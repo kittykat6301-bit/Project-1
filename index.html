@@ -220,6 +220,56 @@ body[data-theme="dad"] .primary-button:hover{background-color:#547a4a}
 .goblin-field{position:relative;overflow:hidden;border:4px solid var(--forest-deep);background:#253b37;touch-action:none;cursor:none}.goblin-field canvas{display:block;width:100%;height:auto;aspect-ratio:640/440}.goblin-field:focus-visible{outline:4px solid var(--accent);outline-offset:3px}.goblin-result{text-align:center;padding:1.1rem}.goblin-result .result-icon{font-size:3.5rem}.goblin-help{font-size:.9rem;color:var(--muted);margin:.75rem 0 0;text-align:center}
 @media(max-width:540px){.goblin-shell{padding:.65rem}.goblin-hud{font-size:1rem}.goblin-intro{padding:1.4rem .45rem}.goblin-field{cursor:default}}
 
+/* Arcade furniture inspired by the user's CRT, cartridge console, and game case references. */
+body{
+  --tv-case:var(--pale);--tv-edge:var(--forest);--tv-trim:var(--pink);--tv-ink:var(--ink);--tv-glass:var(--forest-deep);
+  --console-case:var(--card);--console-edge:var(--forest);--console-ink:var(--ink);
+  --cart-case:var(--pink);--cart-sticker:var(--pale);--cart-ink:var(--forest-deep);
+  --shelf-frame:var(--forest-deep);--shelf-back:var(--forest);--shelf-wood:#8b684e;--case-rim:var(--pink)
+}
+body[data-theme="kat"]{--tv-case:#f4b3bb;--tv-edge:#734567;--tv-trim:#ffe7da;--tv-ink:#58344f;--tv-glass:#48354a;--console-case:#ffc9c0;--console-edge:#85516a;--console-ink:#563849;--cart-case:#e9a1b6;--cart-sticker:#fff1db;--cart-ink:#633951;--shelf-frame:#654154;--shelf-back:#996d7f;--shelf-wood:#bb8179;--case-rim:#ffe2d3}
+body[data-theme="derek"]{--tv-case:#8caa96;--tv-edge:#354f45;--tv-trim:#d3b0db;--tv-ink:#243d3c;--tv-glass:#202b39;--console-case:#779787;--console-edge:#463a41;--console-ink:#1e302e;--cart-case:#ddb0ce;--cart-sticker:#d5d3f0;--cart-ink:#3a2c44;--shelf-frame:#382c29;--shelf-back:#40504a;--shelf-wood:#84664c;--case-rim:#bdb0da}
+body[data-theme="memaw"]{--tv-case:#d0b5e6;--tv-edge:#644479;--tv-trim:#f5d4ed;--tv-ink:#4d3166;--tv-glass:#352944;--console-case:#b493d4;--console-edge:#573c73;--console-ink:#34274d;--cart-case:#9671c2;--cart-sticker:#efdbf9;--cart-ink:#342347;--shelf-frame:#59436b;--shelf-back:#8d70ab;--shelf-wood:#a78ab6;--case-rim:#d6b6ed}
+body[data-theme="ma"]{--tv-case:#f0dbc5;--tv-edge:#41614f;--tv-trim:#eeb09d;--tv-ink:#254437;--tv-glass:#233e35;--console-case:#d3e0cd;--console-edge:#476e54;--console-ink:#29483a;--cart-case:#dfb29c;--cart-sticker:#fff7e9;--cart-ink:#395142;--shelf-frame:#485d46;--shelf-back:#7c9176;--shelf-wood:#a07954;--case-rim:#f4ded0}
+body[data-theme="gerald"]{--tv-case:#201b2c;--tv-edge:#ff78bf;--tv-trim:#a84784;--tv-ink:#ffd9f1;--tv-glass:#080a16;--console-case:#2d243a;--console-edge:#f679bc;--console-ink:#ffe1f3;--cart-case:#f984c3;--cart-sticker:#28172e;--cart-ink:#ffe0f1;--shelf-frame:#f568b2;--shelf-back:#14121c;--shelf-wood:#663751;--case-rim:#ffb7dd}
+body[data-theme="dad"]{--tv-case:#574432;--tv-edge:#b99965;--tv-trim:#385a3b;--tv-ink:#f5e7c5;--tv-glass:#13251f;--console-case:#496446;--console-edge:#a77f50;--console-ink:#fff0cb;--cart-case:#9e7d54;--cart-sticker:#e7d1a1;--cart-ink:#25392a;--shelf-frame:#2a211a;--shelf-back:#2d412f;--shelf-wood:#725037;--case-rim:#bd9d67}
+.arcade-stage{max-width:1170px;margin:0 auto 3rem;display:flex;flex-direction:column;align-items:center;isolation:isolate}
+.retro-tv{position:relative;width:100%;padding:clamp(12px,2vw,28px) clamp(12px,2.5vw,34px) 9px;border:6px solid var(--tv-edge);border-radius:45px 45px 22px 22px;background:linear-gradient(135deg,#ffffff61,transparent 25% 75%,#0000002b),var(--tv-case);box-shadow:inset 0 0 0 5px #ffffff38,inset 0 -16px 0 #00000020,0 13px 0 var(--tv-edge),0 22px 35px #0005}
+.retro-tv:before,.retro-tv:after{content:'';position:absolute;bottom:-25px;width:15%;height:22px;background:var(--tv-edge);z-index:-1;border-radius:0 0 8px 8px}.retro-tv:before{left:10%}.retro-tv:after{right:10%}
+.tv-screen{position:relative;isolation:isolate;overflow:auto;border:10px solid var(--tv-edge);border-radius:28px / 34px;background:radial-gradient(circle at 50% 42%,#ffffff23,transparent 55%),var(--tv-glass);box-shadow:inset 0 0 22px 12px #0008,0 0 0 3px var(--tv-trim),0 4px 12px #0007;scrollbar-color:var(--tv-trim) var(--tv-glass)}
+.tv-screen:after{content:'';pointer-events:none;position:absolute;inset:0;z-index:5;border-radius:inherit;background:repeating-linear-gradient(0deg,transparent 0 3px,#00000012 4px 5px);opacity:.45}
+.tv-idle{min-height:clamp(240px,36vw,430px);display:grid;place-items:center;text-align:center;color:#e6fbea}
+.tv-idle-content{display:flex;flex-direction:column;gap:.35rem;align-items:center;padding:2rem;font-family:'Pixelify Sans',system-ui,sans-serif;text-shadow:0 0 15px var(--tv-trim)}
+.tv-idle-content .tv-star{font-size:3.3rem;color:var(--tv-trim)}.tv-idle-content strong{font-size:clamp(2.3rem,6vw,5rem);line-height:1}.tv-idle-content span:not(.tv-star){font-size:clamp(1rem,2vw,1.7rem)}.tv-idle-content small{margin-top:.75rem;font-size:.9rem;letter-spacing:.08em}
+.tv-chin{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:14px 13px 8px;color:var(--tv-ink);font:700 1.25rem 'Pixelify Sans',system-ui,sans-serif;letter-spacing:.05em}.tv-chin small{display:block;font-size:.65rem;letter-spacing:.16em}.tv-control-lights{display:flex;gap:7px;margin-left:auto}.tv-control-lights i{display:block;width:10px;height:10px;border-radius:50%;background:var(--tv-trim);border:2px solid var(--tv-edge)}.tv-power{display:grid;place-items:center;width:31px;height:31px;background:var(--tv-edge);color:var(--tv-trim);border-radius:50%}
+.arcade-stage .console{position:relative;width:min(590px,88%);max-width:none;min-height:132px;margin:-10px auto 0;padding:35px 22px 12px;z-index:4;border:5px solid var(--console-edge);border-radius:18px 18px 11px 11px;background:linear-gradient(135deg,#ffffff58,transparent 44%),var(--console-case);color:var(--console-ink);box-shadow:inset 0 -14px 0 #00000018,inset 0 4px 0 #ffffff40,0 9px 0 var(--console-edge),0 19px 23px #0005}
+.arcade-stage .console-top{font-size:1.25rem}.arcade-stage .console-top small{color:var(--console-ink);opacity:.78}.arcade-stage .console-light{color:var(--console-ink);font-size:.8rem}.arcade-stage .console-bottom{color:var(--console-ink);font-size:.72rem;margin-top:12px}
+.arcade-stage .cartridge-slot{position:relative;overflow:visible;width:min(62%,285px);height:17px;margin:-15px auto 12px;border:4px inset var(--console-edge);border-radius:4px;background:#141c1c;color:var(--console-ink);box-shadow:inset 0 6px 8px #000a;z-index:2}
+.arcade-stage .cartridge-slot:before,.arcade-stage .cartridge-slot:after{display:none}.arcade-stage #slot-placeholder{position:absolute;left:50%;top:20px;width:250px;max-width:95vw;transform:translateX(-50%);text-align:center;font-size:.8rem;white-space:nowrap;color:var(--console-ink);letter-spacing:.07em}
+.arcade-stage .slot-cartridge{position:absolute;left:50%;top:-48px;bottom:auto;z-index:3;display:grid;align-content:center;width:min(220px,58%);height:83px;min-height:0;padding:8px 12px;border:7px solid var(--console-edge);border-bottom-width:11px;border-radius:10px 10px 2px 2px;background:var(--cart-case);color:var(--cart-ink);box-shadow:inset 0 0 0 3px #ffffff45,0 4px 0 #0005;text-align:center;font:700 1.15rem/1.06 'Pixelify Sans',system-ui,sans-serif;letter-spacing:.02em}
+.arcade-stage .slot-cartridge span{background:var(--cart-sticker);padding:5px 4px;border:2px solid var(--console-edge);border-radius:3px}.arcade-stage .slot-cartridge small{display:block;margin-top:3px;color:var(--cart-ink);font-size:.73rem}
+.arcade-preview .slot-cartridge{transform:translate(-50%,-155px);opacity:0}.arcade-preview.is-loading .slot-cartridge{animation:cartridge-seated 1.1s cubic-bezier(.19,.74,.23,1) forwards}.arcade-preview.is-loading #slot-placeholder{opacity:0}
+.arcade-preview.is-loading .tv-idle-content{opacity:0}.arcade-preview.is-loading .tv-screen:before{content:'✦   BOOTING QUEST   ✦';position:absolute;inset:0;z-index:4;display:grid;place-items:center;color:#ecffe9;font:700 clamp(1.5rem,4vw,3rem) 'Pixelify Sans',system-ui,sans-serif;text-shadow:0 0 25px var(--tv-trim);animation:tv-boot 1.25s steps(5,end) both}
+@keyframes cartridge-seated{0%{opacity:1;transform:translate(-50%,-155px)}56%{opacity:1;transform:translate(-50%,-6px)}75%{transform:translate(-50%,-18px)}100%{opacity:1;transform:translate(-50%,-9px)}}
+@keyframes tv-boot{0%{opacity:0;transform:scaleY(.02);filter:brightness(2)}25%{opacity:1;transform:scaleY(.02)}40%{transform:scaleY(1);opacity:.65}55%{opacity:1}70%{opacity:.35}100%{opacity:1}}
+.arcade-stage.is-game .slot-cartridge{transform:translate(-50%,-9px);opacity:1}.arcade-stage.is-game .tv-screen{width:100%;max-height:min(74vh,740px);min-height:380px;overflow:auto}.arcade-stage.is-game .tv-screen-inner{position:relative;min-height:100%;background:var(--card)}
+.arcade-stage.is-game .game-layout{min-height:590px;border:0;border-radius:0;box-shadow:none}.arcade-stage.is-game :is(#home-content,#goblin-content){margin:0;max-width:none}.arcade-stage.is-game .home-workshop{padding:1rem}
+.arcade-stage.is-game .tv-screen-inner>.goblin-shell{border:0;box-shadow:none}.arcade-stage.is-game .tv-screen-inner>#home-content{padding:1rem}
+.arcade-stage.is-game .console-bottom{justify-content:center}.arcade-stage.is-game .cartridge-slot{margin-top:-15px}
+.game-library{padding:1rem 1rem 1.4rem;margin:2.2rem auto 4rem;border:9px solid var(--shelf-frame);border-radius:11px;background:linear-gradient(90deg,#0003,transparent 10% 90%,#0003),var(--shelf-back);box-shadow:inset 0 9px 22px #0005,8px 11px 0 var(--shelf-wood);max-width:1350px}
+.game-library:before{content:'✦  THE CARTRIDGE SHELF  ✦';display:block;padding:.35rem .7rem 1rem;color:var(--tv-trim);text-align:center;font:700 1.3rem 'Pixelify Sans',system-ui,sans-serif;text-shadow:0 1px 3px #0009}
+#view-games .game-grid{grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:355px;column-gap:1.1rem;row-gap:0;margin:0;padding:0 .7rem 8px;background:linear-gradient(to bottom,transparent 0 309px,var(--shelf-wood) 309px 325px,var(--shelf-frame) 325px 355px) left top/100% 355px repeat-y}
+#view-games .game-card,#view-games .game-card.featured{align-self:start;min-height:286px;height:286px;margin:16px 0 0;padding:1.3rem 1.1rem 1.2rem;border:7px solid var(--case-rim);border-radius:8px;box-shadow:inset 0 0 0 3px #ffffff70,inset 0 -12px 0 #0002,5px 8px 0 #0007;transition:transform .22s,box-shadow .22s;overflow:visible}
+#view-games .game-card:before{content:'';position:absolute;top:6%;left:-13px;width:11px;height:88%;background:var(--case-rim);border:2px solid var(--shelf-frame);border-right:0;border-radius:5px 0 0 5px;box-shadow:inset -2px 0 #fff5}
+#view-games .game-card:after,#view-games .game-card.featured:after{content:'KC ✦';position:absolute;left:auto;right:14px;bottom:10px;width:auto;height:auto;background:none;border:0;opacity:.7;font:700 .75rem 'Pixelify Sans',system-ui,sans-serif;color:currentColor}
+#view-games .game-card:has(.insert-trigger){cursor:pointer}#view-games .game-card:has(.insert-trigger):hover{transform:translateY(-7px) rotate(-1deg);box-shadow:inset 0 0 0 3px #ffffff70,0 15px 0 #0005}
+#view-games .game-card .card-icon{width:42px;height:42px;font-size:1.45rem}#view-games .game-card h3{font-size:clamp(1.2rem,1.7vw,1.65rem);margin:1rem 0 .45rem}#view-games .game-card p{font-size:.78rem;line-height:1.35}#view-games .game-card .status{top:1.4rem;right:1rem;font-size:.65rem}
+#view-games .game-card .primary-button{font-size:1rem;min-height:40px;padding:.38rem .55rem}#view-games .game-card .coming-pill{font-size:.7rem}
+@media(max-width:1200px){#view-games .game-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#view-games .game-card{max-width:330px;width:100%;justify-self:center}}
+@media(max-width:760px){.arcade-stage.is-game .tv-screen{max-height:none;min-height:0;overflow:visible}.arcade-stage.is-game .game-layout{min-height:0}.retro-tv{border-radius:24px 24px 14px 14px}.tv-screen{border-width:6px;border-radius:18px}.arcade-stage.is-game .tv-screen-inner>#home-content{padding:.4rem}.arcade-stage.is-game .home-workshop{padding:.3rem}.arcade-stage .console{width:min(88%,590px)}}
+@media(max-width:600px){#view-games .game-grid{grid-template-columns:1fr;grid-auto-rows:342px;background-size:100% 342px;background-image:linear-gradient(to bottom,transparent 0 297px,var(--shelf-wood) 297px 313px,var(--shelf-frame) 313px 342px)}#view-games .game-card,#view-games .game-card.featured{height:275px;min-height:275px;margin-top:13px;width:min(100%,310px)}.game-library{padding:.75rem .5rem}.tv-chin{font-size:.9rem}.arcade-stage .console{width:94%;padding:32px 12px 8px}.arcade-stage .console-top{font-size:.9rem}.arcade-stage .console-top small{display:block;font-size:.55rem}.arcade-stage .console-bottom{font-size:.57rem}.arcade-stage .slot-cartridge{height:75px;top:-44px;font-size:.85rem;width:min(190px,60%)}.arcade-stage .slot-cartridge small{font-size:.62rem}.arcade-stage .cartridge-slot{width:60%}.tv-idle{min-height:240px}}
+@media(prefers-reduced-motion:reduce){.arcade-preview.is-loading .slot-cartridge,.arcade-preview.is-loading .tv-screen:before{animation-duration:.01ms!important}}
+
 </style>
   
 </head>
@@ -288,18 +338,27 @@ body[data-theme="dad"] .primary-button:hover{background-color:#547a4a}
 
       <section class="view" id="view-games" aria-labelledby="games-title" hidden>
         <div class="section-heading"><p class="eyebrow">THE ARCADE SHELF</p><h2 id="games-title">Pick your <em>cartridge.</em></h2><p>Four adventures are ready. Choose one to slide into the console.</p></div>
-        <div class="console" aria-label="Game console">
-          <div class="console-top"><span>KC <small>POCKET QUEST SYSTEM</small></span><span class="console-light">POWER</span></div>
-          <div class="cartridge-slot" id="cartridge-slot"><span id="slot-placeholder">▼ INSERT CARTRIDGE ▼</span><span class="slot-cartridge" id="slot-cartridge" aria-hidden="true"><span id="slot-title">CHOOSE YOUR FATE</span> <small id="slot-number">QUEST 001</small></span></div>
-          <div class="console-bottom"><span>✦ FOUR GAMES READY</span><span>04 / 05 GAMES LOADED</span></div>
+        <div class="arcade-stage arcade-preview" id="arcade-stage">
+          <div class="retro-tv" aria-label="Kat's Corner retro television">
+            <div class="tv-screen tv-idle" id="library-screen" role="status" aria-live="polite">
+              <div class="tv-idle-content"><span class="tv-star" aria-hidden="true">✦</span><strong>KAT’S CORNER</strong><span>CHOOSE A CARTRIDGE BELOW</span><small>PRESS START · MAKE TROUBLE · HAVE FUN</small></div>
+            </div>
+            <div class="tv-chin"><span>KC DREAMVISION <small>COLOR TV</small></span><span class="tv-control-lights" aria-hidden="true"><i></i><i></i><i></i></span><span class="tv-power" aria-hidden="true">◉</span></div>
+          </div>
+          <div class="console" aria-label="Game console">
+            <div class="console-top"><span>KC <small>POCKET QUEST SYSTEM</small></span><span class="console-light">POWER</span></div>
+            <div class="cartridge-slot" id="cartridge-slot"><span id="slot-placeholder">▼ INSERT CARTRIDGE ▼</span></div>
+            <div class="slot-cartridge" id="slot-cartridge" aria-hidden="true"><span id="slot-title">CHOOSE YOUR FATE</span><small id="slot-number">QUEST 001</small></div>
+            <div class="console-bottom"><span>✦ FOUR GAMES READY</span><span>04 / 05 GAMES LOADED</span></div>
+          </div>
         </div>
-        <div class="game-grid">
+        <div class="game-library" aria-label="Cartridge case shelf"><div class="game-grid">
           <article class="game-card featured"><span class="card-icon" aria-hidden="true">⚔</span><span class="status">READY TO PLAY</span><h3>Choose Your Fate</h3><p>A tiny fantasy adventure where every decision is probably a mistake.</p><button type="button" class="primary-button insert-trigger" data-game="play">Insert cartridge <span aria-hidden="true">↥</span></button></article>
           <article class="game-card monster-cartridge"><span class="card-icon" aria-hidden="true">✿</span><span class="status">READY TO PLAY</span><h3>Adopt a Tiny Monster</h3><p>Choose an egg. Acquire a problem.</p><button type="button" class="primary-button insert-trigger" data-game="monster">Insert cartridge <span aria-hidden="true">↥</span></button></article>
           <article class="game-card"><span class="card-icon" aria-hidden="true">⌂</span><span class="status">READY TO PLAY</span><h3>Fantasy Home Builder</h3><p>Design a cozy escape. Possibly with a dragon sized mortgage.</p><button type="button" class="primary-button insert-trigger" data-game="home">Insert cartridge ↥</button></article>
           <article class="game-card"><span class="card-icon" aria-hidden="true">🪙</span><span class="status">READY TO PLAY</span><h3>Goblin Grab</h3><p>Catch as many coins as your basket can hold before the guard arrives.</p><button type="button" class="primary-button insert-trigger" data-game="goblin">Insert cartridge ↥</button></article>
           <article class="game-card"><span class="card-icon" aria-hidden="true">✧</span><span class="status muted">A LITTLE SPARK</span><h3>Fantasy Creature Quiz</h3><p>Find out which magical creature matches your particular brand of chaos.</p><span class="coming-pill">PLANNED</span></article>
-        </div>
+        </div></div>
       </section>
 
       <section class="view" id="view-home" aria-labelledby="home-title" hidden>
@@ -846,24 +905,41 @@ $('#theme-select').addEventListener('change', event => { setTheme(event.target.v
 $('#volume-select').addEventListener('change', event => { setVolume(Number(event.target.value)); sound('choice'); });
 document.addEventListener('click', () => { if (saved.volume === 3) sound('goblin'); }, true);
 $('#sound-toggle').addEventListener('click', () => { setVolume(saved.volume ? 0 : 1); sound('choice'); });
-document.querySelectorAll('.insert-trigger').forEach(button => button.addEventListener('click', () => {
-  if ($('#cartridge-slot').classList.contains('is-loading')) return;
+const CARTRIDGE_INFO = {
+  play:{title:'CHOOSE YOUR FATE',number:'QUEST 001'},
+  monster:{title:'ADOPT A TINY MONSTER',number:'QUEST 002'},
+  home:{title:'FANTASY HOME BUILDER',number:'QUEST 003'},
+  goblin:{title:'GOBLIN GRAB',number:'QUEST 004'}
+};
+function insertCartridge(button) {
+  const stage = $('#arcade-stage');
+  if (stage.classList.contains('is-loading')) return;
   const game = button.dataset.game;
-  $('#slot-title').textContent = game === 'goblin' ? 'GOBLIN GRAB' : game === 'home' ? 'FANTASY HOME BUILDER' : game === 'monster' ? 'ADOPT A TINY MONSTER' : 'CHOOSE YOUR FATE';
-  $('#slot-number').textContent = game === 'goblin' ? 'QUEST 004' : game === 'home' ? 'QUEST 003' : game === 'monster' ? 'QUEST 002' : 'QUEST 001';
+  const info = CARTRIDGE_INFO[game];
+  if (!info) return;
+  $('#slot-title').textContent = info.title;
+  $('#slot-number').textContent = info.number;
+  $('#library-screen').setAttribute('aria-label',`Booting ${info.title}`);
   document.querySelectorAll('.insert-trigger').forEach(trigger => trigger.disabled = true);
   button.dataset.originalLabel = button.innerHTML;
-  button.textContent = 'Loading quest…';
-  $('#cartridge-slot').classList.add('is-loading');
+  button.textContent = 'Inserting…';
+  stage.classList.add('is-loading');
   sound('choice');
   setTimeout(() => {
-    $('#cartridge-slot').classList.remove('is-loading');
+    stage.classList.remove('is-loading');
+    $('#library-screen').removeAttribute('aria-label');
     document.querySelectorAll('.insert-trigger').forEach(trigger => trigger.disabled = false);
     button.innerHTML = button.dataset.originalLabel;
     if (game === 'goblin') renderGoblinStart(); else if (game === 'home') renderHomeStart(); else if (game === 'monster') resetMonster(); else resetGame();
     showView(game);
-  }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 80 : 950);
-}));
+    document.querySelector(`#view-${game} .start-button, #view-${game} .home-start button, #view-${game} .goblin-intro button`)?.focus({preventScroll:true});
+  }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 80 : 1350);
+}
+document.querySelectorAll('.insert-trigger').forEach(button => button.addEventListener('click', () => insertCartridge(button)));
+document.querySelectorAll('#view-games .game-card').forEach(card => {
+  const trigger = card.querySelector('.insert-trigger');
+  if (trigger) card.addEventListener('click', event => { if (!event.target.closest('button')) insertCartridge(trigger); });
+});
 $('#do-not-press').addEventListener('click', () => { sound('bonk'); unlock('button'); note('You pressed it. The forest has been informed.'); document.body.classList.add('oops'); setTimeout(() => document.body.classList.remove('oops'), 450); });
 document.addEventListener('keydown', event => {
   if (event.key === 'Escape') { $('#settings-panel').hidden = true; $('#settings-toggle').setAttribute('aria-expanded','false'); $('#mobile-menu').hidden = true; $('#menu-toggle').setAttribute('aria-expanded','false'); }
@@ -1078,6 +1154,29 @@ function finishGoblin() {
   const again=homeElement('button','Play again ↻','primary-button');again.type='button';again.addEventListener('click',startGoblin);
   result.append(again);box.append(result);sound('win');
 }
+function mountGameStages() {
+  const targets = {
+    play:'#view-play .game-layout',
+    monster:'#view-monster .game-layout',
+    home:'#home-content',
+    goblin:'#goblin-content'
+  };
+  for (const [game,selector] of Object.entries(targets)) {
+    const content = $(selector), info = CARTRIDGE_INFO[game];
+    const stage = document.createElement('div'); stage.className = 'arcade-stage is-game';
+    const tv = document.createElement('div'); tv.className = 'retro-tv'; tv.setAttribute('aria-label','Retro television');
+    const screen = document.createElement('div'); screen.className = 'tv-screen'; screen.setAttribute('role','region'); screen.setAttribute('aria-label',`${info.title} game screen`);
+    const inner = document.createElement('div'); inner.className = 'tv-screen-inner';
+    screen.append(inner);
+    const chin = document.createElement('div'); chin.className = 'tv-chin';
+    chin.innerHTML = '<span>KC DREAMVISION <small>COLOR TV</small></span><span class="tv-control-lights" aria-hidden="true"><i></i><i></i><i></i></span><span class="tv-power" aria-hidden="true">◉</span>';
+    tv.append(screen,chin);
+    const consoleBox = document.createElement('div'); consoleBox.className = 'console'; consoleBox.setAttribute('aria-label',`${info.title} cartridge inserted in the console`);
+    consoleBox.innerHTML = `<div class="console-top"><span>KC <small>POCKET QUEST SYSTEM</small></span><span class="console-light">POWER</span></div><div class="cartridge-slot"></div><div class="slot-cartridge" aria-hidden="true"><span>${info.title}</span><small>${info.number}</small></div><div class="console-bottom"><span>✦ CARTRIDGE LOADED</span><span>PRESS START ON SCREEN</span></div>`;
+    content.before(stage); inner.append(content); stage.append(tv,consoleBox);
+  }
+}
+mountGameStages();
 renderHomeStart();
 renderGoblinStart();
 
