@@ -58,8 +58,29 @@ h2{line-height:1.05}.forest-panel h1{line-height:.9}
 @media(max-width:760px){.forest-panel{border-right:0;border-bottom:4px solid var(--pink)}.forest-panel h1{font-size:4.2rem}.game-layout{box-shadow:5px 5px 0 var(--pink)}.console{margin-bottom:2rem}.story-panel{box-shadow:inset 0 0 0 5px var(--card),inset 0 0 0 7px var(--line)}}
 @media(max-width:540px){.brand{font-size:1.35rem}.forest-panel h1{font-size:4.1rem}.story-content h2{font-size:2.5rem}.game-grid{grid-template-columns:1fr;max-width:400px}.game-card,.game-card.featured{min-height:260px}.console{padding:.9rem}.console-top small{display:block;margin:-.3rem 0 0}.cartridge-slot{height:72px;font-size:.8rem}.console-bottom{font-size:.65rem;align-items:flex-end}.console-insert{font-size:.82rem;max-width:210px}.section-heading h2{font-size:3.6rem}.choice-button{font-size:.91rem}}
 
-  </style>
+/* Adopt a Tiny Monster uses the same game frame with its own nursery art. */
+.monster-panel{background:linear-gradient(150deg,var(--forest) 15%,#5b536e 100%)}
+.monster-panel .eyebrow{margin-top:.5rem}
+.monster-panel h1{font-size:clamp(3.3rem,4.8vw,5rem);max-width:550px}
+.monster-panel h1 em{color:#f6b9d7}
+.monster-panel .intro{max-width:390px}
+.egg-art{display:block;align-self:center;width:min(100%,270px);height:auto;object-fit:contain;margin:.5rem 0 .2rem;filter:drop-shadow(0 15px 18px rgba(0,0,0,.25))}
+.monster-cartridge .primary-button{background:var(--pink);color:var(--forest);border-color:var(--forest-deep)}
+.creature-portrait{display:grid;place-items:center;align-self:flex-start;width:100px;height:100px;background:var(--pale);border:4px solid var(--forest);box-shadow:6px 6px 0 var(--pink);font-size:3.7rem;margin:0 0 1.4rem}
+.creature-quirk{font-weight:800;color:var(--accent)!important;margin-bottom:1.2rem}
+.name-form{width:100%;max-width:560px;margin:1.2rem 0}
+.name-form label{display:block;font-family:'Pixelify Sans','Courier New',monospace;font-size:1.25rem;font-weight:700;margin-bottom:.45rem}
+.name-row{display:flex;gap:.7rem;align-items:stretch;flex-wrap:wrap}
+.name-row input{flex:1 1 170px;min-width:0;min-height:50px;padding:.6rem .8rem;border:2px solid var(--forest);border-radius:4px;background:var(--bg);color:var(--ink);font:600 1rem 'DM Sans',system-ui,sans-serif}
+.name-row input:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.monster-shelf{margin-top:-1rem}
+@media(max-width:760px){.egg-art{position:absolute;right:1.5rem;top:3rem;width:155px;opacity:.88}.monster-panel .eyebrow{margin-top:6rem}.monster-panel h1{font-size:clamp(3rem,9vw,4.2rem);max-width:450px}.monster-panel{min-height:370px}.monster-panel .intro{padding-right:0;max-width:330px}}
+@media(max-width:540px){.egg-art{right:.7rem;top:2.4rem;width:132px}.monster-panel .eyebrow{margin-top:7rem}.monster-panel h1{font-size:3.5rem}.monster-panel{min-height:420px}.name-row .primary-button{width:100%}}
 
+.egg-art-inline{display:flex;align-items:center;justify-content:center;gap:.45rem;min-height:160px}.egg-art-inline span{display:grid;place-items:center;width:72px;height:96px;border:4px solid #213e32;border-radius:48% 48% 42% 42%;font-size:2rem;box-shadow:4px 5px 0 #dca6bc}.egg-art-inline span:nth-child(1){background:#b9d7a5}.egg-art-inline span:nth-child(2){background:#f5b3d1}.egg-art-inline span:nth-child(3){background:#b9b9ec}
+
+</style>
+  
 </head>
 <body data-theme="fae">
   <a class="skip-link" href="#main">Skip to the arcade</a>
@@ -71,8 +92,9 @@ h2{line-height:1.05}.forest-panel h1{line-height:.9}
         <span>FAE <i>&</i> FATE<small>THE TINY ENCHANTED ARCADE</small></span>
       </button>
       <nav class="top-nav" aria-label="Main menu">
-        <button type="button" class="nav-link" data-go="play">Play</button>
         <button type="button" class="nav-link is-active" data-go="games" aria-current="page">Games</button>
+        <button type="button" class="nav-link" data-go="play">Fate Quest</button>
+        <button type="button" class="nav-link" data-go="monster">Tiny Monster</button>
         <button type="button" class="nav-link" data-go="building">In development</button>
         <button type="button" class="nav-link" data-go="achievements">Achievements</button>
         <button type="button" class="nav-link" data-go="about">About</button>
@@ -80,7 +102,7 @@ h2{line-height:1.05}.forest-panel h1{line-height:.9}
       <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">☰</button>
     </header>
     <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile menu" hidden>
-      <button type="button" data-go="play">Play</button><button type="button" data-go="games">Games</button><button type="button" data-go="building">In development</button><button type="button" data-go="achievements">Achievements</button><button type="button" data-go="about">About</button>
+      <button type="button" data-go="games">Games</button><button type="button" data-go="play">Fate Quest</button><button type="button" data-go="monster">Tiny Monster</button><button type="button" data-go="building">In development</button><button type="button" data-go="achievements">Achievements</button><button type="button" data-go="about">About</button>
     </nav>
 
     <main id="main">
@@ -104,16 +126,35 @@ h2{line-height:1.05}.forest-panel h1{line-height:.9}
         <div class="under-game"><span>✦ Every ending is a valid ending. Probably.</span><button type="button" class="text-button" data-go="games">Explore the arcade <span aria-hidden="true">↗</span></button></div>
       </section>
 
+      <section class="view" id="view-monster" aria-labelledby="monster-title" hidden>
+        <div class="game-layout monster-layout">
+          <aside class="forest-panel monster-panel">
+            <div class="panel-topline"><span>✧ QUEST FILE 002</span><span class="live-dot">NURSERY OPEN</span></div>
+            <div class="egg-art egg-art-inline" role="img" aria-label="Three enchanted eggs in moss green, pink, and periwinkle"><span>🌿</span><span>💗</span><span>✧</span></div>
+            <p class="eyebrow">A TINY CREATURE AWAITS</p>
+            <h1 id="monster-title">Adopt a<br><em>Tiny Monster.</em></h1>
+            <p class="intro">Pick an egg. Be very normal about your new magical child.</p>
+            <div class="sidebar-bottom"><span>CREATURES MET</span><strong id="monster-count">0 / 6</strong></div>
+          </aside>
+          <div class="story-panel">
+            <div class="story-header"><span id="monster-step-label">CARTRIDGE LOADED</span><span class="story-stars" aria-hidden="true">✿ · ✧ · ✿</span></div>
+            <div class="progress-track" role="progressbar" aria-label="Monster adventure progress" aria-valuemin="0" aria-valuemax="4" aria-valuenow="0" id="monster-progress"><span id="monster-progress-fill"></span></div>
+            <div id="monster-content" class="story-content" aria-live="polite"></div>
+          </div>
+        </div>
+        <div class="under-game"><span>✦ The nursery has absolutely no return policy.</span><button type="button" class="text-button" data-go="games">Back to the cartridges <span aria-hidden="true">↗</span></button></div>
+      </section>
+
       <section class="view" id="view-games" aria-labelledby="games-title" hidden>
-        <div class="section-heading"><p class="eyebrow">THE ARCADE SHELF</p><h2 id="games-title">Pick your <em>cartridge.</em></h2><p>Insert a game below. New cartridges appear as I build them.</p></div>
+        <div class="section-heading"><p class="eyebrow">THE ARCADE SHELF</p><h2 id="games-title">Pick your <em>cartridge.</em></h2><p>Two adventures are ready. Choose one to slide into the console.</p></div>
         <div class="console" aria-label="Game console">
           <div class="console-top"><span>F&F <small>POCKET QUEST SYSTEM</small></span><span class="console-light">POWER</span></div>
-          <div class="cartridge-slot" id="cartridge-slot"><span id="slot-placeholder">▼ INSERT CARTRIDGE ▼</span><span class="slot-cartridge" id="slot-cartridge" aria-hidden="true">CHOOSE YOUR FATE <small>QUEST 001</small></span></div>
-          <div class="console-bottom"><button type="button" class="console-insert insert-trigger">INSERT CHOOSE YOUR FATE ↥</button><span>01 / 04 GAMES LOADED</span></div>
+          <div class="cartridge-slot" id="cartridge-slot"><span id="slot-placeholder">▼ INSERT CARTRIDGE ▼</span><span class="slot-cartridge" id="slot-cartridge" aria-hidden="true"><span id="slot-title">CHOOSE YOUR FATE</span> <small id="slot-number">QUEST 001</small></span></div>
+          <div class="console-bottom"><span>✦ TWO GAMES READY</span><span>02 / 04 GAMES LOADED</span></div>
         </div>
         <div class="game-grid">
-          <article class="game-card featured"><span class="card-icon" aria-hidden="true">⚔</span><span class="status">READY TO PLAY</span><h3>Choose Your Fate</h3><p>A tiny fantasy adventure where every decision is probably a mistake.</p><button type="button" class="primary-button insert-trigger">Insert cartridge <span aria-hidden="true">↥</span></button></article>
-          <article class="game-card"><span class="card-icon" aria-hidden="true">🐉</span><span class="status muted">GROWING</span><h3>Adopt a Tiny Monster</h3><p>Choose an egg. Acquire a problem.</p><span class="coming-pill">BUILDING IN PROGRESS</span></article>
+          <article class="game-card featured"><span class="card-icon" aria-hidden="true">⚔</span><span class="status">READY TO PLAY</span><h3>Choose Your Fate</h3><p>A tiny fantasy adventure where every decision is probably a mistake.</p><button type="button" class="primary-button insert-trigger" data-game="play">Insert cartridge <span aria-hidden="true">↥</span></button></article>
+          <article class="game-card monster-cartridge"><span class="card-icon" aria-hidden="true">✿</span><span class="status">READY TO PLAY</span><h3>Adopt a Tiny Monster</h3><p>Choose an egg. Acquire a problem.</p><button type="button" class="primary-button insert-trigger" data-game="monster">Insert cartridge <span aria-hidden="true">↥</span></button></article>
           <article class="game-card"><span class="card-icon" aria-hidden="true">⌂</span><span class="status muted">ON THE HORIZON</span><h3>Fantasy Home Builder</h3><p>Design a cozy escape. Possibly with a dragon sized mortgage.</p><span class="coming-pill">COMING SOON</span></article>
           <article class="game-card"><span class="card-icon" aria-hidden="true">✧</span><span class="status muted">A LITTLE SPARK</span><h3>Fantasy Creature Quiz</h3><p>Find out which magical creature matches your particular brand of chaos.</p><span class="coming-pill">PLANNED</span></article>
         </div>
@@ -122,7 +163,6 @@ h2{line-height:1.05}.forest-panel h1{line-height:.9}
       <section class="view" id="view-building" aria-labelledby="building-title" hidden>
         <div class="section-heading"><p class="eyebrow">THE CODE GARDEN</p><h2 id="building-title">Still being <em>summoned.</em></h2><p>Little games and features taking shape behind the curtain.</p></div>
         <div class="build-list">
-          <article class="build-card"><div><span class="build-glyph" aria-hidden="true">🐉</span><h3>Adopt a Tiny Monster</h3><p>Pick an egg, meet your creature, then find out what it thinks of you.</p></div><span class="build-tag">NEXT IN LINE</span></article>
           <article class="build-card"><div><span class="build-glyph" aria-hidden="true">⌂</span><h3>Fantasy Home Builder</h3><p>A magical address, a very questionable floor plan, and room for a pet.</p></div><span class="build-tag">SKETCHING IDEAS</span></article>
           <article class="build-card"><div><span class="build-glyph" aria-hidden="true">✧</span><h3>Fantasy Creature Quiz</h3><p>A quick personality quiz for people who suspect they might be a goblin.</p></div><span class="build-tag">PLANNED</span></article>
           <article class="build-card"><div><span class="build-glyph" aria-hidden="true">✿</span><h3>Family inspired themes</h3><p>Secret color palettes and little details, made from some very suspicious survey answers.</p></div><span class="build-tag">AWAITING ANSWERS</span></article>
@@ -131,9 +171,10 @@ h2{line-height:1.05}.forest-panel h1{line-height:.9}
 
       <section class="view" id="view-achievements" aria-labelledby="achievements-title" hidden>
         <div class="section-heading"><p class="eyebrow">YOUR LITTLE TROPHY SHELF</p><h2 id="achievements-title">Things you <em>did.</em></h2><p>Discover endings and make questionable choices. Saved on this device.</p></div>
-        <div class="achievement-summary"><strong id="achievement-count">0 / 6</strong><span>ACHIEVEMENTS UNLOCKED</span></div>
+        <div class="achievement-summary"><strong id="achievement-count">0 / 8</strong><span>ACHIEVEMENTS UNLOCKED</span></div>
         <div class="achievement-grid" id="achievement-grid"></div>
         <div class="ending-shelf"><h3>Endings discovered</h3><div id="ending-list" class="ending-list"></div></div>
+        <div class="ending-shelf monster-shelf"><h3>Creature journal</h3><div id="monster-list" class="ending-list"></div></div>
       </section>
 
       <section class="view" id="view-about" aria-labelledby="about-title" hidden>
@@ -158,7 +199,7 @@ h2{line-height:1.05}.forest-panel h1{line-height:.9}
     <p>Sounds play only after you turn them on. Your settings stay on this device.</p>
   </div>
   <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
-  <script>
+<script>
 /* Fae & Fate: edit SCENES to add story choices, and ENDINGS for results. */
 const STORAGE_KEY = 'fae-and-fate-v1';
 const ENDINGS = {
@@ -177,7 +218,9 @@ const ACHIEVEMENTS = [
   { id: 'sidequest', icon: '❧', title: 'Main Quest? Never Heard of Her', text: 'Choose the dragon over the main quest.' },
   { id: 'capitalism', icon: '♜', title: 'Capitalism Wins Again', text: 'Unlock the Tavern Owner ending.' },
   { id: 'completionist', icon: '★', title: 'Completionist Behavior Detected', text: 'Discover all seven endings.' },
-  { id: 'button', icon: '!', title: 'WHY WOULD YOU PRESS THAT', text: 'Press the button explicitly labeled Do Not Press.' }
+  { id: 'button', icon: '!', title: 'WHY WOULD YOU PRESS THAT', text: 'Press the button explicitly labeled Do Not Press.' },
+  { id: 'firstMonster', icon: '🥚', title: 'Oh. It Imprinted on You.', text: 'Adopt your first tiny monster.' },
+  { id: 'fullNursery', icon: '✿', title: 'The Nursery Is Full', text: 'Meet all six kinds of tiny monster.' }
 ];
 
 const SCENES = {
@@ -254,6 +297,38 @@ const SCENES = {
   }
 };
 
+const MONSTERS = {
+  spriglet: { icon:'🌿', title:'Spriglet', name:'Moss', text:'A soft little forest creature with leaves for ears. It grows flowers in your pockets when it thinks you need cheering up.', quirk:'Collects warm socks.' },
+  puffwyrm: { icon:'🐉', title:'Puffwyrm', name:'Pip', text:'A palm-sized dragon with a heart too big for its wings. It puffs pink smoke whenever it wants a cuddle.', quirk:'Roars at teaspoons.' },
+  moonbun: { icon:'🌙', title:'Moonbun', name:'Luma', text:'A star-dusted rabbit with a talent for finding lost things. It insists on sleeping inside your spellbook.', quirk:'Sneezes glitter.' },
+  mimic: { icon:'🎒', title:'Pocket Mimic', name:'Button', text:'A shapeshifter that can imitate almost anything smaller than a boot. It has chosen you as its favorite hiding place.', quirk:'Pretends to be your keys.' },
+  bubble: { icon:'🫧', title:'Bubble Imp', name:'Bloop', text:'A floating little menace that sees the whole world in rainbow colors. It giggles every time someone says “be careful.”', quirk:'Bounces off ceilings.' },
+  ember: { icon:'🔥', title:'Emberling', name:'Cinder', text:'A tiny salamander with a brave heart and pleasantly warm paws. It considers every shadow a worthy opponent.', quirk:'Toasts its own snacks.' }
+};
+
+const MONSTER_STEPS = [
+  { kicker:'THE VILLAGE NURSERY', title:'Three eggs are waiting for someone.', text:'They wobble as soon as you walk in. Which one do you carry home?', choices:[
+    { icon:'🌿', text:'The mossy green egg with leaf markings.', points:{spriglet:3} },
+    { icon:'💗', text:'The velvet pink egg covered in hearts.', points:{puffwyrm:3} },
+    { icon:'✧', text:'The periwinkle egg full of tiny stars.', points:{moonbun:3} }
+  ]},
+  { kicker:'A VERY SMALL NOISE', title:'The egg taps back when you touch it.', text:'Whatever is inside is trying to tell you something. What do you do?', choices:[
+    { icon:'✿', text:'Wrap it in your softest scarf.', points:{spriglet:3,puffwyrm:2} },
+    { icon:'✧', text:'Listen closely and decode the tapping.', points:{moonbun:3,mimic:1} },
+    { icon:'♫', text:'Tap out a ridiculous little song.', points:{bubble:3,mimic:1} }
+  ]},
+  { kicker:'FIRST SNACK', title:'A tiny crack appears. It smells food.', text:'The nursery keeper says you may offer one treat to coax it out.', choices:[
+    { icon:'🍓', text:'Fresh berries and flower petals.', points:{spriglet:3,puffwyrm:1} },
+    { icon:'✦', text:'A shiny sugar crystal.', points:{bubble:3,moonbun:1} },
+    { icon:'🔥', text:'A warm pepper biscuit.', points:{ember:4} }
+  ]},
+  { kicker:'ONE LAST WOBBLE', title:'The egg rolls toward the door.', text:'It is apparently ready for a first adventure. Where do you take it?', choices:[
+    { icon:'🎒', text:'Show it a tiny treasure hidden under a cup.', points:{mimic:5} },
+    { icon:'✿', text:'Visit the flower meadow and its floating bubbles.', points:{spriglet:2,puffwyrm:2,bubble:2} },
+    { icon:'☀', text:'Follow the warm trail of sparks.', points:{ember:3,moonbun:1} }
+  ]}
+];
+
 function readSaved() {
   try {
     const value = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
@@ -261,12 +336,14 @@ function readSaved() {
       theme: Object.hasOwn( { fae:1,mage:1,healer:1,rogue:1,dragon:1,fairy:1 }, value.theme) ? value.theme : 'fae',
       volume: [0,1,2,3].includes(value.volume) ? value.volume : 0,
       endings: Array.isArray(value.endings) ? value.endings.filter(id => ENDINGS[id]) : [],
-      achievements: Array.isArray(value.achievements) ? value.achievements.filter(id => ACHIEVEMENTS.some(a => a.id === id)) : []
+      achievements: Array.isArray(value.achievements) ? value.achievements.filter(id => ACHIEVEMENTS.some(a => a.id === id)) : [],
+      monsters: Array.isArray(value.monsters) ? value.monsters.filter(item => item && MONSTERS[item.species] && typeof item.name === 'string').map(item => ({species:item.species,name:item.name.slice(0,24)})) : []
     };
-  } catch { return { theme:'fae', volume:0, endings:[], achievements:[] }; }
+  } catch { return { theme:'fae', volume:0, endings:[], achievements:[], monsters:[] }; }
 }
 const saved = readSaved();
 let adventure = { scene: 'opening', step: 0, started: false, scores: Object.fromEntries(Object.keys(ENDINGS).map(key => [key, 0])), flags: [] };
+let monsterRun = { step:0, started:false, scores:Object.fromEntries(Object.keys(MONSTERS).map(key => [key,0])) };
 let audioContext;
 let toastTimer;
 const $ = selector => document.querySelector(selector);
@@ -437,6 +514,104 @@ function resetGame() {
   sound('click');
 }
 
+function resetMonster() {
+  monsterRun = { step:0, started:false, scores:Object.fromEntries(Object.keys(MONSTERS).map(key => [key,0])) };
+  renderMonsterStart();
+}
+
+function renderMonsterStart() {
+  $('#monster-step-label').textContent = 'CARTRIDGE LOADED · NURSERY 002';
+  $('#monster-progress').setAttribute('aria-valuenow', '0');
+  $('#monster-progress-fill').style.width = '0%';
+  const content = $('#monster-content'); content.replaceChildren(); content.classList.add('start-screen');
+  const kicker = document.createElement('span'); kicker.className = 'story-kicker'; kicker.textContent = '✿ A LITTLE EGG IS WAITING';
+  const icon = document.createElement('span'); icon.className = 'start-icon'; icon.setAttribute('aria-hidden','true'); icon.textContent = '🥚';
+  const title = document.createElement('h2'); title.textContent = 'Adopt a Tiny Monster';
+  const copy = document.createElement('p'); copy.textContent = 'Choose an egg, care for it, and meet the creature that chooses you back.';
+  const button = document.createElement('button'); button.className = 'primary-button start-button'; button.type = 'button'; button.textContent = '✦ PRESS START';
+  button.addEventListener('click', () => { monsterRun.started = true; content.classList.remove('start-screen'); renderMonsterStep(); sound('win'); });
+  content.append(kicker,icon,title,copy,button);
+}
+
+function renderMonsterStep() {
+  const step = MONSTER_STEPS[monsterRun.step];
+  $('#monster-step-label').textContent = `NURSERY ${String(monsterRun.step + 1).padStart(2,'0')} / 04`;
+  $('#monster-progress').setAttribute('aria-valuenow', String(monsterRun.step));
+  $('#monster-progress-fill').style.width = `${monsterRun.step * 25}%`;
+  const content = $('#monster-content'); content.replaceChildren();
+  const kicker = document.createElement('span'); kicker.className = 'story-kicker'; kicker.textContent = step.kicker;
+  const title = document.createElement('h2'); title.textContent = step.title;
+  const copy = document.createElement('p'); copy.textContent = step.text;
+  const choices = document.createElement('div'); choices.className = 'choices';
+  step.choices.forEach(choice => {
+    const button = document.createElement('button'); button.type = 'button'; button.className = 'choice-button';
+    const icon = document.createElement('span'); icon.className = 'choice-icon'; icon.setAttribute('aria-hidden','true'); icon.textContent = choice.icon;
+    const label = document.createElement('span'); label.textContent = choice.text;
+    button.append(icon,label);
+    button.addEventListener('click', () => {
+      Object.entries(choice.points).forEach(([key,value]) => monsterRun.scores[key] += value);
+      monsterRun.step++;
+      sound('choice');
+      if (monsterRun.step === MONSTER_STEPS.length) renderMonsterReveal(); else renderMonsterStep();
+    });
+    choices.append(button);
+  });
+  content.append(kicker,title,copy,choices);
+}
+
+function pickMonster() {
+  return Object.keys(MONSTERS).reduce((best,current) => monsterRun.scores[current] > monsterRun.scores[best] ? current : best);
+}
+
+function renderMonsterReveal() {
+  const species = pickMonster();
+  const creature = MONSTERS[species];
+  $('#monster-step-label').textContent = 'THE EGG HAS HATCHED';
+  $('#monster-progress').setAttribute('aria-valuenow', '4');
+  $('#monster-progress-fill').style.width = '100%';
+  const content = $('#monster-content'); content.replaceChildren();
+  const kicker = document.createElement('span'); kicker.className = 'story-kicker'; kicker.textContent = '✦ A NEW FRIEND APPEARED';
+  const portrait = document.createElement('span'); portrait.className = 'creature-portrait'; portrait.setAttribute('aria-hidden','true'); portrait.textContent = creature.icon;
+  const title = document.createElement('h2'); title.textContent = `It's a ${creature.title}!`;
+  const copy = document.createElement('p'); copy.textContent = creature.text;
+  const quirk = document.createElement('p'); quirk.className = 'creature-quirk'; quirk.textContent = `Tiny habit: ${creature.quirk}`;
+  const form = document.createElement('form'); form.className = 'name-form';
+  const label = document.createElement('label'); label.htmlFor = 'monster-name'; label.textContent = 'What will you call them?';
+  const row = document.createElement('div'); row.className = 'name-row';
+  const input = document.createElement('input'); input.id = 'monster-name'; input.name = 'monster-name'; input.type = 'text'; input.maxLength = 24; input.required = true; input.value = creature.name; input.autocomplete = 'off';
+  const button = document.createElement('button'); button.className = 'primary-button'; button.type = 'submit'; button.textContent = 'Adopt them ♡';
+  row.append(input,button); form.append(label,row);
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    const name = input.value.trim().slice(0,24);
+    if (!name) { input.focus(); return; }
+    const existing = saved.monsters.find(item => item.species === species);
+    if (existing) existing.name = name; else saved.monsters.push({species,name});
+    save();
+    unlock('firstMonster');
+    if (saved.monsters.length === Object.keys(MONSTERS).length) unlock('fullNursery');
+    renderCollection();
+    renderMonsterAdopted(species,name);
+    sound('win');
+    note(`${name} is coming home with you!`);
+  });
+  content.append(kicker,portrait,title,copy,quirk,form);
+  sound('win');
+}
+
+function renderMonsterAdopted(species,name) {
+  const creature = MONSTERS[species];
+  const content = $('#monster-content'); content.replaceChildren();
+  const kicker = document.createElement('span'); kicker.className = 'story-kicker'; kicker.textContent = '♡ ADOPTION COMPLETE';
+  const portrait = document.createElement('span'); portrait.className = 'creature-portrait'; portrait.setAttribute('aria-hidden','true'); portrait.textContent = creature.icon;
+  const title = document.createElement('h2'); title.textContent = `Meet ${name}.`;
+  const copy = document.createElement('p'); copy.textContent = `Your ${creature.title.toLowerCase()} has moved in. ${creature.quirk} The nursery keeper says you're doing great.`;
+  const actions = document.createElement('div'); actions.className = 'result-actions';
+  const again = document.createElement('button'); again.type = 'button'; again.className = 'primary-button'; again.textContent = 'Choose another egg ↻'; again.addEventListener('click', () => { resetMonster(); sound('click'); });
+  const journal = document.createElement('button'); journal.type = 'button'; journal.className = 'secondary-button'; journal.textContent = 'See my creatures'; journal.addEventListener('click', () => showView('achievements'));
+  actions.append(again,journal); content.append(kicker,portrait,title,copy,actions);
+}
+
 function renderCollection() {
   $('#ending-count').textContent = `${saved.endings.length} / ${Object.keys(ENDINGS).length}`;
   $('#achievement-count').textContent = `${saved.achievements.length} / ${ACHIEVEMENTS.length}`;
@@ -453,6 +628,14 @@ function renderCollection() {
   Object.entries(ENDINGS).forEach(([id,item]) => {
     const found = saved.endings.includes(id);
     const pill = document.createElement('span'); pill.className = found ? '' : 'undiscovered'; pill.textContent = found ? `${item.icon} ${item.title}` : '◇ Undiscovered ending'; endings.append(pill);
+  });
+  $('#monster-count').textContent = `${saved.monsters.length} / ${Object.keys(MONSTERS).length}`;
+  const journal = $('#monster-list'); journal.replaceChildren();
+  Object.entries(MONSTERS).forEach(([id,item]) => {
+    const found = saved.monsters.find(monster => monster.species === id);
+    const pill = document.createElement('span'); pill.className = found ? '' : 'undiscovered';
+    pill.textContent = found ? `${item.icon} ${found.name} · ${item.title}` : '◇ Mystery egg';
+    journal.append(pill);
   });
 }
 
@@ -473,6 +656,9 @@ $('#volume-select').addEventListener('change', event => { setVolume(Number(event
 $('#sound-toggle').addEventListener('click', () => { setVolume(saved.volume ? 0 : 1); sound('choice'); });
 document.querySelectorAll('.insert-trigger').forEach(button => button.addEventListener('click', () => {
   if ($('#cartridge-slot').classList.contains('is-loading')) return;
+  const game = button.dataset.game;
+  $('#slot-title').textContent = game === 'monster' ? 'ADOPT A TINY MONSTER' : 'CHOOSE YOUR FATE';
+  $('#slot-number').textContent = game === 'monster' ? 'QUEST 002' : 'QUEST 001';
   document.querySelectorAll('.insert-trigger').forEach(trigger => trigger.disabled = true);
   button.dataset.originalLabel = button.innerHTML;
   button.textContent = 'Loading quest…';
@@ -482,8 +668,8 @@ document.querySelectorAll('.insert-trigger').forEach(button => button.addEventLi
     $('#cartridge-slot').classList.remove('is-loading');
     document.querySelectorAll('.insert-trigger').forEach(trigger => trigger.disabled = false);
     button.innerHTML = button.dataset.originalLabel;
-    resetGame();
-    showView('play');
+    if (game === 'monster') resetMonster(); else resetGame();
+    showView(game);
   }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 80 : 950);
 }));
 $('#do-not-press').addEventListener('click', () => { sound('bonk'); unlock('button'); note('You pressed it. The forest has been informed.'); document.body.classList.add('oops'); setTimeout(() => document.body.classList.remove('oops'), 450); });
@@ -492,12 +678,16 @@ document.addEventListener('keydown', event => {
   if (event.key === 'Enter' && !adventure.started && !$('#view-play').hidden && document.activeElement === document.body) {
     $('#story-content .start-button')?.click();
   }
+  if (event.key === 'Enter' && !monsterRun.started && !$('#view-monster').hidden && document.activeElement === document.body) {
+    $('#monster-content .start-button')?.click();
+  }
 });
 window.addEventListener('hashchange', () => showView(location.hash.slice(1)));
 setTheme(saved.theme);
 setVolume(saved.volume);
 renderCollection();
 renderStartScreen();
+renderMonsterStart();
 showView(location.hash.slice(1) || 'games');
 
 // Optional browser tool: an assistant can play the same five choices as a person.
@@ -529,9 +719,28 @@ if (document.modelContext?.registerTool) {
         return { ending: ENDINGS[ending].title, discoveredEndings: saved.endings.length };
       }
     })).catch(() => {});
+    Promise.resolve(context.registerTool({
+      name: 'adopt_tiny_monster',
+      title: 'Adopt a Tiny Monster',
+      description: 'Play four nursery choices, hatch a creature, and give it a name. Choice numbers start at zero.',
+      inputSchema: { type:'object', properties:{ choices:{type:'array',items:{type:'integer',minimum:0,maximum:2},minItems:4,maxItems:4}, name:{type:'string',minLength:1,maxLength:24} }, required:['choices','name'], additionalProperties:false },
+      annotations: { readOnlyHint:false, untrustedContentHint:false },
+      execute(input) {
+        if (!input || !Array.isArray(input.choices) || input.choices.length !== 4 || input.choices.some(index => !Number.isInteger(index) || index < 0 || index > 2)) throw new Error('Provide four choice numbers from 0 to 2.');
+        const name = typeof input.name === 'string' ? input.name.trim().slice(0,24) : '';
+        if (!name) throw new Error('Give your creature a name.');
+        resetMonster(); showView('monster');
+        $('#monster-content .start-button').click();
+        input.choices.forEach(index => $('#monster-content .choice-button:nth-child(' + (index + 1) + ')').click());
+        const species = pickMonster();
+        $('#monster-name').value = name;
+        $('#monster-content form').requestSubmit();
+        return { creature: MONSTERS[species].title, name, adoptedCreatures: saved.monsters.length };
+      }
+    })).catch(() => {});
   } catch { /* Normal browsers may not support browser tools. */ }
 }
 
-  </script>
+</script>
 </body>
 </html>
