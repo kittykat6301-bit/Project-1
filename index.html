@@ -423,6 +423,7 @@ body[data-theme="gerald"]{--header-surface:#181320f6;--header-ink:#ffecf6;--head
 .arcade-stage .console-top small{font-size:.76rem;opacity:1;letter-spacing:0;line-height:1.45}
 .arcade-stage .console-bottom{font-size:.7rem;line-height:1.4}
 .arcade-stage .console-light,.arcade-stage .eject-button{font-family:'Space Mono','Courier New',monospace;font-weight:700}
+.arcade-stage .console-top .console-name{font:700 clamp(.75rem,1.15vw,.95rem)/1.35 'Space Mono','Courier New',monospace;letter-spacing:0;white-space:normal}
 .arcade-preview .console{display:flex;flex-direction:column;gap:0;min-height:160px;padding:15px 20px 13px;margin:18px auto 0}
 .arcade-preview .console-top{min-height:42px;flex:none}
 .arcade-preview .cartridge-slot{flex:none;width:min(76%,420px);height:16px;margin:8px auto 34px}
@@ -436,28 +437,79 @@ body[data-theme="gerald"]{--header-surface:#181320f6;--header-ink:#ffecf6;--head
 .tv-idle-content span:not(.tv-star){font-size:clamp(.86rem,1.9vw,1.35rem);font-weight:700;line-height:1.4}
 .tv-idle-content small{font-size:clamp(.71rem,1.1vw,.93rem);line-height:1.55;letter-spacing:0}
 @media(max-width:600px){.arcade-preview .console{width:96%;padding:12px 10px 11px;min-height:163px}.arcade-preview .console-top{font-size:.85rem;min-height:49px}.arcade-preview .console-top small{font-size:.64rem;line-height:1.3}.arcade-preview .cartridge-slot{width:78%;margin:7px auto 38px}.arcade-preview #slot-placeholder{font-size:.69rem}.arcade-preview .console-bottom{font-size:.58rem;gap:.35rem}.tv-chin{min-height:62px}.tv-idle-content{padding:1.3rem .8rem}}
+/* A shelf-sized cartridge seats below the console name and behind the slot lip. */
+.arcade-stage.is-game .console{min-height:282px;padding-top:14px}
+.arcade-stage.is-game .console-top{position:relative;z-index:5;min-height:43px}
+.arcade-stage.is-game .slot-cartridge{top:68px;width:min(535px,92%);height:132px;padding:12px 12px 10px 16%;font-size:clamp(.95rem,1.85vw,1.2rem);border-bottom-width:14px;clip-path:polygon(0 7%,9% 7%,9% 0,91% 0,91% 7%,100% 7%,100% 100%,0 100%);box-shadow:inset 0 3px #fff7,0 6px 0 #0005}
+.arcade-stage.is-game .slot-cartridge:before{top:18px;height:60%}
+.arcade-stage.is-game .slot-cartridge span{padding:7px 4px}
+.arcade-stage.is-game .cartridge-slot{z-index:4;width:min(91%,540px);height:17px;margin:116px auto 24px;box-shadow:inset 0 6px 8px #000a,0 2px 0 var(--cart-plastic-edge)}
+.arcade-stage.is-game .console-bottom{position:relative;z-index:5}
+@media(max-width:540px){.arcade-stage.is-game .console{min-height:255px}.arcade-stage.is-game .slot-cartridge{top:69px;width:93%;height:109px;padding-left:17%;font-size:clamp(.68rem,2.9vw,.82rem)}.arcade-stage.is-game .cartridge-slot{width:94%;margin:97px auto 23px}}
+.theme-filter{display:flex;flex-wrap:wrap;gap:.4rem;margin:.25rem 0 .9rem}
+.theme-filter button{border:2px solid var(--line);background:var(--card);color:var(--ink);padding:.35rem .52rem;border-radius:6px;font:700 .72rem/1.3 'Space Mono','Courier New',monospace}
+.theme-filter button[aria-selected="true"]{background:var(--forest);color:var(--button-text);border-color:var(--forest)}
+.theme-filter button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.arcade-stage.is-console-off .console-light:before{background:#858683;box-shadow:none}
+.arcade-stage.is-console-off .console-light{filter:grayscale(.9)}
+.arcade-stage.is-game.is-console-off:not(.is-off) .tv-screen{min-height:clamp(210px,35vw,330px)}
+.arcade-stage.is-game.is-console-off:not(.is-off) .tv-screen-inner{display:none}
+.arcade-stage.is-game.is-console-off:not(.is-off) .tv-screen:before{content:'NO SIGNAL · TURN ON CONSOLE';position:absolute;inset:0;display:grid;place-items:center;padding:1rem;color:#e7f4df;text-align:center;font:700 clamp(1rem,3vw,1.7rem) 'Space Mono','Courier New',monospace;z-index:6}
+.site-footer{flex-wrap:wrap}.site-footer .gerald-credit{display:block;flex:1 1 100%;text-align:center;color:var(--muted);font:700 .75rem/1.5 'Space Mono','Courier New',monospace;letter-spacing:0}
+.arcade-icon{display:inline-block;width:1.25em;height:1.25em;vertical-align:-.2em;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.nav-icon{width:1.1rem;height:1.1rem;margin-right:.36rem;vertical-align:-.16em}
+.brand-mark .arcade-icon{width:29px;height:29px}
+#view-games .cart-label{padding-left:36px}
+#view-games .cart-label .card-icon{display:grid;place-items:center;flex:0 0 24px;width:24px;height:30px;margin:0;background:none;color:var(--cart-plastic-edge);font-size:1.25rem}
+#view-games .cart-label .card-icon .arcade-icon{width:22px;height:22px}
+.build-glyph .arcade-icon{width:1.1em;height:1.1em}
+.start-icon .arcade-icon,.creature-portrait .arcade-icon{width:58%;height:58%}
+.choice-icon .arcade-icon,.achievement-icon .arcade-icon{width:1.3em;height:1.3em}
+.goblin-result .result-icon .arcade-icon,.goblin-intro .start-icon .arcade-icon{width:64px;height:64px}
+.ending-list .arcade-icon,.story-content h2>.arcade-icon{width:1em;height:1em;vertical-align:-.11em}
+@media(max-width:680px){#view-games .cart-label{padding-left:35px;gap:4px}#view-games .cart-label .card-icon{width:18px;flex-basis:18px}#view-games .cart-label .card-icon .arcade-icon{width:17px;height:17px}}
+
+/* The original archetype themes now have rooms of their own across every view. */
+body[data-theme="fae"]{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjAwIDEwMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIHNsaWNlIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9IndhbGwiIHgyPSIwIiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iI2RlZjBkZCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2Y1ZGFkYSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjEwMDAiIGZpbGw9InVybCgjd2FsbCkiLz48cGF0aCBkPSJNMCA3MTJoMTYwMHYyODhIMHoiIGZpbGw9IiNkMGJiYTEiLz48cGF0aCBkPSJNMCA3NDBoMTYwMG0wIDI2SDAiIHN0cm9rZT0iI2ZmZjVlNSIgc3Ryb2tlLXdpZHRoPSIxNyIgb3BhY2l0eT0iLjY0Ii8+PHBhdGggZD0iTTI1MCA3NDVWMTc1UTI1MCA2NSAzNjUgNjVoODcwcTExNSAwIDExNSAxMTB2NTcwIiBmaWxsPSJub25lIiBzdHJva2U9IiNiNmM5YWYiIHN0cm9rZS13aWR0aD0iMjgiLz48cGF0aCBkPSJNMjc1IDc0NVYxODBRMjc1IDk0IDM2NSA5NGg4NzBxODcgMCA4NyA4NnY1NjUiIGZpbGw9IiNhNmM2YWUiIG9wYWNpdHk9Ii40MiIvPjxjaXJjbGUgY3g9IjgwMCIgY3k9IjMxMCIgcj0iMjIwIiBmaWxsPSIjZmJlOGQ1IiBvcGFjaXR5PSIuNzgiLz48cGF0aCBkPSJNODAwIDk1djY1ME0yNzUgNDIwaDEwNTBNNTMwIDEwMHY2NDVtNTQwLTY0NXY2NDUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZkZjJkZCIgc3Ryb2tlLXdpZHRoPSIxNSIgb3BhY2l0eT0iLjg1Ii8+PHBhdGggZD0iTTExNiAxMTBxMjEwIDgwIDI1MCAzNDJNMTUxMCA5NXEtMjE4IDkyLTI1NiAzNTIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzQzNmE1MSIgc3Ryb2tlLXdpZHRoPSIyMCIvPjxwYXRoIGQ9Ik0xOTQgMTUycTgwIDEgNzUgNTAtNzAgOC03NS01MG0xMDUgNTJxLTg5IDIyLTcwIDY0IDcwLTUgNzAtNjRtLTIyIDcwcTcyIDMgNjIgNDgtNjYgNS02Mi00OG0xMDcgNTJxLTgxIDIwLTYyIDU4IDY2LTUgNjItNThNMTQ0MCAxNTlxLTc2IDMtNjkgNTAgNjggMSA2OS01MG0tMTA3IDU4cTcwIDEyIDYyIDU2LTY3LTQtNjItNTZtMjEgODZxLTc2IDgtNjUgNTUgNzQgMSA2NS01NSIgZmlsbD0iIzY0OGE2MCIvPjxwYXRoIGQ9Ik02NSA3NTBoMjQwdjk4SDY1em0xMjMwIDBoMjQwdjk4aC0yNDB6IiBmaWxsPSIjYTk3OTc0Ii8+PHBhdGggZD0iTTEwMCA3MzVxODUtMTU4IDE3MCAwbTEwOTUgMHE4NS0xNTggMTU0IDAiIGZpbGw9IiM5NGI4N2YiLz48L3N2Zz4=");background-size:cover;background-position:center;background-attachment:fixed}
+body[data-theme="mage"]{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjAwIDEwMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIHNsaWNlIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9IndhbGwiIHgyPSIwIiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iIzIwMjIzOCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzRlNDI2MyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjEwMDAiIGZpbGw9InVybCgjd2FsbCkiLz48cGF0aCBkPSJNMCA4MDVoMTYwMHYxOTVIMHoiIGZpbGw9IiMyOTIxM2QiLz48cGF0aCBkPSJNMTQwIDgyMFYxNDJRMTQwIDQ1IDI0MCA0NWgxMTIwcTEwMCAwIDEwMCA5N3Y2NzgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Q3YjU4YyIgc3Ryb2tlLXdpZHRoPSIyNyIvPjxwYXRoIGQ9Ik0xNzcgODA1VjE1NXEwLTcwIDcwLTcwaDExMDZxNzAgMCA3MCA3MHY2NTAiIGZpbGw9IiMxMTFhMzMiLz48Y2lyY2xlIGN4PSIxMTAzIiBjeT0iMjcyIiByPSI5NCIgZmlsbD0iI2Y4ZTdiNiIvPjxjaXJjbGUgY3g9IjExMzkiIGN5PSIyNDMiIHI9IjkyIiBmaWxsPSIjMTExYTMzIi8+PHBhdGggZD0iTTgwMCA4MnY3MjNtLTYyMy0zNjBoMTI0NiIgc3Ryb2tlPSIjZDViZDllIiBzdHJva2Utd2lkdGg9IjE2IiBvcGFjaXR5PSIuNzUiLz48cGF0aCBkPSJNMzA3IDIwMCA0NDYgMjg0IDYyMCAxNDUgNzE0IDI1NSA4MjggMTY0bTMwIDI5MSAxMjgtODkgMTc0IDEyMiAxNDAtMTAxIiBmaWxsPSJub25lIiBzdHJva2U9IiNjNGIzZWEiIHN0cm9rZS13aWR0aD0iMyIgb3BhY2l0eT0iLjY4Ii8+PGcgZmlsbD0iI2Y4ZTljNSI+PGNpcmNsZSBjeD0iMzA3IiBjeT0iMjAwIiByPSI4Ii8+PGNpcmNsZSBjeD0iNDQ2IiBjeT0iMjg0IiByPSI4Ii8+PGNpcmNsZSBjeD0iNjIwIiBjeT0iMTQ1IiByPSI4Ii8+PGNpcmNsZSBjeD0iNzE0IiBjeT0iMjU1IiByPSI4Ii8+PGNpcmNsZSBjeD0iODU4IiBjeT0iNDU1IiByPSI3Ii8+PGNpcmNsZSBjeD0iOTg2IiBjeT0iMzY2IiByPSI4Ii8+PGNpcmNsZSBjeD0iMTE2MCIgY3k9IjQ4OCIgcj0iNyIvPjxjaXJjbGUgY3g9IjEzMDAiIGN5PSIzODciIHI9IjgiLz48L2c+PHBhdGggZD0iTTMyIDgyMWgzMjB2LTM4MEgzMnptMTIxNiAwaDMyMFY0NDFoLTMyMHoiIGZpbGw9IiMzODMxNDkiIHN0cm9rZT0iI2E3OGU4NCIgc3Ryb2tlLXdpZHRoPSIxNyIvPjxwYXRoIGQ9Ik00NSA1MzZoMjk2bS0yOTYgOThoMjk2bS0yOTYgMTAyaDI5Nm05MjYtMjAwaDI4MG0tMjgwIDk4aDI4MG0tMjgwIDEwMmgyODAiIHN0cm9rZT0iI2FlODU2OSIgc3Ryb2tlLXdpZHRoPSIxNyIvPjxwYXRoIGQ9Ik02MCA1NTV2LTQ4bTM1IDQ4di02M200MiA2M3YtNDdtNjMgNDd2LTU1bTYzIDU1di01N20xMDYwIDU4di01NW00NSA1NXYtNjVtNzYgNjV2LTYxIiBzdHJva2U9IiNjNmIzZDgiIHN0cm9rZS13aWR0aD0iMTciLz48L3N2Zz4=");background-size:cover;background-position:center;background-attachment:fixed}
+body[data-theme="healer"]{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjAwIDEwMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIHNsaWNlIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9IndhbGwiIHgyPSIwIiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iI2UwZWNkYSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2M0ZDZiNSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjEwMDAiIGZpbGw9InVybCgjd2FsbCkiLz48cGF0aCBkPSJNMCA3ODVoMTYwMHYyMTVIMHoiIGZpbGw9IiNiZWE2ODgiLz48cGF0aCBkPSJNMjAgNDcwaDQxMG03NDAgMGg0MTBNMTAgNjE4aDQzMG03MzAgMGg0MzAiIHN0cm9rZT0iIzgyNmE1NCIgc3Ryb2tlLXdpZHRoPSIyOSIvPjxwYXRoIGQ9Ik03OCA0MjBoNjB2NTBINzh6bTEwNC0xOGg3NnY2OGgtNzZ6bTEzMi0zMmg1OHYxMDBoLTU4em04OTAgMWg2NHY5OWgtNjR6bTEwMCAzNWg4NXY2NGgtODV6bTEzMC0yN2g1M3Y5MWgtNTN6IiBmaWxsPSIjYTc3ZDYyIi8+PHBhdGggZD0iTTkwIDU4MGg2MHYzOEg5MHptMTI1LTE1aDY3djUzaC02N3ptMTA5IDE0aDU4djM5aC01OHptOTAxLTEyaDc1djUxaC03NXptMTI4LTIwaDYydjcxaC02MnptMTE1IDM4aDczdjMzaC03M3oiIGZpbGw9IiM5ZWI3YTAiLz48cGF0aCBkPSJNNTE1IDgyMFYxNTVxMC0xMDUgMTA0LTEwNWgzNjNxMTA1IDAgMTA1IDEwNXY2NjUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzc0OGM3MiIgc3Ryb2tlLXdpZHRoPSIyOSIvPjxwYXRoIGQ9Ik01NDkgNzg2VjE1N3EwLTc2IDc2LTc2aDM1M3E3NiAwIDc2IDc2djYyOSIgZmlsbD0iI2Q5ZTViZCIvPjxjaXJjbGUgY3g9IjgxMyIgY3k9IjI3MyIgcj0iMTI0IiBmaWxsPSIjZmZmMmNjIi8+PHBhdGggZD0iTTgxMyA4MHY3MDVNNTUwIDQ2NGg1MDQiIHN0cm9rZT0iI2ZmZjVkOSIgc3Ryb2tlLXdpZHRoPSIxNiIvPjxwYXRoIGQ9Ik0zOCA3NnExMDAgNzIgMTIwIDIxM20xMzAtMTc2cS03MSAxMTItMzIgMjU3bTEyOTAtMjgwcS05NSA4My0xMjAgMjMwIiBmaWxsPSJub25lIiBzdHJva2U9IiM1MTgyNjMiIHN0cm9rZS13aWR0aD0iMTkiLz48cGF0aCBkPSJNOTggMjAwcTkzLTIzIDk0IDQzLTg0IDI1LTk0LTQzbTE0MCA0MHEtOTctMTAtODkgNjEgOTUgOCA4OS02MW0tMjAgODVxOTYtOCA5OCA1Ni05MSAxNi05OC01Nm0xMjAzLTkycS05MS0xNi05MSA1MCA4NiAxOSA5MS01MCIgZmlsbD0iIzZiOWY3MiIvPjxwYXRoIGQ9Ik02MjAgODI0aDM2MHY4MEg2MjB6IiBmaWxsPSIjOWE4MDZhIi8+PC9zdmc+");background-size:cover;background-position:center;background-attachment:fixed}
+body[data-theme="rogue"]{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjAwIDEwMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIHNsaWNlIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9IndhbGwiIHgyPSIwIiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iIzJhMjkzOSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzU1NDQ1ZCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjEwMDAiIGZpbGw9InVybCgjd2FsbCkiLz48cGF0aCBkPSJNMCA4MjVoMTYwMHYxNzVIMHoiIGZpbGw9IiMyZTI1MzQiLz48cGF0aCBkPSJNMCAwaDE2MDB2ODIwSDB6IiBmaWxsPSJub25lIiBzdHJva2U9IiMzYzMxNDYiIHN0cm9rZS13aWR0aD0iMTQiLz48cGF0aCBkPSJNMCAwaDM2MHY4MjVIMHptMTIzMCAwaDM3MHY4MjVoLTM3MHoiIGZpbGw9IiMzYzM0NDUiLz48cGF0aCBkPSJNNDAgNDVoMjc1djcyMEg0MHptMTI3NSAwaDI0NXY3MjBoLTI0NXoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzgxNmM3NiIgc3Ryb2tlLXdpZHRoPSIxOCIvPjxwYXRoIGQ9Ik03MSAxMjhoMjA3djE4M0g3MXptMCAyNjBoMjA3djE3NUg3MXptMTI3My0yNjBoMTc3djE4M2gtMTc3em0wIDI2MGgxNzd2MTc1aC0xNzd6IiBmaWxsPSIjZTdhYTlkIiBvcGFjaXR5PSIuNDIiIHN0cm9rZT0iI2I4OGY5YSIgc3Ryb2tlLXdpZHRoPSIxMiIvPjxwYXRoIGQ9Ik0zNjAgNzkzIDU2MCA0NTVoNDcwbDIwMCAzMzgiIGZpbGw9IiMyZDI4MzkiLz48cGF0aCBkPSJNNTYwIDQ1NSA2MTAgMTE1aDM3MWw0OSAzNDAiIGZpbGw9IiM4MTcyOGMiIG9wYWNpdHk9Ii4zNSIvPjxjaXJjbGUgY3g9Ijg1MSIgY3k9IjIzOSIgcj0iMTAwIiBmaWxsPSIjZmZlMWJkIiBvcGFjaXR5PSIuODgiLz48cGF0aCBkPSJNNzAgODExIDM2MyA2MzBtMTE2NCAxODEtMjkxLTE4MSIgc3Ryb2tlPSIjYzk5ODlhIiBzdHJva2Utd2lkdGg9IjI0Ii8+PHBhdGggZD0iTTAgNjEwaDE2MDBtMCA0OEgwbTAgNTFoMTYwMCIgc3Ryb2tlPSIjYTQ4NDgxIiBzdHJva2Utd2lkdGg9IjkiIG9wYWNpdHk9Ii4xOCIvPjxwYXRoIGQ9Ik0zNzAgNzkxcTQzMC05OSA4NjEgMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZWViNWI3IiBzdHJva2Utd2lkdGg9IjkiIG9wYWNpdHk9Ii41Ii8+PHBhdGggZD0iTTgyIDcwMGgyMjRtMTAxMCAwaDIwNiIgc3Ryb2tlPSIjZDdhM2ExIiBzdHJva2Utd2lkdGg9IjIyIi8+PC9zdmc+");background-size:cover;background-position:center;background-attachment:fixed}
+body[data-theme="dragon"]{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjAwIDEwMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIHNsaWNlIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9IndhbGwiIHgyPSIwIiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iIzUxNGY1NCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzg0NjY1NSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjEwMDAiIGZpbGw9InVybCgjd2FsbCkiLz48cGF0aCBkPSJNMCA4NDBoMTYwMHYxNjBIMHoiIGZpbGw9IiMzOTNhM2IiLz48cGF0aCBkPSJNMTgwIDg2MFYxOThRMTgwIDQ1IDM2MCA0NWg4ODBxMTgwIDAgMTgwIDE1M3Y2NjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2FlYTI5NiIgc3Ryb2tlLXdpZHRoPSI1NSIvPjxwYXRoIGQ9Ik0yMzAgODYwVjIxNVEyMzAgOTUgMzY1IDk1aDg3MHExMzUgMCAxMzUgMTIwdjY0NSIgZmlsbD0iIzc3NzQ3NCIgb3BhY2l0eT0iLjc1Ii8+PHBhdGggZD0iTTMwMCA4NTBWMjYwcTAtOTUgOTUtOTVoODEwcTk1IDAgOTUgOTV2NTkwIiBmaWxsPSIjMzQzZTNlIi8+PHBhdGggZD0iTTgwMCAxNzV2Njc1TTMwMCA0ODJoMTAwMCIgc3Ryb2tlPSIjNzc3ZTc5IiBzdHJva2Utd2lkdGg9IjMyIiBvcGFjaXR5PSIuNjMiLz48cGF0aCBkPSJNNDAgODUwIDI5MCA2NjAgNDUwIDg1MHptMTEwMCAwIDIwMC0yNzAgMjQwIDI3MHoiIGZpbGw9IiM2MDVjNTciLz48cGF0aCBkPSJNMCA4NTVxMTMwLTcyIDI2MCAwdDI2MCAwIDI2MCAwIDI2MCAwIDI2MCAwIDI2MCAwdjE0NUgwIiBmaWxsPSIjYzU3NTQ4IiBvcGFjaXR5PSIuNTgiLz48cGF0aCBkPSJNNzUgNzYwcS0zMC0xMTUgMTItMTc1IDM5IDcxIDM3IDExNSAyMi03OCA1MS0xMTAgNDEgMTE3IDAgMTcwbTEzMDEgMHEtNDUtMTIxIDUtMTk3IDM3IDgxIDM0IDEyNSAzMC02OCA0NC04MCA0OSAxMjUgOCAxNTIiIGZpbGw9IiNmZmM1ODMiIG9wYWNpdHk9Ii44NyIvPjxwYXRoIGQ9Im00OTYgMzEwIDMxLTYzIDMzIDYzbTU0MCAwIDMxLTYzIDMzIDYzIiBmaWxsPSJub25lIiBzdHJva2U9IiNmOWJlODEiIHN0cm9rZS13aWR0aD0iMTciIG9wYWNpdHk9Ii43NSIvPjxwYXRoIGQ9Ik0xMTUgMzk0aDE5MG05OTAgMGgxOTBNMCA3MTVoMTYwMCIgc3Ryb2tlPSIjYjQ5Yjg3IiBzdHJva2Utd2lkdGg9IjE3IiBvcGFjaXR5PSIuMzgiLz48L3N2Zz4=");background-size:cover;background-position:center;background-attachment:fixed}
+body[data-theme="fairy"]{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjAwIDEwMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIHNsaWNlIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9IndhbGwiIHgyPSIwIiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iI2Y1ZTJmNyIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2UxZWNkYiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjEwMDAiIGZpbGw9InVybCgjd2FsbCkiLz48cGF0aCBkPSJNMCA3NTBoMTYwMHYyNTBIMHoiIGZpbGw9IiM5YWMxOWEiLz48cGF0aCBkPSJNMCA3NzVxMTUwLTc1IDMwMCAwdDMwMCAwIDMwMCAwIDMwMCAwIDMwMCAwIDMwMCAwdjIyNUgwIiBmaWxsPSIjOGRiNThmIi8+PGNpcmNsZSBjeD0iMTE3NSIgY3k9IjI2MSIgcj0iMTcyIiBmaWxsPSIjZmZlN2JjIiBvcGFjaXR5PSIuODEiLz48cGF0aCBkPSJNMTU1IDc1NVYyOTNxMC0xMzIgMTMyLTEzMmgxMDI2cTEzMiAwIDEzMiAxMzJ2NDYyIiBmaWxsPSJub25lIiBzdHJva2U9IiNjNDljYmIiIHN0cm9rZS13aWR0aD0iMzciLz48cGF0aCBkPSJNMTg1IDc1NVYzMDBxMC0xMDcgMTA3LTEwN2gxMDE2cTEwNyAwIDEwNyAxMDd2NDU1IiBmaWxsPSIjYzBkOWM3IiBvcGFjaXR5PSIuNTYiLz48cGF0aCBkPSJNODAwIDE5M3Y1NjJNMTg1IDQ3NWgxMjMwIiBzdHJva2U9IiNmZmYwZTIiIHN0cm9rZS13aWR0aD0iMTUiLz48cGF0aCBkPSJNNTAgODUwcTk1LTE3MCAxOTAgMG0xMDQ1IDBxOTUtMTcwIDIzMCAwIiBmaWxsPSIjZjRhY2M4Ii8+PHBhdGggZD0iTTU5IDgzNWgxODJtMTA1MSAwaDE4NCIgc3Ryb2tlPSIjZmVlOGRjIiBzdHJva2Utd2lkdGg9IjE3Ii8+PHBhdGggZD0iTTE0NyA3NjB2LTE5MG0yMiAxOTBWNTcwbTEyNDYgMTkwVjU0NW0yNCAyMTVWNTQ1IiBzdHJva2U9IiM4NTVjOTIiIHN0cm9rZS13aWR0aD0iMTkiLz48cGF0aCBkPSJNNjUgNTQwcTc4LTEzMCAxNjQgMG0xMTM5LTM0cTg4LTExNSAxNzUgMCIgZmlsbD0iI2Q4OTRiNiIvPjxnIGZpbGw9IiNmOWQ2YWMiPjxjaXJjbGUgY3g9IjM1OCIgY3k9IjYyMCIgcj0iMTAiLz48Y2lyY2xlIGN4PSI1MDkiIGN5PSI3MjAiIHI9IjgiLz48Y2lyY2xlIGN4PSIxMDMxIiBjeT0iNTk2IiByPSIxMCIvPjxjaXJjbGUgY3g9IjEyMDUiIGN5PSI3MDciIHI9IjkiLz48L2c+PHBhdGggZD0iTTI3MiAxNjlxNTUgODMgNDAgMTg5bTEwNTQtMTk2cS02NCA5MS01MCAyMTkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzhiYjk5ZiIgc3Ryb2tlLXdpZHRoPSIxOSIvPjxwYXRoIGQ9Ik0yODQgMjYwcTcyLTE4IDc4IDMzLTY3IDIzLTc4LTMzbTEwMTgtNnEtNjktMTktODAgMzYgNjYgMTkgODAtMzYiIGZpbGw9IiM5M2MwYTEiLz48L3N2Zz4=");background-size:cover;background-position:center;background-attachment:fixed}
+body[data-theme="fae"]{--header-surface:#f3f1e9f7;--header-ink:#264838;--header-active:#2d624b;--header-active-ink:#fffaf4}
+body[data-theme="mage"]{--header-surface:#26223bf7;--header-ink:#f7eaff;--header-active:#c6a8ef;--header-active-ink:#29203c}
+body[data-theme="healer"]{--header-surface:#f2f5eafa;--header-ink:#254734;--header-active:#356c53;--header-active-ink:#fffdf4}
+body[data-theme="rogue"]{--header-surface:#2e2636f7;--header-ink:#ffe7ef;--header-active:#f2a2c3;--header-active-ink:#342537}
+body[data-theme="dragon"]{--header-surface:#343b36f7;--header-ink:#ffe9d2;--header-active:#db9a65;--header-active-ink:#342e29}
+body[data-theme="fairy"]{--header-surface:#fff0f6f8;--header-ink:#583d63;--header-active:#7d4d87;--header-active-ink:#fff8fa}
+body[data-theme="fae"] .shell,body[data-theme="healer"] .shell,body[data-theme="fairy"] .shell{background:linear-gradient(90deg,#fffaf9af,#fffef4d3 17% 83%,#fffaf9af)}
+body[data-theme="mage"] .shell,body[data-theme="rogue"] .shell,body[data-theme="dragon"] .shell{background:linear-gradient(90deg,#211d2b8c,#f6f0f1e3 17% 83%,#211d2b8c)}
+body[data-theme="fae"] .section-heading,body[data-theme="healer"] .section-heading,body[data-theme="fairy"] .section-heading,body[data-theme="mage"] .section-heading,body[data-theme="rogue"] .section-heading,body[data-theme="dragon"] .section-heading{padding:1rem 1.2rem;border:2px solid var(--forest);background:var(--card);box-shadow:5px 6px 0 var(--pink);border-radius:8px}
+body[data-theme="mage"] .section-heading{background:#f4edfaed}body[data-theme="rogue"] .section-heading{background:#f5e9efed}body[data-theme="dragon"] .section-heading{background:#f7eee1ed}
+@media(max-width:760px){body[data-theme="fae"] .shell,body[data-theme="mage"] .shell,body[data-theme="healer"] .shell,body[data-theme="rogue"] .shell,body[data-theme="dragon"] .shell,body[data-theme="fairy"] .shell{background:transparent}body[data-theme="fae"] .section-heading,body[data-theme="mage"] .section-heading,body[data-theme="healer"] .section-heading,body[data-theme="rogue"] .section-heading,body[data-theme="dragon"] .section-heading,body[data-theme="fairy"] .section-heading{background:var(--card)}}
 </style>
   
 </head>
 <body data-theme="fae">
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden"><defs><symbol id="icon-book" viewBox="0 0 24 24"><path d="M12 5c-3-2-6-2-9-1v15c3-1 6-1 9 1 3-2 6-2 9-1V4c-3-1-6-1-9 1v15"/></symbol><symbol id="icon-wand" viewBox="0 0 24 24"><path d="m5 19 13-13M15 3v3m-3-1 3 1m4 5 2 1m-3 2 2 2M4 6l1 2m-2 1 2 1"/></symbol><symbol id="icon-trophy" viewBox="0 0 24 24"><path d="M7 3h10v7a5 5 0 0 1-10 0V3ZM7 5H4v3a3 3 0 0 0 3 3m10-6h3v3a3 3 0 0 1-3 3m-5 4v4m-4 2h8"/></symbol><symbol id="icon-flower" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/><path d="M10 9C6 2 12 1 12 8c0-7 6-6 2 1 7-4 8 2 1 3 7 1 4 7-2 3-1 7-7 7-3 0-7 4-9-2-2-3-6-1-6-7 2-3Z"/></symbol><symbol id="icon-sword" viewBox="0 0 24 24"><path d="m5 19 11-11 2-5 3-1-1 4-4 3L5 20Zm-2-5 7 7M3 21l3-3"/></symbol><symbol id="icon-egg" viewBox="0 0 24 24"><path d="M12 3c-4 0-7 6-7 11a7 7 0 0 0 14 0c0-5-3-11-7-11Z"/><path d="m8 14 2 2 2-2 2 2 2-2"/></symbol><symbol id="icon-home" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8v10H3V11Zm6 10v-7h6v7"/></symbol><symbol id="icon-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="6"/><path d="M14 9c-3-2-5 0-4 2s5 1 4 4-4 2-5 1m3-9v10"/></symbol><symbol id="icon-potion" viewBox="0 0 24 24"><path d="M9 3h6m-5 0v7l-5 8c-1 2 0 3 2 3h10c2 0 3-1 2-3l-5-8V3M8 15h8m-5 3h2"/></symbol><symbol id="icon-eye" viewBox="0 0 24 24"><path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6Z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="icon-scroll" viewBox="0 0 24 24"><path d="M6 4h12v15c0 2-2 3-4 2H6c-2 0-3-2-3-4V7c0-2 1-3 3-3Zm0 0c-2 0-3 2-3 4m6 2h6m-6 4h6m-6 4h4"/></symbol><symbol id="icon-cup" viewBox="0 0 24 24"><path d="M4 9h13v5a6 6 0 0 1-12 0V9Zm13 1h2a2 2 0 0 1 0 4h-2M3 21h16M5 5h12"/></symbol><symbol id="icon-bubble" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><circle cx="19" cy="19" r="2"/><path d="M7 9a4 4 0 0 1 4-4"/></symbol><symbol id="icon-board" viewBox="0 0 24 24"><path d="M4 4h16v17H4V4Zm4 4h8m-8 4h7m-7 4h5"/><path d="m16 16 2 2"/></symbol><symbol id="icon-creature" viewBox="0 0 24 24"><path d="M4 20v-9l3-6 4 3 2-3 5 2 2 7-3 6H4Zm2-11L5 3m10 4 3-4M8 13h1m6 0h1m-6 4c1 1 3 1 4 0"/></symbol><symbol id="icon-paw" viewBox="0 0 24 24"><path d="M6 14c-3 0-3-4-1-4s3 3 1 4Zm4-4c-3 0-2-5 0-5s3 5 0 5Zm5 0c-2 0-2-5 0-5 3 0 3 5 0 5Zm5 4c-3 0-3-4-1-4s3 4 1 4ZM6 20c0-3 3-6 6-6s6 3 6 6c0 2-2 2-4 1s-3-1-4 0-4 1-4-1Z"/></symbol><symbol id="icon-heart" viewBox="0 0 24 24"><path d="M12 21 3 12C-1 7 5 2 10 6l2 2 2-2c5-4 11 1 7 6l-9 9Z"/></symbol><symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M20 3C8 3 3 7 3 14a7 7 0 0 0 7 7c7 0 11-6 10-18Zm-15 17c3-6 7-9 12-12"/></symbol><symbol id="icon-fire" viewBox="0 0 24 24"><path d="M12 22c-5 0-8-3-8-8 0-4 3-6 4-10 3 2 4 5 4 7 2-2 3-4 3-7 4 3 5 7 5 10 0 5-3 8-8 8Zm0-1c-3 0-4-2-4-4 0-2 2-3 3-5 2 2 4 3 4 5s-1 4-3 4Z"/></symbol><symbol id="icon-moon" viewBox="0 0 24 24"><path d="M20 16A9 9 0 0 1 8 4a9 9 0 1 0 12 12Z"/></symbol><symbol id="icon-star" viewBox="0 0 24 24"><path d="m12 2 2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5L12 2Z"/></symbol><symbol id="icon-satchel" viewBox="0 0 24 24"><path d="M4 8h16v12H4V8Zm4 0V5c0-2 2-3 4-3s4 1 4 3v3M4 12l8 4 8-4m-8 4v2"/></symbol><symbol id="icon-key" viewBox="0 0 24 24"><circle cx="8" cy="8" r="5"/><path d="m12 12 9 9m-5-5 2-2m0 4 2-2"/></symbol><symbol id="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10 2 2M19 5l-2 2M7 17l-2 2"/></symbol><symbol id="icon-berry" viewBox="0 0 24 24"><path d="M8 9c-5 0-6 10 0 11 2 0 3-1 4-1s2 1 4 1c6-1 5-11 0-11-1 0-3 1-4 1S9 9 8 9Zm4 1c0-3 1-5 4-6M9 6l3 2 3-2"/></symbol><symbol id="icon-dragon" viewBox="0 0 24 24"><path d="M4 20c0-4 3-6 6-7l1-5 4-5 1 4 4 1-2 4 3 3-5 1-2 5H4Zm6-7-4-7-2 7m11-3h1"/></symbol><symbol id="icon-basket" viewBox="0 0 24 24"><path d="M3 10h18l-2 11H5L3 10Zm4 0 5-7 5 7M9 13v5m6-5v5"/></symbol></defs></svg>
   <a class="skip-link" href="#main">Skip to the arcade</a>
   <div class="ambient" aria-hidden="true"><span>✦</span><span>✿</span><span>✧</span><span>✦</span><span>✿</span></div>
   <div class="shell">
     <header class="site-header">
       <button class="brand" type="button" data-go="games" aria-label="Kat’s Corner, go to game selection">
-        <span class="brand-mark" aria-hidden="true">✿</span>
+        <span class="brand-mark" aria-hidden="true"><svg class="arcade-icon" aria-hidden="true"><use href="#icon-flower"></use></svg></span>
         <span>KAT’S CORNER<small>THE TINY ENCHANTED ARCADE</small></span>
       </button>
       <nav class="top-nav" aria-label="Main menu">
-        <button type="button" class="nav-link is-active" data-go="games" aria-current="page"><span class="nav-icon" aria-hidden="true">📚</span> Library</button>
-        <button type="button" class="nav-link" data-go="building"><span class="nav-icon" aria-hidden="true">🪄</span> In development</button>
-        <button type="button" class="nav-link" data-go="achievements"><span class="nav-icon" aria-hidden="true">🏆</span> Achievements</button>
-        <button type="button" class="nav-link" data-go="about"><span class="nav-icon" aria-hidden="true">✿</span> About</button>
+        <button type="button" class="nav-link is-active" data-go="games" aria-current="page"><svg class="arcade-icon nav-icon" aria-hidden="true"><use href="#icon-book"></use></svg> Library</button>
+        <button type="button" class="nav-link" data-go="building"><svg class="arcade-icon nav-icon" aria-hidden="true"><use href="#icon-wand"></use></svg> In development</button>
+        <button type="button" class="nav-link" data-go="achievements"><svg class="arcade-icon nav-icon" aria-hidden="true"><use href="#icon-trophy"></use></svg> Achievements</button>
+        <button type="button" class="nav-link" data-go="about"><svg class="arcade-icon nav-icon" aria-hidden="true"><use href="#icon-flower"></use></svg> About</button>
       </nav>
       <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">☰</button>
     </header>
     <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile menu" hidden>
-      <button type="button" data-go="games"><span class="nav-icon" aria-hidden="true">📚</span> Library</button><button type="button" data-go="building"><span class="nav-icon" aria-hidden="true">🪄</span> In development</button><button type="button" data-go="achievements"><span class="nav-icon" aria-hidden="true">🏆</span> Achievements</button><button type="button" data-go="about"><span class="nav-icon" aria-hidden="true">✿</span> About</button>
+      <button type="button" data-go="games"><svg class="arcade-icon nav-icon" aria-hidden="true"><use href="#icon-book"></use></svg> Library</button><button type="button" data-go="building"><svg class="arcade-icon nav-icon" aria-hidden="true"><use href="#icon-wand"></use></svg> In development</button><button type="button" data-go="achievements"><svg class="arcade-icon nav-icon" aria-hidden="true"><use href="#icon-trophy"></use></svg> Achievements</button><button type="button" data-go="about"><svg class="arcade-icon nav-icon" aria-hidden="true"><use href="#icon-flower"></use></svg> About</button>
     </nav>
 
     <main id="main">
@@ -465,7 +517,7 @@ body[data-theme="gerald"]{--header-surface:#181320f6;--header-ink:#ffecf6;--head
         <div class="game-layout">
           <aside class="forest-panel">
             <div class="panel-topline"><span>✧ QUEST FILE 001</span><span class="live-dot">SAVE SLOT 01</span></div>
-            <div class="crest" aria-hidden="true"><span class="crest-ring">✧</span><span class="crest-main">⚔</span><span class="crest-leaf">❧</span></div>
+            <div class="crest" aria-hidden="true"><span class="crest-ring">✧</span><span class="crest-main"><svg class="arcade-icon" aria-hidden="true"><use href="#icon-sword"></use></svg></span><span class="crest-leaf">❧</span></div>
             <p class="eyebrow">A FIVE CHOICE ADVENTURE</p>
             <h1 id="play-title">Choose<br>Your <em>Fate.</em></h1>
             <p class="intro">Wake up in a magical forest. Make choices. Acquire a suspiciously small dragon, perhaps.</p>
@@ -510,25 +562,25 @@ body[data-theme="gerald"]{--header-surface:#181320f6;--header-ink:#ffecf6;--head
             <div class="tv-chin"><span>KAT’S STORYBOX <small>MAGIC-VISION COLOR TV</small></span><span class="tv-control-lights" aria-hidden="true"><i></i><i></i><i></i></span><button class="tv-channel" id="tv-channel" type="button" aria-label="Change silly TV channel" title="Change channel">CH ↻</button><button class="tv-power" id="tv-power" type="button" aria-pressed="true" aria-label="Turn TV off" title="Turn TV off">⏻</button></div>
           </div>
           <div class="console" aria-label="Game console">
-            <div class="console-top"><span>KAT’S <small>POCKET QUEST DECK</small></span><button class="console-light" id="console-power" type="button" aria-pressed="true" aria-label="Turn TV off" title="Turn TV off">POWER</button></div>
+            <div class="console-top"><span class="console-name">KAT’S POCKET QUEST DECK</span><button class="console-light" id="console-power" type="button" aria-pressed="true" aria-label="Turn console off" title="Turn console off">POWER</button></div>
             <div class="cartridge-slot" id="cartridge-slot"><span id="slot-placeholder">▼ INSERT CARTRIDGE ▼</span></div>
             <div class="slot-cartridge" id="slot-cartridge" aria-hidden="true"><span id="slot-title">CHOOSE YOUR FATE</span><small id="slot-number">QUEST 001</small></div>
             <div class="console-bottom"><span>✦ FOUR GAMES READY</span><button type="button" id="eject-cartridge" class="eject-button" aria-label="Eject cartridge">⏏ EJECT</button><span>04 / 12 CASES PLAYABLE</span></div>
           </div>
         </div>
         <div class="game-library" aria-label="Game cartridge rack"><div class="game-grid">
-          <article class="game-card featured"><div class="cart-label"><span class="card-icon" aria-hidden="true">⚔</span><span class="status">READY TO PLAY</span><h3>Choose Your Fate</h3><p>A tiny fantasy adventure where every decision is probably a mistake.</p><button type="button" class="primary-button insert-trigger" data-game="play">Insert cartridge <span aria-hidden="true">↥</span></button></div></article>
-          <article class="game-card monster-cartridge"><div class="cart-label"><span class="card-icon" aria-hidden="true">✿</span><span class="status">READY TO PLAY</span><h3>Adopt a Tiny Monster</h3><p>Choose an egg. Acquire a problem.</p><button type="button" class="primary-button insert-trigger" data-game="monster">Insert cartridge <span aria-hidden="true">↥</span></button></div></article>
-          <article class="game-card"><div class="cart-label"><span class="card-icon" aria-hidden="true">⌂</span><span class="status">READY TO PLAY</span><h3>Fantasy Home Builder</h3><p>Design a cozy escape. Possibly with a dragon sized mortgage.</p><button type="button" class="primary-button insert-trigger" data-game="home">Insert cartridge ↥</button></div></article>
-          <article class="game-card"><div class="cart-label"><span class="card-icon" aria-hidden="true">🪙</span><span class="status">READY TO PLAY</span><h3>Goblin Grab</h3><p>Catch as many coins as your basket can hold before the guard arrives.</p><button type="button" class="primary-button insert-trigger" data-game="goblin">Insert cartridge ↥</button></div></article>
-          <article class="game-card planned"><div class="cart-label"><span class="card-icon" aria-hidden="true">⚗</span><span class="status">NEXT UP</span><h3>Potion Problems</h3><p>Mix remedies for villagers with oddly specific ailments. Beware sentient hats.</p><span class="coming-pill">IN DEVELOPMENT</span></div></article>
-          <article class="game-card planned"><div class="cart-label"><span class="card-icon" aria-hidden="true">◈</span><span class="status">COMING SOON</span><h3>Mimic Hunt</h3><p>Spot objects pretending to be other objects. The teapot is breathing.</p><span class="coming-pill">PLANNED</span></div></article>
-          <article class="game-card planned"><div class="cart-label"><span class="card-icon" aria-hidden="true">✎</span><span class="status">COMING SOON</span><h3>Spellbook Autocorrect</h3><p>Fill in a missing word. Deal with what the spellbook thought you meant.</p><span class="coming-pill">PLANNED</span></div></article>
-          <article class="game-card planned"><div class="cart-label"><span class="card-icon" aria-hidden="true">♜</span><span class="status">COMING SOON</span><h3>Tiny Tavern Shift</h3><p>Serve snacks and drinks while piecing together the guests’ gossip.</p><span class="coming-pill">PLANNED</span></div></article>
-          <article class="game-card planned"><div class="cart-label"><span class="card-icon" aria-hidden="true">◌</span><span class="status">COMING SOON</span><h3>Bubble Sunset Studio</h3><p>Make sunsets inside bubbles and keep your favorites as postcards.</p><span class="coming-pill">PLANNED</span></div></article>
-          <article class="game-card planned"><div class="cart-label"><span class="card-icon" aria-hidden="true">▤</span><span class="status">COMING SOON</span><h3>The Quest Board</h3><p>Pack three items for a ridiculous quest. Discover what happens next.</p><span class="coming-pill">PLANNED</span></div></article>
-          <article class="game-card planned"><div class="cart-label"><span class="card-icon" aria-hidden="true">✧</span><span class="status">COMING SOON</span><h3>Fantasy Creature Quiz</h3><p>Meet the magical creature that matches your particular brand of chaos.</p><span class="coming-pill">PLANNED</span></div></article>
-          <article class="game-card planned"><div class="cart-label"><span class="card-icon" aria-hidden="true">🦡</span><span class="status">COMING SOON</span><h3>Shrimp Chip Heist</h3><p>Help a honey badger sneak through a castle for the royal snacks.</p><span class="coming-pill">PLANNED</span></div></article>
+          <article class="game-card featured"><div class="cart-label"><span class="card-icon" aria-hidden="true"><svg class="arcade-icon" aria-hidden="true"><use href="#icon-sword"></use></svg></span><span class="status">READY TO PLAY</span><h3>Choose Your Fate</h3><p>A tiny fantasy adventure where every decision is probably a mistake.</p><button type="button" class="primary-button insert-trigger" data-game="play">Insert cartridge <span aria-hidden="true">↥</span></button></div></article>
+          <article class="game-card monster-cartridge"><div class="cart-label"><span class="card-icon" aria-hidden="true"><svg class="arcade-icon" aria-hidden="true"><use href="#icon-egg"></use></svg></span><span class="status">READY TO PLAY</span><h3>Adopt a Tiny Monster</h3><p>Choose an egg. Acquire a problem.</p><button type="button" class="primary-button insert-trigger" data-game="monster">Insert cartridge <span aria-hidden="true">↥</span></button></div></article>
+          <article class="game-card"><div class="cart-label"><span class="card-icon" aria-hidden="true"><svg class="arcade-icon" aria-hidden="true"><use href="#icon-home"></use></svg></span><span class="status">READY TO PLAY</span><h3>Fantasy Home Builder</h3><p>Design a cozy escape. Possibly with a dragon sized mortgage.</p><button type="button" class="primary-button insert-trigger" data-game="home">Insert cartridge ↥</button></div></article>
+          <article class="game-card"><div class="cart-label"><span class="card-icon" aria-hidden="true"><svg class="arcade-icon" aria-hidden="true"><use href="#icon-coin"></use></svg></span><span class="status">READY TO PLAY</span><h3>Goblin Grab</h3><p>Catch as many coins as your basket can hold before the guard arrives.</p><button type="button" class="primary-button insert-trigger" data-game="goblin">Insert cartridge ↥</button></div></article>
+          <article class="game-card planned"><div class="cart-label"><span class="card-icon" aria-hidden="true"><svg class="arcade-icon" aria-hidden="true"><use href="#icon-potion"></use></svg></span><span class="status">NEXT UP</span><h3>Potion Problems</h3><p>Mix remedies for villagers with oddly specific ailments. Beware sentient hats.</p><span class="coming-pill">IN DEVELOPMENT</span></div></article>
+          <article class="game-card planned"><div class="cart-label"><span class="card-icon" aria-hidden="true"><svg class="arcade-icon" aria-hidden="true"><use href="#icon-eye"></use></svg></span><span class="status">COMING SOON</span><h3>Mimic Hunt</h3><p>Spot objects pretending to be other objects. The teapot is breathing.</p><span class="coming-pill">PLANNED</span></div></article>
+          <article class="game-card planned"><div class="cart-label"><span class="card-icon" aria-hidden="true"><svg class="arcade-icon" aria-hidden="true"><use href="#icon-scroll"></use></svg></span><span class="status">COMING SOON</span><h3>Spellbook Autocorrect</h3><p>Fill in a missing word. Deal with what the spellbook thought you meant.</p><span class="coming-pill">PLANNED</span></div></article>
+          <article class="game-card planned"><div class="cart-label"><span class="card-icon" aria-hidden="true"><svg class="arcade-icon" aria-hidden="true"><use href="#icon-cup"></use></svg></span><span class="status">COMING SOON</span><h3>Tiny Tavern Shift</h3><p>Serve snacks and drinks while piecing together the guests’ gossip.</p><span class="coming-pill">PLANNED</span></div></article>
+          <article class="game-card planned"><div class="cart-label"><span class="card-icon" aria-hidden="true"><svg class="arcade-icon" aria-hidden="true"><use href="#icon-bubble"></use></svg></span><span class="status">COMING SOON</span><h3>Bubble Sunset Studio</h3><p>Make sunsets inside bubbles and keep your favorites as postcards.</p><span class="coming-pill">PLANNED</span></div></article>
+          <article class="game-card planned"><div class="cart-label"><span class="card-icon" aria-hidden="true"><svg class="arcade-icon" aria-hidden="true"><use href="#icon-board"></use></svg></span><span class="status">COMING SOON</span><h3>The Quest Board</h3><p>Pack three items for a ridiculous quest. Discover what happens next.</p><span class="coming-pill">PLANNED</span></div></article>
+          <article class="game-card planned"><div class="cart-label"><span class="card-icon" aria-hidden="true"><svg class="arcade-icon" aria-hidden="true"><use href="#icon-creature"></use></svg></span><span class="status">COMING SOON</span><h3>Fantasy Creature Quiz</h3><p>Meet the magical creature that matches your particular brand of chaos.</p><span class="coming-pill">PLANNED</span></div></article>
+          <article class="game-card planned"><div class="cart-label"><span class="card-icon" aria-hidden="true"><svg class="arcade-icon" aria-hidden="true"><use href="#icon-paw"></use></svg></span><span class="status">COMING SOON</span><h3>Shrimp Chip Heist</h3><p>Help a honey badger sneak through a castle for the royal snacks.</p><span class="coming-pill">PLANNED</span></div></article>
           <div class="empty-slot" aria-hidden="true"></div><div class="empty-slot" aria-hidden="true"></div>
         </div><div class="shelf-caption" id="shelf-caption" aria-live="polite">Read a spine, then pull out a cartridge to play.</div></div>
       </section>
@@ -548,17 +600,17 @@ body[data-theme="gerald"]{--header-surface:#181320f6;--header-ink:#ffecf6;--head
 <section class="view" id="view-building" aria-labelledby="building-title" hidden>
         <div class="section-heading"><p class="eyebrow">THE CODE GARDEN</p><h2 id="building-title">Still being <em>summoned.</em></h2><p>Little games and features taking shape behind the curtain.</p></div>
         <div class="build-list">
-          <article class="build-card"><div><span class="build-glyph" aria-hidden="true">⌂</span><h3>Fantasy Home Builder</h3><p>The cottage workshop is open! Pick a roof, plant a garden, and invite a tiny roommate.</p></div><span class="build-tag">NOW PLAYABLE</span></article>
-          <article class="build-card"><div><span class="build-glyph" aria-hidden="true">🪙</span><h3>Goblin Grab</h3><p>The treasury is open. Catch coins before the guard comes running.</p></div><span class="build-tag">NOW PLAYABLE</span></article>
-          <article class="build-card"><div><span class="build-glyph" aria-hidden="true">⚗</span><h3>Potion Problems</h3><p>Mix ingredients for villagers with extremely specific ailments. Discover recipes, collect mishaps, and accidentally enchant a hat.</p></div><span class="build-tag">NEXT CARTRIDGE</span></article>
-          <article class="build-card"><div><span class="build-glyph" aria-hidden="true">◈</span><h3>Mimic Hunt</h3><p>Search a cozy room for objects that are pretending to be other objects. Keep an eye on the teapot.</p></div><span class="build-tag">PLANNED</span></article>
-          <article class="build-card"><div><span class="build-glyph" aria-hidden="true">✎</span><h3>Spellbook Autocorrect</h3><p>Fill in a missing word to cast a spell, then face the spellbook’s interpretation.</p></div><span class="build-tag">PLANNED</span></article>
-          <article class="build-card"><div><span class="build-glyph" aria-hidden="true">♜</span><h3>Tiny Tavern Shift</h3><p>Serve fantasy guests snacks and drinks while gathering their gossip.</p></div><span class="build-tag">PLANNED</span></article>
-          <article class="build-card"><div><span class="build-glyph" aria-hidden="true">◌</span><h3>Bubble Sunset Studio</h3><p>Make tiny sunsets inside bubbles and save your favorites as postcards.</p></div><span class="build-tag">PLANNED</span></article>
-          <article class="build-card"><div><span class="build-glyph" aria-hidden="true">▤</span><h3>The Quest Board</h3><p>Pack three items for a ridiculous quest and see whether your choices save the day.</p></div><span class="build-tag">PLANNED</span></article>
-          <article class="build-card"><div><span class="build-glyph" aria-hidden="true">✧</span><h3>Fantasy Creature Quiz</h3><p>A quick personality quiz and a cute, suspiciously accurate creature card.</p></div><span class="build-tag">PLANNED</span></article>
-          <article class="build-card"><div><span class="build-glyph" aria-hidden="true">🦡</span><h3>Shrimp Chip Heist</h3><p>Help a honey badger sneak through the castle in search of the greatest treasure: shrimp chips.</p></div><span class="build-tag">PLANNED</span></article>
-          <article class="build-card"><div><span class="build-glyph" aria-hidden="true">✿</span><h3>Family inspired themes</h3><p>Kat, Dad, Derek, Memaw, Ma, and Gerald each have their own little corner to explore.</p></div><span class="build-tag">NOW AVAILABLE</span></article>
+          <article class="build-card"><div><span class="build-glyph" aria-hidden="true"><svg class="arcade-icon" aria-hidden="true"><use href="#icon-home"></use></svg></span><h3>Fantasy Home Builder</h3><p>The cottage workshop is open! Pick a roof, plant a garden, and invite a tiny roommate.</p></div><span class="build-tag">NOW PLAYABLE</span></article>
+          <article class="build-card"><div><span class="build-glyph" aria-hidden="true"><svg class="arcade-icon" aria-hidden="true"><use href="#icon-coin"></use></svg></span><h3>Goblin Grab</h3><p>The treasury is open. Catch coins before the guard comes running.</p></div><span class="build-tag">NOW PLAYABLE</span></article>
+          <article class="build-card"><div><span class="build-glyph" aria-hidden="true"><svg class="arcade-icon" aria-hidden="true"><use href="#icon-potion"></use></svg></span><h3>Potion Problems</h3><p>Mix ingredients for villagers with extremely specific ailments. Discover recipes, collect mishaps, and accidentally enchant a hat.</p></div><span class="build-tag">NEXT CARTRIDGE</span></article>
+          <article class="build-card"><div><span class="build-glyph" aria-hidden="true"><svg class="arcade-icon" aria-hidden="true"><use href="#icon-eye"></use></svg></span><h3>Mimic Hunt</h3><p>Search a cozy room for objects that are pretending to be other objects. Keep an eye on the teapot.</p></div><span class="build-tag">PLANNED</span></article>
+          <article class="build-card"><div><span class="build-glyph" aria-hidden="true"><svg class="arcade-icon" aria-hidden="true"><use href="#icon-scroll"></use></svg></span><h3>Spellbook Autocorrect</h3><p>Fill in a missing word to cast a spell, then face the spellbook’s interpretation.</p></div><span class="build-tag">PLANNED</span></article>
+          <article class="build-card"><div><span class="build-glyph" aria-hidden="true"><svg class="arcade-icon" aria-hidden="true"><use href="#icon-cup"></use></svg></span><h3>Tiny Tavern Shift</h3><p>Serve fantasy guests snacks and drinks while gathering their gossip.</p></div><span class="build-tag">PLANNED</span></article>
+          <article class="build-card"><div><span class="build-glyph" aria-hidden="true"><svg class="arcade-icon" aria-hidden="true"><use href="#icon-bubble"></use></svg></span><h3>Bubble Sunset Studio</h3><p>Make tiny sunsets inside bubbles and save your favorites as postcards.</p></div><span class="build-tag">PLANNED</span></article>
+          <article class="build-card"><div><span class="build-glyph" aria-hidden="true"><svg class="arcade-icon" aria-hidden="true"><use href="#icon-board"></use></svg></span><h3>The Quest Board</h3><p>Pack three items for a ridiculous quest and see whether your choices save the day.</p></div><span class="build-tag">PLANNED</span></article>
+          <article class="build-card"><div><span class="build-glyph" aria-hidden="true"><svg class="arcade-icon" aria-hidden="true"><use href="#icon-creature"></use></svg></span><h3>Fantasy Creature Quiz</h3><p>A quick personality quiz and a cute, suspiciously accurate creature card.</p></div><span class="build-tag">PLANNED</span></article>
+          <article class="build-card"><div><span class="build-glyph" aria-hidden="true"><svg class="arcade-icon" aria-hidden="true"><use href="#icon-paw"></use></svg></span><h3>Shrimp Chip Heist</h3><p>Help a honey badger sneak through the castle in search of the greatest treasure: shrimp chips.</p></div><span class="build-tag">PLANNED</span></article>
+          <article class="build-card"><div><span class="build-glyph" aria-hidden="true"><svg class="arcade-icon" aria-hidden="true"><use href="#icon-flower"></use></svg></span><h3>Family inspired themes</h3><p>Kat, Dad, Derek, Memaw, Ma, and Gerald each have their own little corner to explore.</p></div><span class="build-tag">NOW AVAILABLE</span></article>
         </div>
       </section>
 
@@ -576,20 +628,21 @@ body[data-theme="gerald"]{--header-surface:#181320f6;--header-ink:#ffecf6;--head
       </section>
     </main>
 
-    <footer class="site-footer"><span>✿ KAT’S CORNER · MADE BY LordToT-ToT<span class="roman-numerals">III</span></span><span>Built with caffeine, questionable decisions, and an unreasonable amount of CSS.</span></footer>
+    <footer class="site-footer"><span>✿ KAT’S CORNER · MADE BY LordToT-ToT<span class="roman-numerals">III</span></span><span>Built with caffeine, questionable decisions, and an unreasonable amount of CSS.</span><span class="gerald-credit">And Gerald helped provide emotional support (and passive aggressive threats of more pink).</span></footer>
   </div>
 
   <div class="control-dock" aria-label="Arcade settings">
     <button type="button" id="sound-toggle" class="dock-button" aria-pressed="false" aria-label="Turn beep boops on">♫ <span id="sound-label">OFF</span></button>
-    <button type="button" id="settings-toggle" class="dock-button" aria-expanded="false" aria-controls="settings-panel" aria-label="Open theme and sound settings">✿ <span>THEMES</span></button>
+    <button type="button" id="settings-toggle" class="dock-button" aria-expanded="false" aria-controls="settings-panel" aria-label="Open theme and sound settings"><svg class="arcade-icon" aria-hidden="true"><use href="#icon-flower"></use></svg> <span>THEMES</span></button>
   </div>
   <div class="settings-panel" id="settings-panel" hidden>
     <div class="settings-heading"><strong>Little enchantments</strong><button type="button" id="settings-close" aria-label="Close settings">×</button></div>
+    <div class="theme-filter" role="tablist" aria-label="Theme collections"><button type="button" id="filter-default" role="tab" aria-controls="theme-select" data-theme-group="default" aria-selected="true">Default</button><button type="button" id="filter-family" role="tab" aria-controls="theme-select" data-theme-group="family" aria-selected="false" tabindex="-1">Family</button><button type="button" id="filter-races" role="tab" aria-controls="theme-select" data-theme-group="races" aria-selected="false" tabindex="-1">Races</button><button type="button" id="filter-classes" role="tab" aria-controls="theme-select" data-theme-group="classes" aria-selected="false" tabindex="-1">Classes</button></div>
     <label for="theme-select">Choose a look</label>
     <select id="theme-select"><option value="fae">Fae Garden · pink + green</option><option value="kat">Kat’s Margins · pastel + salmon</option><option value="dad">Dad’s Guildhall · forest + wood</option><option value="derek">Derek’s Cottage · sage + velvet pink</option><option value="memaw">Memaw’s Purple Haven · lavender + plum</option><option value="ma">Ma’s Sunroom · practical + pretty</option><option value="gerald">Gerald’s Cyber Corner · pink + black</option><option value="mage">Moon Mage · lilac + midnight</option><option value="healer">Woodland Healer · mint + cream</option><option value="rogue">Rose Rogue · pink + charcoal</option><option value="dragon">Dragon Grove · ember + pine</option><option value="fairy">Candy Fairy · pastel daydream</option></select>
-    <label for="volume-select">Beep boop level</label>
-    <select id="volume-select"><option value="0">Silent</option><option value="1">Polite</option><option value="2">Beepy</option><option value="3">Goblin Mode</option></select>
-    <p>Goblin Mode makes every click a surprise: moo, cluck, boop, bonk, and more. Sounds start only when you turn them on. Your settings stay on this device.</p>
+    <label for="volume-select">Sound world</label>
+    <select id="volume-select"><option value="0">Silent</option><option value="1">Polite · soft chimes</option><option value="2">Beepy · classic arcade</option><option value="3">Goblin Mode · random chaos</option><option value="4">Music Box · tiny bells</option><option value="5">8-Bit Quest · pixel bleeps</option><option value="6">Tavern · cozy wooden taps</option><option value="7">Bubble Pop · bouncy bloops</option></select>
+    <p id="sound-description">Goblin Mode makes every click a surprise: moo, cluck, boop, bonk, and more. Sounds start only when you turn them on. Your settings stay on this device.</p>
   </div>
   <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 <script>
@@ -764,7 +817,7 @@ function readSaved() {
     const value = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
     return {
       theme: Object.hasOwn( { fae:1,kat:1,dad:1,derek:1,memaw:1,ma:1,gerald:1,mage:1,healer:1,rogue:1,dragon:1,fairy:1 }, value.theme) ? value.theme : 'fae',
-      volume: [0,1,2,3].includes(value.volume) ? value.volume : 0,
+      volume: [0,1,2,3,4,5,6,7].includes(value.volume) ? value.volume : 0,
       endings: Array.isArray(value.endings) ? value.endings.filter(id => ENDINGS[id]) : [],
       achievements: Array.isArray(value.achievements) ? value.achievements.filter(id => ACHIEVEMENTS.some(a => a.id === id)) : [],
       counter: Number.isSafeInteger(value.counter) && value.counter >= 0 ? value.counter : 0,
@@ -784,6 +837,15 @@ let audioContext;
 let toastTimer;
 let lastGoblinNoise = -1;
 const $ = selector => document.querySelector(selector);
+const GLYPH_ICONS = { '⚔':'sword','✧':'star','✦':'star','★':'star','◈':'eye','✿':'flower','❧':'leaf','🌿':'leaf','🐉':'dragon','☾':'moon','🌙':'moon','🫧':'bubble','💗':'heart','♫':'wand','🍓':'berry','🔥':'fire','🎒':'satchel','☀':'sun','🗝':'key','♜':'cup','🥚':'egg','🏡':'home','🧌 🧺 🪙':'basket','🧌 🧺':'basket','◇':'star','!':'star' };
+function setGlyph(element, glyph) {
+  const icon = GLYPH_ICONS[glyph];
+  if (!icon) { element.textContent = glyph; return; }
+  const svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+  svg.setAttribute('class','arcade-icon'); svg.setAttribute('aria-hidden','true');
+  const use = document.createElementNS('http://www.w3.org/2000/svg','use');
+  use.setAttribute('href','#icon-' + icon); svg.append(use); element.replaceChildren(svg);
+}
 function save() { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(saved)); } catch { /* The game still works if storage is unavailable. */ } }
 
 function note(message) {
@@ -833,25 +895,37 @@ function sound(kind = 'click') {
       return;
     }
     const notes = { click:[520], hover:[760], choice:[480,720], win:[530,670,880], unlock:[690,920], bonk:[270,190], secret:[340,250,440] }[kind] || [520];
+    const mode = saved.volume;
     notes.forEach((frequency, index) => {
       const oscillator = audioContext.createOscillator();
       const gain = audioContext.createGain();
-      const start = now + index * .09;
-      oscillator.type = kind === 'bonk' ? 'triangle' : 'sine';
-      oscillator.frequency.setValueAtTime(frequency, start);
-      oscillator.frequency.exponentialRampToValueAtTime(frequency * (kind === 'bonk' ? .7 : 1.06), start + .12);
+      const start = now + index * (mode === 4 ? .12 : .09);
+      oscillator.type = mode === 5 ? 'square' : mode === 6 || kind === 'bonk' ? 'triangle' : 'sine';
+      const pitch = mode === 4 ? frequency * 1.7 : mode === 6 ? frequency * .43 : mode === 7 ? frequency * .65 : frequency;
+      const duration = mode === 4 ? .32 : mode === 5 ? .11 : mode === 6 ? .15 : mode === 7 ? .23 : .17;
+      oscillator.frequency.setValueAtTime(pitch, start);
+      oscillator.frequency.exponentialRampToValueAtTime(pitch * (mode === 7 ? 1.8 : mode === 6 ? .75 : kind === 'bonk' ? .7 : 1.06), start + duration * .7);
       gain.gain.setValueAtTime(.0001, start);
-      gain.gain.exponentialRampToValueAtTime([0,.025,.055,.09][saved.volume], start + .018);
-      gain.gain.exponentialRampToValueAtTime(.0001, start + .17);
+      gain.gain.exponentialRampToValueAtTime([0,.025,.055,.09,.032,.028,.05,.04][mode], start + .018);
+      gain.gain.exponentialRampToValueAtTime(.0001, start + duration);
       oscillator.connect(gain).connect(audioContext.destination);
       oscillator.start(start);
-      oscillator.stop(start + .19);
+      oscillator.stop(start + duration + .02);
     });
   } catch { /* Audio is optional on browsers without Web Audio. */ }
 }
 
+const THEME_GROUPS = { default:['fae'], family:['kat','dad','derek','memaw','ma','gerald'], races:['dragon','fairy'], classes:['mage','healer','rogue'] };
+const THEME_OPTIONS = Array.from($('#theme-select').options);
 function setTheme(theme) {
-  if (!$('#theme-select').querySelector(`option[value="${theme}"]`)) return;
+  if (!THEME_OPTIONS.some(option => option.value === theme)) return;
+  const group = Object.keys(THEME_GROUPS).find(key => THEME_GROUPS[key].includes(theme)) || 'default';
+  document.querySelectorAll('[data-theme-group]').forEach(tab => {
+    const active = tab.dataset.themeGroup === group;
+    tab.setAttribute('aria-selected', String(active));
+    tab.tabIndex = active ? 0 : -1;
+  });
+  $('#theme-select').replaceChildren(...THEME_OPTIONS.filter(option => THEME_GROUPS[group].includes(option.value)));
   saved.theme = theme;
   document.body.dataset.theme = theme;
   document.querySelector('meta[name="theme-color"]').setAttribute('content', getComputedStyle(document.body).getPropertyValue('--forest').trim());
@@ -859,8 +933,19 @@ function setTheme(theme) {
   save();
 }
 function setVolume(volume) {
+  if (![0,1,2,3,4,5,6,7].includes(volume)) volume = 0;
   saved.volume = volume;
   $('#volume-select').value = String(volume);
+  $('#sound-description').textContent = [
+    'Quiet as a sleeping dragon. Your settings stay on this device.',
+    'Soft little chimes for your buttons. Your settings stay on this device.',
+    'Classic friendly arcade beeps. Your settings stay on this device.',
+    'Every click gets a surprise: moo, cluck, boop, bonk, and more. Your settings stay on this device.',
+    'Bright tiny music-box bells greet each choice. Your settings stay on this device.',
+    'Crisp pixel bleeps for an old-school quest. Your settings stay on this device.',
+    'Warm, low wooden taps from a very tiny tavern. Your settings stay on this device.',
+    'Little bubbles swoop up and pop when you play. Your settings stay on this device.'
+  ][volume];
   $('#sound-toggle').setAttribute('aria-pressed', String(volume !== 0));
   $('#sound-toggle').setAttribute('aria-label', volume ? 'Turn beep boops off' : 'Turn beep boops on');
   $('#sound-label').textContent = volume ? 'ON' : 'OFF';
@@ -894,7 +979,7 @@ function renderStartScreen() {
   const content = $('#story-content'); content.replaceChildren();
   content.classList.add('start-screen');
   const kicker = document.createElement('span'); kicker.className = 'story-kicker'; kicker.textContent = '✦ QUEST FILE 001 IS READY';
-  const icon = document.createElement('span'); icon.className = 'start-icon'; icon.setAttribute('aria-hidden','true'); icon.textContent = '⚔';
+  const icon = document.createElement('span'); icon.className = 'start-icon'; icon.setAttribute('aria-hidden','true'); setGlyph(icon,'⚔');
   const title = document.createElement('h2'); title.textContent = 'Choose Your Fate';
   const copy = document.createElement('p'); copy.textContent = 'Five choices. A story full of endings. One very small dragon.';
   const button = document.createElement('button'); button.className = 'primary-button start-button'; button.type = 'button'; button.textContent = '✦ PRESS START';
@@ -916,7 +1001,7 @@ function renderScene() {
   const choices = document.createElement('div'); choices.className = 'choices';
   scene.choices.forEach(choice => {
     const button = document.createElement('button'); button.type = 'button'; button.className = 'choice-button';
-    const icon = document.createElement('span'); icon.className = 'choice-icon'; icon.setAttribute('aria-hidden','true'); icon.textContent = choice.icon;
+    const icon = document.createElement('span'); icon.className = 'choice-icon'; icon.setAttribute('aria-hidden','true'); setGlyph(icon,choice.icon);
     const label = document.createElement('span'); label.textContent = choice.text;
     button.append(icon,label); button.addEventListener('click', () => choose(choice)); choices.append(button);
   });
@@ -966,7 +1051,7 @@ function renderResult() {
   renderCollection();
   const content = $('#story-content'); content.replaceChildren();
   const kicker = document.createElement('span'); kicker.className = 'story-kicker'; kicker.textContent = '✧ ' + (firstTime ? 'NEW ENDING DISCOVERED' : 'ENDING REVISITED');
-  const title = document.createElement('h2'); title.textContent = `${ending.icon} ${ending.title}`;
+  const title = document.createElement('h2'); setGlyph(title,ending.icon); title.append(' ' + ending.title);
   const paragraph = document.createElement('p'); paragraph.textContent = ending.text;
   const badge = document.createElement('div'); badge.className = 'result-badge'; badge.textContent = 'ENDING UNLOCKED: ' + ending.tag;
   const stats = document.createElement('div'); stats.className = 'result-stats';
@@ -996,7 +1081,7 @@ function renderMonsterStart() {
   $('#monster-progress-fill').style.width = '0%';
   const content = $('#monster-content'); content.replaceChildren(); content.classList.add('start-screen');
   const kicker = document.createElement('span'); kicker.className = 'story-kicker'; kicker.textContent = '✿ A LITTLE EGG IS WAITING';
-  const icon = document.createElement('span'); icon.className = 'start-icon'; icon.setAttribute('aria-hidden','true'); icon.textContent = '🥚';
+  const icon = document.createElement('span'); icon.className = 'start-icon'; icon.setAttribute('aria-hidden','true'); setGlyph(icon,'🥚');
   const title = document.createElement('h2'); title.textContent = 'Adopt a Tiny Monster';
   const copy = document.createElement('p'); copy.textContent = 'Choose an egg, care for it, and meet the creature that chooses you back.';
   const button = document.createElement('button'); button.className = 'primary-button start-button'; button.type = 'button'; button.textContent = '✦ PRESS START';
@@ -1016,7 +1101,7 @@ function renderMonsterStep() {
   const choices = document.createElement('div'); choices.className = 'choices';
   step.choices.forEach(choice => {
     const button = document.createElement('button'); button.type = 'button'; button.className = 'choice-button';
-    const icon = document.createElement('span'); icon.className = 'choice-icon'; icon.setAttribute('aria-hidden','true'); icon.textContent = choice.icon;
+    const icon = document.createElement('span'); icon.className = 'choice-icon'; icon.setAttribute('aria-hidden','true'); setGlyph(icon,choice.icon);
     const label = document.createElement('span'); label.textContent = choice.text;
     button.append(icon,label);
     button.addEventListener('click', () => {
@@ -1042,7 +1127,7 @@ function renderMonsterReveal() {
   $('#monster-progress-fill').style.width = '100%';
   const content = $('#monster-content'); content.replaceChildren();
   const kicker = document.createElement('span'); kicker.className = 'story-kicker'; kicker.textContent = '✦ A NEW FRIEND APPEARED';
-  const portrait = document.createElement('span'); portrait.className = 'creature-portrait'; portrait.setAttribute('aria-hidden','true'); portrait.textContent = creature.icon;
+  const portrait = document.createElement('span'); portrait.className = 'creature-portrait'; portrait.setAttribute('aria-hidden','true'); setGlyph(portrait,creature.icon);
   const title = document.createElement('h2'); title.textContent = `It's a ${creature.title}!`;
   const copy = document.createElement('p'); copy.textContent = creature.text;
   const quirk = document.createElement('p'); quirk.className = 'creature-quirk'; quirk.textContent = `Tiny habit: ${creature.quirk}`;
@@ -1074,7 +1159,7 @@ function renderMonsterAdopted(species,name) {
   const creature = MONSTERS[species];
   const content = $('#monster-content'); content.replaceChildren();
   const kicker = document.createElement('span'); kicker.className = 'story-kicker'; kicker.textContent = '♡ ADOPTION COMPLETE';
-  const portrait = document.createElement('span'); portrait.className = 'creature-portrait'; portrait.setAttribute('aria-hidden','true'); portrait.textContent = creature.icon;
+  const portrait = document.createElement('span'); portrait.className = 'creature-portrait'; portrait.setAttribute('aria-hidden','true'); setGlyph(portrait,creature.icon);
   const title = document.createElement('h2'); title.textContent = `Meet ${name}.`;
   const copy = document.createElement('p'); copy.textContent = `Your ${creature.title.toLowerCase()} has moved in. ${creature.quirk} The nursery keeper says you're doing great.`;
   const actions = document.createElement('div'); actions.className = 'result-actions';
@@ -1090,7 +1175,7 @@ function renderCollection() {
   ACHIEVEMENTS.forEach(item => {
     const unlocked = saved.achievements.includes(item.id);
     const card = document.createElement('article'); card.className = 'achievement' + (unlocked ? '' : ' is-locked');
-    const icon = document.createElement('span'); icon.className = 'achievement-icon'; icon.setAttribute('aria-hidden','true'); icon.textContent = unlocked ? item.icon : '◇';
+    const icon = document.createElement('span'); icon.className = 'achievement-icon'; icon.setAttribute('aria-hidden','true'); setGlyph(icon,unlocked ? item.icon : '◇');
     const title = document.createElement('h3'); title.textContent = unlocked ? item.title : '???';
     const detail = document.createElement('p'); detail.textContent = unlocked ? item.text : 'Keep exploring to unlock this one.';
     card.append(icon,title,detail); list.append(card);
@@ -1098,14 +1183,14 @@ function renderCollection() {
   const endings = $('#ending-list'); endings.replaceChildren();
   Object.entries(ENDINGS).forEach(([id,item]) => {
     const found = saved.endings.includes(id);
-    const pill = document.createElement('span'); pill.className = found ? '' : 'undiscovered'; pill.textContent = found ? `${item.icon} ${item.title}` : '◇ Undiscovered ending'; endings.append(pill);
+    const pill = document.createElement('span'); pill.className = found ? '' : 'undiscovered'; setGlyph(pill,found ? item.icon : '◇'); pill.append(found ? ' ' + item.title : ' Undiscovered ending'); endings.append(pill);
   });
   $('#monster-count').textContent = `${saved.monsters.length} / ${Object.keys(MONSTERS).length}`;
   const journal = $('#monster-list'); journal.replaceChildren();
   Object.entries(MONSTERS).forEach(([id,item]) => {
     const found = saved.monsters.find(monster => monster.species === id);
     const pill = document.createElement('span'); pill.className = found ? '' : 'undiscovered';
-    pill.textContent = found ? `${item.icon} ${found.name} · ${item.title}` : '◇ Mystery egg';
+    setGlyph(pill,found ? item.icon : '◇'); pill.append(found ? ` ${found.name} · ${item.title}` : ' Mystery egg');
     journal.append(pill);
   });
 }
@@ -1123,6 +1208,19 @@ $('#settings-toggle').addEventListener('click', () => {
 });
 $('#settings-close').addEventListener('click', () => { $('#settings-panel').hidden = true; $('#settings-toggle').setAttribute('aria-expanded','false'); sound('click'); });
 $('#theme-select').addEventListener('change', event => { setTheme(event.target.value); sound('secret'); });
+document.querySelectorAll('[data-theme-group]').forEach(tab => tab.addEventListener('click', () => {
+  const group = tab.dataset.themeGroup;
+  setTheme(THEME_GROUPS[group].includes(saved.theme) ? saved.theme : THEME_GROUPS[group][0]);
+  sound('choice');
+}));
+$('.theme-filter').addEventListener('keydown', event => {
+  if (!['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) return;
+  event.preventDefault();
+  const tabs = Array.from(document.querySelectorAll('[data-theme-group]'));
+  const current = tabs.indexOf(document.activeElement);
+  const index = event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1 : (current + (event.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length;
+  tabs[index].click(); tabs[index].focus();
+});
 $('#volume-select').addEventListener('change', event => { setVolume(Number(event.target.value)); sound('choice'); });
 document.addEventListener('click', () => { if (saved.volume === 3) sound('goblin'); }, true);
 $('#sound-toggle').addEventListener('click', () => { setVolume(saved.volume ? 0 : 1); sound('choice'); });
@@ -1147,7 +1245,7 @@ const TV_CHANNELS = [
   ['SHRIMP CHIP ALERT','THE BAG IS SUSPICIOUSLY EMPTY','A HONEY BADGER DENIES ALL INVOLVEMENT'],
   ['WRITER’S HOUR','CHAPTER 249: THE TINY DETOUR','PLOT TWIST: THE INK HAS ESCAPED']
 ];
-let tvOn = true, channelIndex = 0, queuedCartridge = null, bootButton = null, bootTimer = null, screenTaps = 0;
+let tvOn = true, consoleOn = true, channelIndex = 0, queuedCartridge = null, bootButton = null, bootTimer = null, screenTaps = 0;
 function renderTvChannel() {
   const [title, subtitle, tagline] = TV_CHANNELS[channelIndex];
   $('#tv-broadcast-title').textContent = title;
@@ -1166,33 +1264,51 @@ function stopCartridgeBoot() {
     bootButton = null;
   }
 }
+function resumeQueuedCartridge() {
+  if (!tvOn || !consoleOn || !queuedCartridge) return false;
+  const button = queuedCartridge;
+  queuedCartridge = null;
+  $('#arcade-stage').classList.remove('has-cartridge');
+  insertCartridge(button);
+  return true;
+}
 function setTvPower(on) {
   if (tvOn === on) return;
   const stage = $('#arcade-stage');
   tvOn = on;
   stage.classList.toggle('is-off', !on);
   $('#library-screen').setAttribute('aria-label', on ? 'Television on' : 'Television off');
-  for (const id of ['tv-power','console-power']) {
-    const button = $('#' + id);
-    button.setAttribute('aria-pressed', String(on));
-    button.setAttribute('aria-label', on ? 'Turn TV off' : 'Turn TV on');
-    button.title = on ? 'Turn TV off' : 'Turn TV on';
-  }
+  const button = $('#tv-power');
+  button.setAttribute('aria-pressed', String(on));
+  button.setAttribute('aria-label', on ? 'Turn TV off' : 'Turn TV on');
+  button.title = on ? 'Turn TV off' : 'Turn TV on';
   sound(on ? 'win' : 'bonk');
   if (!on && bootTimer !== null) {
     queuedCartridge = bootButton;
     stopCartridgeBoot();
     stage.classList.add('has-cartridge');
   }
-  if (on && queuedCartridge) {
-    const button = queuedCartridge;
-    queuedCartridge = null;
-    stage.classList.remove('has-cartridge');
-    insertCartridge(button);
-  } else note(on ? '✦ Kat’s Storybox hums to life.' : 'The TV has gone to sleep. Shhh.');
+  if (!resumeQueuedCartridge()) note(on ? '✦ Kat’s Storybox hums to life.' : 'The TV has gone to sleep. Shhh.');
+}
+function setConsolePower(on) {
+  if (consoleOn === on) return;
+  consoleOn = on;
+  const stage = $('#arcade-stage');
+  stage.classList.toggle('is-console-off', !on);
+  const button = $('#console-power');
+  button.setAttribute('aria-pressed', String(on));
+  button.setAttribute('aria-label', on ? 'Turn console off' : 'Turn console on');
+  button.title = on ? 'Turn console off' : 'Turn console on';
+  if (!on && bootTimer !== null) {
+    queuedCartridge = bootButton;
+    stopCartridgeBoot();
+    stage.classList.add('has-cartridge');
+  }
+  sound(on ? 'win' : 'bonk');
+  if (!resumeQueuedCartridge()) note(on ? '✦ The Quest Deck whirs awake.' : 'The console is sleeping. The TV still works.');
 }
 $('#tv-power').addEventListener('click', () => setTvPower(!tvOn));
-$('#console-power').addEventListener('click', () => setTvPower(!tvOn));
+$('#console-power').addEventListener('click', () => setConsolePower(!consoleOn));
 $('#tv-channel').addEventListener('click', () => {
   if (!tvOn) { note('The TV is off. The channel is dramatic silence.'); sound('bonk'); return; }
   if (bootTimer !== null) { note('Give the tiny TV a moment to boot.'); return; }
@@ -1232,10 +1348,10 @@ function insertCartridge(button) {
   caseElement?.classList.add('is-pulled');
   $('#slot-title').textContent = info.title;
   $('#slot-number').textContent = info.number;
-  if (!tvOn) {
+  if (!tvOn || !consoleOn) {
     queuedCartridge = button;
     stage.classList.add('has-cartridge');
-    note('Cartridge seated. Press POWER to wake the TV.');
+    note(!consoleOn ? 'Cartridge seated. Press the console POWER button to boot it.' : 'Cartridge seated. Press the TV POWER button to see it boot.');
     sound('click');
     setTimeout(() => caseElement?.classList.remove('is-pulled'), 500);
     return;
@@ -1367,7 +1483,7 @@ const HOME_DEFAULT={walls:'sage',roof:'berry',sky:'sunset',garden:'flowers',frie
 let homeDraft={...HOME_DEFAULT};
 let homeSaved=false;
 try{const old=JSON.parse(localStorage.getItem('fae-fate-cottage')||'null');if(old&&typeof old==='object'){for(const key of Object.keys(HOME_OPTIONS))if(HOME_OPTIONS[key].items.some(item=>item[0]===old[key]))homeDraft[key]=old[key];if(typeof old.name==='string')homeDraft.name=old.name.slice(0,40);homeSaved=true;}}catch{}
-function homeElement(tag,text,cls){const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;return e;}
+function homeElement(tag,text,cls){const e=document.createElement(tag);if(text!==undefined){if(cls==='start-icon'||cls==='result-icon')setGlyph(e,text);else e.textContent=text;}if(cls)e.className=cls;return e;}
 function homeChoice(key){return HOME_OPTIONS[key].items.find(item=>item[0]===homeDraft[key]);}
 function renderHomeStart(){
  const box=$('#home-content');box.replaceChildren();
@@ -1518,33 +1634,34 @@ function mountGameStages() {
     chin.innerHTML = '<span>KAT’S STORYBOX <small>MAGIC-VISION COLOR TV</small></span><span class="tv-control-lights" aria-hidden="true"><i></i><i></i><i></i></span><button class="tv-power" type="button" aria-pressed="true" aria-label="Turn TV off" title="Turn TV off">⏻</button>';
     tv.append(screen,chin);
     const consoleBox = document.createElement('div'); consoleBox.className = 'console'; consoleBox.setAttribute('aria-label',`${info.title} cartridge inserted in the console`);
-    consoleBox.innerHTML = `<div class="console-top"><span>KAT’S <small>POCKET QUEST DECK</small></span><button class="console-light" type="button" aria-pressed="true" aria-label="Turn TV off" title="Turn TV off">POWER</button></div><div class="cartridge-slot"></div><div class="slot-cartridge" aria-hidden="true"><span>${info.title}</span><small>${info.number}</small></div><div class="console-bottom"><span>✦ CARTRIDGE LOADED</span><button class="eject-button" type="button" aria-label="Eject cartridge and return to Library">⏏ EJECT</button><span>PRESS START ON SCREEN</span></div>`;
+    consoleBox.innerHTML = `<div class="console-top"><span class="console-name">KAT’S POCKET QUEST DECK</span><button class="console-light" type="button" aria-pressed="true" aria-label="Turn console off" title="Turn console off">POWER</button></div><div class="cartridge-slot"></div><div class="slot-cartridge" aria-hidden="true"><span>${info.title}</span><small>${info.number}</small></div><div class="console-bottom"><span>✦ CARTRIDGE LOADED</span><button class="eject-button" type="button" aria-label="Eject cartridge and return to Library">⏏ EJECT</button><span>PRESS START ON SCREEN</span></div>`;
     content.before(stage); inner.append(content); stage.append(tv,consoleBox);
-    const gamePowerButtons = [chin.querySelector('.tv-power'), consoleBox.querySelector('.console-light')];
-    function setGamePower(powered, announce = true) {
-      const wasOff = stage.classList.contains('is-off');
-      stage.classList.toggle('is-off', !powered);
-      gamePowerButtons.forEach(button => {
-        button.setAttribute('aria-pressed', String(powered));
-        button.setAttribute('aria-label', powered ? 'Turn TV off' : 'Turn TV on');
-        button.title = powered ? 'Turn TV off' : 'Turn TV on';
-      });
-      screen.setAttribute('aria-label', powered ? `${info.title} game screen` : `${info.title} television off`);
-      if (game === 'goblin' && goblinRun && wasOff === powered) {
-        if (powered) { goblinRun.last = 0; goblinRun.frame = requestAnimationFrame(goblinFrame); }
+    const gameTvButton = chin.querySelector('.tv-power'), gameConsoleButton = consoleBox.querySelector('.console-light');
+    function setGamePower(device, powered, announce = true) {
+      const wasPlayable = !stage.classList.contains('is-off') && !stage.classList.contains('is-console-off');
+      const tv = device === 'tv';
+      const button = tv ? gameTvButton : gameConsoleButton;
+      stage.classList.toggle(tv ? 'is-off' : 'is-console-off', !powered);
+      button.setAttribute('aria-pressed', String(powered));
+      button.setAttribute('aria-label', powered ? `Turn ${tv ? 'TV' : 'console'} off` : `Turn ${tv ? 'TV' : 'console'} on`);
+      button.title = powered ? `Turn ${tv ? 'TV' : 'console'} off` : `Turn ${tv ? 'TV' : 'console'} on`;
+      const playable = !stage.classList.contains('is-off') && !stage.classList.contains('is-console-off');
+      screen.setAttribute('aria-label', playable ? `${info.title} game screen` : tv && !powered ? `${info.title} television off` : `${info.title} console off`);
+      if (game === 'goblin' && goblinRun && wasPlayable !== playable) {
+        if (playable) { goblinRun.last = 0; goblinRun.frame = requestAnimationFrame(goblinFrame); }
         else { cancelAnimationFrame(goblinRun.frame); goblinRun.frame = 0; }
       }
       if (announce) {
-        note(powered ? '✦ The adventure is back on the air.' : 'The adventure is paused while the TV sleeps.');
+        note(powered ? playable ? '✦ The adventure is back on the air.' : 'The TV is on. The console is still asleep.' : tv ? 'The TV is off. The console keeps its place.' : 'The console is off. The TV says NO SIGNAL.');
         sound(powered ? 'win' : 'bonk');
       }
     }
-    function toggleGamePower() { setGamePower(stage.classList.contains('is-off')); }
-    gamePowerResetters[game] = () => setGamePower(true,false);
-    gamePowerButtons.forEach(button => button.addEventListener('click', toggleGamePower));
+    gamePowerResetters[game] = () => { setGamePower('tv',true,false); setGamePower('console',true,false); };
+    gameTvButton.addEventListener('click', () => setGamePower('tv',stage.classList.contains('is-off')));
+    gameConsoleButton.addEventListener('click', () => setGamePower('console',stage.classList.contains('is-console-off')));
     consoleBox.querySelector('.eject-button').addEventListener('click', () => {
       if (game === 'goblin' && goblinRun) renderGoblinStart();
-      setGamePower(true,false);
+      gamePowerResetters[game]();
       $('#eject-cartridge').click();
       showView('games');
     });
