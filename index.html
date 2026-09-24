@@ -502,6 +502,97 @@ body[data-theme="gerald"] .shell{background:linear-gradient(90deg,#17111cc4,#171
 .arcade-stage.is-game .tv-chin>.tv-control-lights{margin-left:0}
 @media(max-width:540px){.arcade-stage.is-game .tv-chin{display:flex;flex-wrap:wrap;gap:.4rem}.arcade-stage.is-game .tv-chin>span:first-child{flex:1 1 100%}.arcade-stage.is-game .tv-chin>.tv-channel{margin-left:auto}}
 @media(max-width:760px){body[data-theme="gerald"]{background-attachment:scroll}body[data-theme="gerald"] .shell{background:#16121ab3}}
+
+/* Consistent power states between the preview and game TVs. */
+.arcade-preview.is-console-off:not(.is-off) .tv-screen{background:#132120;min-height:clamp(240px,36vw,430px)}
+.arcade-preview.is-console-off:not(.is-off) .tv-idle-content{visibility:hidden}
+.arcade-preview.is-console-off:not(.is-off) .tv-screen:before{content:'NO SIGNAL · TURN ON CONSOLE';position:absolute;inset:0;z-index:6;display:grid;place-items:center;padding:1rem;color:#e7f4df;text-align:center;font:700 clamp(1rem,3vw,1.7rem) 'Space Mono','Courier New',monospace;text-shadow:0 0 14px #a8ddb966}
+
+/* Seat the cartridge in an actual console well and keep every control legible. */
+.arcade-stage .console{isolation:isolate;background:linear-gradient(160deg,#fff5 0 3%,transparent 35%),repeating-linear-gradient(0deg,#fff1 0 1px,transparent 1px 28px),var(--console-case);border-width:6px;border-radius:24px 24px 15px 15px;box-shadow:inset 0 4px 0 #fff5,inset 0 -15px 0 #0002,0 9px 0 var(--console-edge),0 20px 28px #0005}
+.arcade-stage .console:before{content:'';position:absolute;top:6px;left:12px;right:12px;height:7px;border-radius:8px;background:#fff5;pointer-events:none}
+.arcade-stage .console-top{position:relative;z-index:6;align-items:center;display:flex;justify-content:space-between;gap:1rem;padding-bottom:10px;border-bottom:2px solid var(--console-edge)}
+.arcade-stage .console-name{color:var(--console-ink);text-shadow:0 1px #fff6;letter-spacing:.03em!important}
+.arcade-stage .cartridge-slot{z-index:6!important;height:20px!important;border:4px solid var(--console-edge);border-top-color:#161819;border-radius:5px;background:#151819;box-shadow:inset 0 5px 7px #000c,0 3px 0 #fff6!important}
+.arcade-stage .slot-cartridge{z-index:5;filter:drop-shadow(0 3px 1px #0005)}
+.arcade-stage .console-bottom{position:relative;z-index:7;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:.6rem;min-width:0;color:var(--console-ink);font-weight:700}
+.arcade-stage .console-bottom>span{min-width:0;line-height:1.35}
+.arcade-stage .console-bottom>span:last-child{text-align:right}
+.arcade-stage .console-bottom .eject-button{margin:0}
+.arcade-preview .console{width:min(760px,88%);min-height:235px;margin:26px auto 0;padding:20px 24px 19px}
+.arcade-preview .console-top{min-height:51px}
+.arcade-preview .cartridge-slot{width:min(530px,80%);margin:42px auto 59px}
+.arcade-preview .slot-cartridge{top:78px;width:min(480px,74%);height:116px;padding:12px 12px 9px 16%;font-size:clamp(.85rem,1.7vw,1.08rem)}
+.arcade-preview .slot-cartridge:before{top:20px;height:57%}
+.arcade-preview:is(.has-cartridge,.is-loading) .cartridge-slot{margin:111px auto 25px}
+.arcade-preview:is(.has-cartridge,.is-loading) .console{min-height:276px}
+.arcade-stage.is-game .console{width:min(760px,90%);margin:27px auto 0;padding:20px 24px 16px;min-height:286px}
+.arcade-stage.is-game .slot-cartridge{top:78px;transform:translateX(-50%);width:min(510px,76%);height:119px}
+.arcade-stage.is-game .cartridge-slot{margin:109px auto 26px;width:min(560px,83%)}
+@media(max-width:600px){.arcade-preview .console,.arcade-stage.is-game .console{width:96%;padding:14px 12px 15px;min-height:230px}.arcade-stage .console-top{min-height:46px;align-items:flex-start}.arcade-stage .console-bottom{grid-template-columns:1fr auto;gap:.35rem;font-size:.58rem}.arcade-stage .console-bottom>span:last-child{grid-column:1 / -1;text-align:left}.arcade-preview .cartridge-slot{width:88%;margin:37px auto 61px}.arcade-preview .slot-cartridge{top:73px;width:80%;height:100px}.arcade-preview:is(.has-cartridge,.is-loading) .cartridge-slot{margin:95px auto 22px}.arcade-stage.is-game .slot-cartridge{top:69px;width:82%;height:103px}.arcade-stage.is-game .cartridge-slot{width:89%;margin:94px auto 22px}.arcade-stage.is-game .console{min-height:248px}}
+
+/* Compact footer credit directly beneath the creator's name. */
+.site-footer{align-items:flex-start;flex-wrap:wrap;gap:1.1rem 2rem}
+.site-footer .footer-authors{display:flex;flex-direction:column;align-items:flex-start;gap:.15rem;flex:1 1 300px}
+.site-footer .maker{color:var(--accent);font-weight:800;letter-spacing:.08em}
+.site-footer .footer-authors .gerald-credit{display:block;flex:none;text-align:left;font:500 .61rem/1.35 'DM Sans',system-ui,sans-serif;color:var(--muted);letter-spacing:0}
+.site-footer .footer-details{flex:0 1 360px;margin-left:auto}
+@media(max-width:760px){.site-footer .footer-details{margin-left:0}}
+
+/* Every theme gives the achievement collection a physical place. */
+#view-achievements{--board-back:#e7d6bd;--board-border:#947757;--board-paper:#fffaf0;--board-ink:#4d3b36;--board-pin:#b86b85}
+.achievement-board{position:relative;isolation:isolate;padding:clamp(1rem,3vw,2.4rem);margin:1rem 0 4rem;border:13px ridge var(--board-border);border-radius:8px;background:repeating-linear-gradient(45deg,#00000008 0 2px,transparent 2px 8px),var(--board-back);box-shadow:inset 0 0 0 4px #fff4,0 18px 35px #0003;color:var(--board-ink)}
+.board-plaque{width:fit-content;max-width:100%;margin:-1.1rem auto 1.8rem;padding:.42rem 1.2rem;border:3px solid var(--board-border);background:var(--board-paper);color:var(--board-ink);box-shadow:3px 4px 0 #0003;text-align:center;font:700 clamp(.75rem,1.5vw,1rem) 'Space Mono','Courier New',monospace;letter-spacing:.08em}
+.achievement-board .achievement-summary{color:var(--board-ink)}
+.achievement-board .achievement-summary strong,.achievement-board .achievement-summary span{color:var(--board-ink)}
+.achievement-board .achievement-grid{gap:clamp(.65rem,2vw,1.4rem)}
+.achievement-board .achievement{position:relative;min-height:160px;border:1px solid var(--board-border);border-radius:2px;background:var(--board-paper);color:var(--board-ink);box-shadow:3px 5px 0 #0002;transform:rotate(var(--tilt,0deg))}
+.achievement-board .achievement:nth-child(3n+1){--tilt:-.7deg}.achievement-board .achievement:nth-child(3n+2){--tilt:.5deg}
+.achievement-board .achievement:before{content:'';position:absolute;top:8px;left:50%;width:10px;height:10px;border-radius:50%;background:var(--board-pin);box-shadow:1px 2px 2px #0006}
+.achievement-board .achievement.is-locked{opacity:.78}
+.achievement-board .achievement h3,.achievement-board .achievement p{color:var(--board-ink)}
+.achievement-board .ending-shelf{margin:1.8rem 0 0;padding:1.1rem;border:1px solid var(--board-border);border-radius:3px;background:var(--board-paper);color:var(--board-ink);box-shadow:3px 4px 0 #0002}
+.achievement-board .ending-shelf h3{color:var(--board-ink)}
+.achievement-board .ending-list span{background:#fffaf5;color:var(--board-ink);border-color:var(--board-border)}
+.achievement-board .ending-list .undiscovered{color:var(--board-ink);opacity:.6}
+body[data-theme="dad"] #view-achievements{--board-back:#483b2d;--board-border:#a38153;--board-paper:#ead9b4;--board-ink:#332b22;--board-pin:#ad7043}
+body[data-theme="dad"] .achievement-board{border-style:double;border-width:18px;background:repeating-linear-gradient(90deg,#35291f45 0 3px,transparent 3px 65px),var(--board-back);box-shadow:inset 0 0 0 4px #c09c67,0 18px 30px #161a18a0}
+body[data-theme="dad"] .achievement-board .achievement{clip-path:polygon(0 0,100% 0,100% 96%,98% 100%,0 100%)}
+body[data-theme="ma"] #view-achievements{--board-back:#aa805e;--board-border:#756348;--board-paper:#fffdf3;--board-ink:#3a5144;--board-pin:#dc695c}
+body[data-theme="ma"] .achievement-board{background:radial-gradient(#744e3833 1px,transparent 2px),var(--board-back);background-size:8px 8px;border:15px solid #726452}
+body[data-theme="ma"] .achievement-board .achievement{border-left:5px solid #9db097;transform:none}
+body[data-theme="memaw"] #view-achievements{--board-back:#aa9a91;--board-border:#795b71;--board-paper:#fff6e9;--board-ink:#584056;--board-pin:#b68aaa}
+body[data-theme="memaw"] .achievement-board{background:repeating-linear-gradient(0deg,#ffffff24 0 2px,transparent 2px 34px),var(--board-back);border-style:double;border-radius:15px}
+body[data-theme="memaw"] .achievement-board .achievement{border-radius:8px;border:3px double #a882a2}
+body[data-theme="kat"] #view-achievements{--board-back:#eec8b4;--board-border:#ae6a7e;--board-paper:#fff4df;--board-ink:#593e53;--board-pin:#c8798b}
+body[data-theme="kat"] .achievement-board{background:repeating-linear-gradient(0deg,transparent 0 31px,#c782a143 32px 33px),var(--board-back);border-style:solid;border-radius:2px}
+body[data-theme="kat"] .achievement-board .achievement{background:repeating-linear-gradient(0deg,transparent 0 24px,#d99ab937 25px 26px),var(--board-paper)}
+body[data-theme="derek"] #view-achievements{--board-back:#556758;--board-border:#927a65;--board-paper:#f6e9e2;--board-ink:#514150;--board-pin:#d29fbd}
+body[data-theme="derek"] .achievement-board{background:repeating-linear-gradient(90deg,#22342754 0 3px,transparent 3px 35px),var(--board-back)}
+body[data-theme="gerald"] #view-achievements{--board-back:#161721;--board-border:#f077b9;--board-paper:#302638;--board-ink:#fff0fa;--board-pin:#fa98cf}
+body[data-theme="gerald"] .achievement-board{border-style:solid;background:linear-gradient(#fa87c012 1px,transparent 1px),linear-gradient(90deg,#fa87c012 1px,transparent 1px),var(--board-back);background-size:24px 24px}
+body[data-theme="gerald"] .achievement-board .achievement{border-radius:3px;box-shadow:0 0 0 2px #f077b94b;transform:none}
+body[data-theme="gerald"] .achievement-board .achievement:before{border-radius:2px;box-shadow:0 0 10px #fa98cf}
+body[data-theme="gerald"] .achievement-board .ending-list span{background:#302638;color:#fff0fa}
+body[data-theme="mage"],body[data-theme="rogue"]{--board-back:#302a42}
+body[data-theme="mage"] #view-achievements{--board-back:#3c3455;--board-border:#a99acb;--board-paper:#f4effc;--board-ink:#382e51;--board-pin:#c3a9df}
+body[data-theme="healer"] #view-achievements{--board-back:#758872;--board-border:#47644f;--board-paper:#f9f8e9;--board-ink:#355140;--board-pin:#b5d7b5}
+body[data-theme="rogue"] #view-achievements{--board-back:#383039;--board-border:#d786a5;--board-paper:#fff0f4;--board-ink:#513043;--board-pin:#dd8aa9}
+body[data-theme="dragon"] #view-achievements{--board-back:#4c604e;--board-border:#c6905c;--board-paper:#fff2d8;--board-ink:#4f392c;--board-pin:#d77855}
+body[data-theme="fairy"] #view-achievements{--board-back:#edd9e6;--board-border:#b282b9;--board-paper:#fff8fc;--board-ink:#584262;--board-pin:#e8a5c9}
+@media(max-width:680px){.achievement-board{border-width:8px;padding:.9rem}.achievement-board .achievement-grid{grid-template-columns:1fr}.board-plaque{margin-top:-.7rem}.achievement-board .achievement{transform:none}}
+
+/* Margin doodles stay behind the words and never intercept controls. */
+.about-card{position:relative;isolation:isolate;overflow:hidden}
+.about-card>:not(.about-doodles){position:relative;z-index:1}
+.about-doodles{position:absolute;inset:0;z-index:0;pointer-events:none;color:var(--accent)}
+.about-doodles .doodle{position:absolute;width:clamp(24px,3.5vw,46px);height:clamp(24px,3.5vw,46px);opacity:.22;filter:none}
+.about-doodles .doodle-book{top:5%;right:7%;transform:rotate(12deg)}
+.about-doodles .doodle-star{top:27%;right:3%;transform:rotate(-14deg)}
+.about-doodles .doodle-dragon{top:47%;right:5%;transform:rotate(9deg)}
+.about-doodles .doodle-leaf{bottom:25%;right:6%;transform:rotate(-25deg)}
+.about-doodles .doodle-heart{bottom:6%;right:8%;transform:rotate(12deg)}
+@media(max-width:600px){.about-doodles .doodle{width:23px;height:23px;opacity:.13}.about-doodles .doodle-book{right:3%}.about-doodles .doodle-dragon{right:2%}}
 </style>
   
 </head>
@@ -631,19 +722,28 @@ body[data-theme="gerald"] .shell{background:linear-gradient(90deg,#17111cc4,#171
 
       <section class="view" id="view-achievements" aria-labelledby="achievements-title" hidden>
         <div class="section-heading"><p class="eyebrow">YOUR LITTLE TROPHY SHELF</p><h2 id="achievements-title">Things you <em>did.</em></h2><p>Discover endings and make questionable choices. Saved on this device.</p></div>
-        <div class="achievement-summary"><strong id="achievement-count">0 / 8</strong><span>ACHIEVEMENTS UNLOCKED</span></div>
-        <div class="achievement-grid" id="achievement-grid"></div>
-        <div class="ending-shelf"><h3>Endings discovered</h3><div id="ending-list" class="ending-list"></div></div>
-        <div class="ending-shelf monster-shelf"><h3>Creature journal</h3><div id="monster-list" class="ending-list"></div></div>
+        <div class="achievement-board">
+          <div class="board-plaque" id="board-plaque">THE LITTLE ADVENTURE LOG</div>
+          <div class="achievement-summary"><strong id="achievement-count">0 / 8</strong><span>ACHIEVEMENTS UNLOCKED</span></div>
+          <div class="achievement-grid" id="achievement-grid"></div>
+          <div class="ending-shelf"><h3>Endings discovered</h3><div id="ending-list" class="ending-list"></div></div>
+          <div class="ending-shelf monster-shelf"><h3>Creature journal</h3><div id="monster-list" class="ending-list"></div></div>
+        </div>
       </section>
 
       <section class="view" id="view-about" aria-labelledby="about-title" hidden>
         <div class="section-heading"><p class="eyebrow">A NOTE FROM THE CREATOR</p><h2 id="about-title">Made with <em>mischief.</em></h2></div>
-        <div class="about-card"><span class="about-icon" aria-hidden="true">✿</span><p>Hi, I’m K. I make characters, collect stories, and enjoy making small interactive things with far too much personality. This is my little corner of the internet for games I build as I learn to code.</p><p>Pick a fate, try another ending, and come back when a new portal appears.</p><p class="late-note">✦ Totally not made at 2 a.m. The tiny dragon will corroborate this.</p><p class="kat-secret">✎ Kat’s margin note: The Storybox got its channel button back, the Quest Console found its real name, and Gerald finally claimed a room. The draft still has side quests, and there are probably 249 tabs open. ♡ &lt;/end note&gt;</p><p class="gerald-note"><strong>Gerald Note:</strong> I finally have a room. It has a tiny pink robot on the monitor and a very reasonable amount of pink. Please stop calling the console “pocket” sized; I measured it.</p><div class="dad-secret">⚔ Dad’s guild notice: The lanterns are lit, the maps are unrolled, and the forest path is open. Come in from your quest; there’s a place by the fire.<span class="dad-notice">Notice: Dad’s arms are always open.</span></div><p class="memaw-secret">☾ Memaw’s purple haven: Pull up a soft chair, tuck a blanket around your shoulders, and stay as long as you like. There’s always room for one more story here. 💜</p><p class="ma-secret">✿ Ma’s sunroom note: Your boots can go by the door, the kettle is ready, and there’s a basket for all the little things you brought home. A pretty place works best when you can really live in it.</p><p class="gerald-secret">🤖 Gerald’s little status report: Pink lights on. Tiny glasses polished. Bow tie straightened. The arcade’s cozy cyber systems are operational. Beep boop. ♡</p><p class="derek-secret">✧ Derek’s cottage note: A fairy and a honey badger have borrowed the spellbook. The sunset looks like it’s trapped inside a bubble. There are choux pastries and shrimp chips on the table. Mind the doorway—you might stub your toe twice.</p><div class="curiosity-counter"><span>THE EXTREMELY IMPORTANT COUNTER</span><button type="button" id="mystery-counter" aria-label="Press the counter">0</button><small>It counts. That is all.</small></div><button type="button" class="primary-button" data-go="play">Into the forest <span aria-hidden="true">↗</span></button><button type="button" class="danger-button" id="do-not-press">DO NOT PRESS</button></div>
+        <div class="about-card"><div class="about-doodles" aria-hidden="true">
+          <svg class="doodle doodle-book arcade-icon"><use href="#icon-book"></use></svg>
+          <svg class="doodle doodle-star arcade-icon"><use href="#icon-star"></use></svg>
+          <svg class="doodle doodle-dragon arcade-icon"><use href="#icon-dragon"></use></svg>
+          <svg class="doodle doodle-leaf arcade-icon"><use href="#icon-leaf"></use></svg>
+          <svg class="doodle doodle-heart arcade-icon"><use href="#icon-heart"></use></svg>
+        </div><span class="about-icon" aria-hidden="true">✿</span><p>Hi, I’m K. I make characters with dramatic backstories, collect stories like a tiny book dragon, and make little games while I learn to code. Sometimes a button works on the first try. I find that deeply suspicious.</p><p>Pick a fate, adopt something tiny, catch goblin coins, or just poke around. There’s probably a side quest hiding where I forgot to put one.</p><p class="late-note">✦ Totally not made at 2 a.m. The tiny dragon will corroborate this.</p><p class="kat-secret">✎ Kat’s margin note: Today the achievement page became a collection of actual boards, and my console finally learned where a cartridge goes. The draft still has side quests, and there are probably 249 tabs open. ♡ &lt;/end note&gt;</p><p class="gerald-note"><strong>Gerald Note:</strong> I labelled the slot, polished the quest board, and gently reminded the TV that an unplugged console cannot broadcast goblin shopping. The TV was defensive.</p><div class="dad-secret">⚔ Dad’s guild notice: The lanterns are lit, the maps are unrolled, and the forest path is open. Come in from your quest; there’s a place by the fire.<span class="dad-notice">Notice: Dad’s arms are always open.</span></div><p class="memaw-secret">☾ Memaw’s purple haven: Pull up a soft chair, tuck a blanket around your shoulders, and stay as long as you like. There’s always room for one more story here. 💜</p><p class="ma-secret">✿ Ma’s sunroom note: Your boots can go by the door, the kettle is ready, and there’s a basket for all the little things you brought home. A pretty place works best when you can really live in it.</p><p class="gerald-secret">🤖 Gerald’s little status report: Pink lights on. Tiny glasses polished. Bow tie straightened. The arcade’s cozy cyber systems are operational. Beep boop. ♡</p><p class="derek-secret">✧ Derek’s cottage note: A fairy and a honey badger have borrowed the spellbook. The sunset looks like it’s trapped inside a bubble. There are choux pastries and shrimp chips on the table. Mind the doorway—you might stub your toe twice.</p><div class="curiosity-counter"><span>THE EXTREMELY IMPORTANT COUNTER</span><button type="button" id="mystery-counter" aria-label="Press the counter">0</button><small>It counts. That is all.</small></div><button type="button" class="primary-button" data-go="games">Raid the cartridge rack <span aria-hidden="true">↗</span></button><button type="button" class="danger-button" id="do-not-press">DO NOT PRESS</button></div>
       </section>
     </main>
 
-    <footer class="site-footer"><span>✿ KAT’S CORNER · MADE BY LordToT-ToT<span class="roman-numerals">III</span></span><span>Built with caffeine, questionable decisions, and an unreasonable amount of CSS.</span><span class="gerald-credit">And Gerald helped provide emotional support (and passive aggressive threats of more pink).</span></footer>
+    <footer class="site-footer"><div class="footer-authors"><span class="maker">✿ KAT’S CORNER · MADE BY LordToT-ToT<span class="roman-numerals">III</span></span><small class="gerald-credit">Gerald: emotional support and passive aggressive threats of more pink.</small></div><span class="footer-details">Built with caffeine, questionable decisions, and an unreasonable amount of CSS.</span></footer>
   </div>
 
   <div class="control-dock" aria-label="Arcade settings">
@@ -943,6 +1043,13 @@ function setTheme(theme) {
   $('#theme-select').replaceChildren(...THEME_OPTIONS.filter(option => THEME_GROUPS[group].includes(option.value)));
   saved.theme = theme;
   document.body.dataset.theme = theme;
+  const boardNames = {
+    fae:'THE ENCHANTED ADVENTURE LOG',kat:'KAT’S VERY OFFICIAL FIELD NOTES',dad:'GUILDHALL QUEST BOARD',
+    derek:'COTTAGE FINDS & FAIRY TALES',memaw:'MEMAW’S KEEPSAKE ALBUM',ma:'THE FAMILY NOTICE BOARD',
+    gerald:'GERALD’S QUEST DATABASE',mage:'THE MOONLIT SPELL LEDGER',healer:'THE HERBALIST’S JOURNAL',
+    rogue:'THE ROSE ROGUE’S DOSSIER',dragon:'THE DRAGON’S HOARD LOG',fairy:'THE FAIRY FIELD JOURNAL'
+  };
+  $('#board-plaque').textContent = boardNames[theme];
   document.querySelector('meta[name="theme-color"]').setAttribute('content', getComputedStyle(document.body).getPropertyValue('--forest').trim());
   $('#theme-select').value = theme;
   save();
@@ -1292,7 +1399,7 @@ function setTvPower(on) {
   const stage = $('#arcade-stage');
   tvOn = on;
   stage.classList.toggle('is-off', !on);
-  $('#library-screen').setAttribute('aria-label', on ? 'Television on' : 'Television off');
+  $('#library-screen').setAttribute('aria-label', on ? (consoleOn ? 'Television on' : 'No signal. Turn on console') : 'Television off');
   const button = $('#tv-power');
   button.setAttribute('aria-pressed', String(on));
   button.setAttribute('aria-label', on ? 'Turn TV off' : 'Turn TV on');
@@ -1310,6 +1417,7 @@ function setConsolePower(on) {
   consoleOn = on;
   const stage = $('#arcade-stage');
   stage.classList.toggle('is-console-off', !on);
+  $('#library-screen').setAttribute('aria-label', on ? (tvOn ? 'Television on' : 'Television off') : 'No signal. Turn on console');
   const button = $('#console-power');
   button.setAttribute('aria-pressed', String(on));
   button.setAttribute('aria-label', on ? 'Turn console off' : 'Turn console on');
