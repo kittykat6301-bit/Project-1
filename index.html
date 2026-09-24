@@ -3,8 +3,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#173c31">
-  <meta name="description" content="A tiny enchanted arcade of questionable decisions, tiny dragons, and very good endings.">
-  <title>Fae & Fate — a tiny enchanted arcade</title>
+  <meta name="description" content="Kat’s Corner: a tiny enchanted arcade of questionable decisions, tiny dragons, and very good endings.">
+  <title>Kat’s Corner — a tiny enchanted arcade</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23173c31'/%3E%3Cpath d='M32 9c-5 13-16 17-16 29a16 16 0 0 0 32 0C48 26 37 22 32 9Z' fill='%23f2a9c7'/%3E%3Cpath d='M22 39c7-2 13-8 20-18M31 36c-3-1-5-4-6-7' stroke='%23173c31' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
   <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Pixelify+Sans:wght@400;500;600;700&display=swap');
@@ -108,9 +108,9 @@ body[data-theme="gerald"]{--bg:#f8eef4;--ink:#43364c;--muted:#74657d;--forest:#6
   <div class="ambient" aria-hidden="true"><span>✦</span><span>✿</span><span>✧</span><span>✦</span><span>✿</span></div>
   <div class="shell">
     <header class="site-header">
-      <button class="brand" type="button" data-go="games" aria-label="Fae and Fate, go to game selection">
+      <button class="brand" type="button" data-go="games" aria-label="Kat’s Corner, go to game selection">
         <span class="brand-mark" aria-hidden="true">✿</span>
-        <span>FAE <i>&</i> FATE<small>THE TINY ENCHANTED ARCADE</small></span>
+        <span>KAT’S CORNER<small>THE TINY ENCHANTED ARCADE</small></span>
       </button>
       <nav class="top-nav" aria-label="Main menu">
         <button type="button" class="nav-link is-active" data-go="games" aria-current="page">Games</button>
@@ -169,7 +169,7 @@ body[data-theme="gerald"]{--bg:#f8eef4;--ink:#43364c;--muted:#74657d;--forest:#6
       <section class="view" id="view-games" aria-labelledby="games-title" hidden>
         <div class="section-heading"><p class="eyebrow">THE ARCADE SHELF</p><h2 id="games-title">Pick your <em>cartridge.</em></h2><p>Three adventures are ready. Choose one to slide into the console.</p></div>
         <div class="console" aria-label="Game console">
-          <div class="console-top"><span>F&F <small>POCKET QUEST SYSTEM</small></span><span class="console-light">POWER</span></div>
+          <div class="console-top"><span>KC <small>POCKET QUEST SYSTEM</small></span><span class="console-light">POWER</span></div>
           <div class="cartridge-slot" id="cartridge-slot"><span id="slot-placeholder">▼ INSERT CARTRIDGE ▼</span><span class="slot-cartridge" id="slot-cartridge" aria-hidden="true"><span id="slot-title">CHOOSE YOUR FATE</span> <small id="slot-number">QUEST 001</small></span></div>
           <div class="console-bottom"><span>✦ THREE GAMES READY</span><span>03 / 04 GAMES LOADED</span></div>
         </div>
@@ -210,7 +210,7 @@ body[data-theme="gerald"]{--bg:#f8eef4;--ink:#43364c;--muted:#74657d;--forest:#6
       </section>
     </main>
 
-    <footer class="site-footer"><span>✿ FAE & FATE · MADE BY K</span><span>Built with caffeine, questionable decisions, and an unreasonable amount of CSS.</span></footer>
+    <footer class="site-footer"><span>✿ KAT’S CORNER · MADE BY K</span><span>Built with caffeine, questionable decisions, and an unreasonable amount of CSS.</span></footer>
   </div>
 
   <div class="control-dock" aria-label="Arcade settings">
@@ -227,7 +227,7 @@ body[data-theme="gerald"]{--bg:#f8eef4;--ink:#43364c;--muted:#74657d;--forest:#6
   </div>
   <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 <script>
-/* Fae & Fate: edit SCENES to add story choices, and ENDINGS for results. */
+/* Kat’s Corner: edit SCENES to add story choices, and ENDINGS for results. */
 const STORAGE_KEY = 'fae-and-fate-v1';
 const ENDINGS = {
   knight: { icon: '⚔', title: 'The Accidental Knight', text: 'You saved the kingdom by doing the brave thing before anyone could talk you out of it. The sword is still glowing. Nobody knows how to turn it off.', tag: 'HEROIC, SOMEHOW', stats: ['Bravery: 94%', 'Planning: optional'] },
