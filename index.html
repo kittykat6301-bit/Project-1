@@ -379,6 +379,40 @@ body[data-theme="memaw"]{--bg:#eee5d9;--card:#fffaf2;--pale:#f1e8eb;--room-surfa
 body[data-theme="memaw"] .shell{background:linear-gradient(90deg,#f4ecdf81,#fff9efae 18% 82%,#f4ecdf81)}
 body[data-theme="memaw"] .section-heading{background:#fff9f1ea}
 body[data-theme="memaw"] .forest-panel,body[data-theme="memaw"] .monster-panel{background:linear-gradient(145deg,#715d77,#89728b)}
+/* One continuous header surface, readable active tabs, and no horizontal spill. */
+body{--header-surface:#f4eee4f4;--header-ink:#29453a;--header-active:#2d5a48;--header-active-ink:#fffaf3}
+body[data-theme="kat"]{--header-surface:#fff3eaf5;--header-ink:#563d52;--header-active:#885069;--header-active-ink:#fffaf6}
+body[data-theme="dad"]{--header-surface:#30393bf6;--header-ink:#faedd7;--header-active:#e3bf83;--header-active-ink:#293136}
+body[data-theme="derek"]{--header-surface:#303b35f5;--header-ink:#fff0ed;--header-active:#e8b3d0;--header-active-ink:#332d37}
+body[data-theme="memaw"]{--header-surface:#fff9f1f5;--header-ink:#533e60;--header-active:#6d4c88;--header-active-ink:#fffaf5}
+body[data-theme="ma"]{--header-surface:#fff9eff5;--header-ink:#2b4839;--header-active:#426751;--header-active-ink:#fffaf1}
+body[data-theme="gerald"]{--header-surface:#181320f6;--header-ink:#ffecf6;--header-active:#ff80c0;--header-active-ink:#241326}
+.shell{min-width:0}
+.site-header{position:relative;isolation:isolate;z-index:2;width:100%;max-width:100%;min-width:0;gap:.65rem;border-bottom:0;flex-wrap:wrap}
+.site-header:before{content:'';position:absolute;z-index:-1;left:50%;top:0;bottom:0;width:100vw;transform:translateX(-50%);background:var(--header-surface);border-bottom:2px solid var(--line);box-shadow:0 5px 18px #0002}
+.site-header .brand{color:var(--header-ink);min-width:0;white-space:normal;font-size:clamp(1.1rem,1.9vw,1.4rem)}
+.site-header .brand small{color:var(--header-ink);opacity:.78}
+.top-nav{min-width:0;max-width:100%;margin-left:auto;flex-wrap:wrap;justify-content:flex-end;gap:.2rem}
+.nav-link{color:var(--header-ink);padding:.62rem .65rem;font-size:.84rem}
+.nav-link:hover,.nav-link.is-active{color:var(--header-active-ink);background:var(--header-active);box-shadow:inset 0 0 0 1px #ffffff45}
+.nav-icon{filter:none}
+/* Keep the CRT inside the viewport and place its cartridge below both labels. */
+.arcade-stage.is-game{width:100%;max-width:1170px;min-width:0}
+.arcade-stage.is-game .retro-tv,.arcade-stage.is-game .tv-screen,.arcade-stage.is-game .tv-screen-inner,.arcade-stage.is-game .game-layout{width:100%;max-width:100%;min-width:0}
+.arcade-stage.is-game .game-layout{grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr)}
+.arcade-stage.is-game .tv-chin{min-height:58px;flex-wrap:wrap;align-items:center;padding:12px 13px 9px}
+.arcade-stage.is-game .tv-chin>span:first-child{min-width:0;max-width:100%;line-height:1.08;overflow-wrap:anywhere}
+.arcade-stage.is-game .tv-chin .tv-control-lights{margin-left:auto;flex:none}
+.arcade-stage.is-game .console{display:flex;flex-direction:column;align-items:stretch;gap:6px;width:min(630px,90%);max-width:100%;min-height:200px;margin:20px auto 0;padding:14px 17px 12px}
+.arcade-stage.is-game .console-top{min-height:39px;min-width:0;flex-wrap:wrap}
+.arcade-stage.is-game .console-top>span{min-width:0;overflow-wrap:anywhere}
+.arcade-stage.is-game .cartridge-slot{flex:none;width:min(86%,510px);height:15px;margin:94px auto 7px}
+.arcade-stage.is-game .slot-cartridge{left:50%;top:64px;width:min(445px,82%);height:84px;min-height:0;padding:7px 8px 5px 16%;transform:translateX(-50%);opacity:1;font-size:clamp(.86rem,1.85vw,1.1rem)}
+.arcade-stage.is-game .slot-cartridge span{line-height:1}
+.arcade-stage.is-game .console-bottom{justify-content:space-between;flex-wrap:wrap;gap:.4rem;margin-top:0}
+@media(max-width:950px){.arcade-stage.is-game .game-layout{grid-template-columns:minmax(0,1fr)}.arcade-stage.is-game .forest-panel{min-height:300px}.arcade-stage.is-game .story-panel{min-height:410px}}
+@media(max-width:760px){.site-header{min-height:79px}.site-header .menu-toggle{margin-left:auto}.mobile-menu:not([hidden]){background:var(--header-surface);padding:.7rem}.arcade-stage.is-game .console{width:min(620px,96%)}.arcade-stage.is-game .slot-cartridge{width:min(445px,84%)}.arcade-stage.is-game .tv-chin{gap:.45rem}}
+@media(max-width:540px){.site-header .brand{font-size:1.08rem}.arcade-stage.is-game .tv-chin{font-size:.86rem;min-height:55px}.arcade-stage.is-game .console{width:98%;padding:12px 10px 10px}.arcade-stage.is-game .console-top{font-size:.98rem}.arcade-stage.is-game .console-top small{font-size:.55rem}.arcade-stage.is-game .slot-cartridge{top:62px;width:85%;height:76px;font-size:.78rem}.arcade-stage.is-game .cartridge-slot{margin-top:85px;width:84%}.arcade-stage.is-game .console-bottom{font-size:.58rem}}
 </style>
   
 </head>
