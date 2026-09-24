@@ -106,6 +106,27 @@ body[data-theme="gerald"] .game-card,body[data-theme="gerald"] .game-card.featur
 body[data-theme="gerald"] .choice-button:hover,body[data-theme="gerald"] .home-option:hover{border-color:#ff78bf;box-shadow:0 0 14px #ff78bf77}
 body[data-theme="gerald"] .home-preview,body[data-theme="gerald"] .home-controls{border-color:#ff78bf}
 
+/* Kat's storybook/code desk and Dad's guildhall. */
+.late-note{display:inline-block;padding:.7rem 1rem;border:2px dashed var(--accent);background:var(--pale);font-family:'Pixelify Sans',system-ui,sans-serif!important;font-size:1rem!important;line-height:1.45!important;transform:rotate(-1deg)}
+.kat-secret,.dad-secret{display:none}
+body[data-theme="kat"]{--bg:#fff1f0;--ink:#443047;--muted:#695365;--forest:#725675;--forest-deep:#49344e;--pink:#f1a09d;--pale:#ffe0db;--accent:#a24e72;--line:#e5c4d2;--card:#fffaf7;--glow:rgba(216,111,146,.24);background-color:var(--bg);background-image:radial-gradient(circle at 88% 10%,#f4c4d388,transparent 34%),radial-gradient(circle at 13% 75%,#d4c1f077,transparent 32%),radial-gradient(var(--line) .8px,transparent .8px)}
+body[data-theme="kat"] .forest-panel,body[data-theme="kat"] .monster-panel{background:linear-gradient(150deg,#8c5e8b,#c9788d 80%,#dd957f)}
+body[data-theme="kat"] .game-card,body[data-theme="kat"] .game-card.featured,body[data-theme="kat"] .game-card:nth-child(2),body[data-theme="kat"] .game-card:nth-child(3),body[data-theme="kat"] .game-card:nth-child(4){background:#f3bfd0;color:#443047;border-color:#725675;box-shadow:0 8px 0 #725675,7px 15px 0 #dd897e}
+body[data-theme="kat"] .game-card h3,body[data-theme="kat"] .game-card p,body[data-theme="kat"] .game-card.featured p,body[data-theme="kat"] .game-card .status{color:#443047}
+body[data-theme="kat"] .game-card:nth-child(2){background:#dbc6ec}body[data-theme="kat"] .game-card:nth-child(3){background:#f6c6ad}body[data-theme="kat"] .game-card:nth-child(4){background:#d9d5ef}
+body[data-theme="kat"] .brand-mark{background:#ffe0db;color:#a24e72}body[data-theme="kat"] .brand-mark:after{content:'✎';position:absolute;right:-.45rem;bottom:-.65rem;font-size:.95rem;color:#a24e72}body[data-theme="kat"] .brand-mark{position:relative}
+body[data-theme="kat"] .about-card{background:repeating-linear-gradient(transparent 0 31px,#e5c4d24d 32px),var(--card)}
+body[data-theme="kat"] .kat-secret{display:block;border-left:4px solid #d88b8c;padding:.8rem 1rem;background:#ffe4df;color:#51334b}
+body[data-theme="kat"] .console{background:linear-gradient(145deg,#aa7994,#c88791)}
+body[data-theme="dad"]{--bg:#172219;--ink:#f6ead1;--muted:#d1c1a0;--forest:#31553b;--forest-deep:#11291c;--pink:#d0ad70;--pale:#334637;--accent:#e5c489;--line:#745e40;--card:#273728;--button-text:#fff8e9;--glow:rgba(215,172,99,.2);color-scheme:dark;background-color:var(--bg);background-image:radial-gradient(circle at 80% 13%,#71532d33,transparent 42%),radial-gradient(var(--line) .8px,transparent .8px)}
+body[data-theme="dad"] .forest-panel,body[data-theme="dad"] .monster-panel{background:linear-gradient(145deg,#294b33,#4b3d27);border-color:#9b774b}
+body[data-theme="dad"] .console{background:repeating-linear-gradient(100deg,#583e2b 0 12px,#624830 12px 24px,#533b2a 24px 32px);border-color:#a6834d;box-shadow:7px 9px 0 #111e15,0 0 0 3px #c3a16c}
+body[data-theme="dad"] .game-card,body[data-theme="dad"] .game-card.featured,body[data-theme="dad"] .game-card:nth-child(2),body[data-theme="dad"] .game-card:nth-child(3),body[data-theme="dad"] .game-card:nth-child(4){background:#39533b;border-color:#251f16;box-shadow:0 8px 0 #121b14,7px 15px 0 #937049}
+body[data-theme="dad"] .game-card:nth-child(2){background:#604936}body[data-theme="dad"] .game-card:nth-child(3){background:#486145}body[data-theme="dad"] .game-card:nth-child(4){background:#554638}
+body[data-theme="dad"] .brand-mark{font-size:0;position:relative;background:#3b3825;border-color:#d0ad70}body[data-theme="dad"] .brand-mark:before{content:'🛡️';font-size:1.5rem}
+body[data-theme="dad"] .dad-secret{display:block;border:3px double #bc955c;padding:1rem;background:#3b3224;color:#f6ead1}
+body[data-theme="dad"] .choice-button:hover{border-color:#d0ad70;box-shadow:0 0 0 2px #d0ad7055}
+
 </style>
   
 </head>
@@ -212,7 +233,7 @@ body[data-theme="gerald"] .home-preview,body[data-theme="gerald"] .home-controls
 
       <section class="view" id="view-about" aria-labelledby="about-title" hidden>
         <div class="section-heading"><p class="eyebrow">A NOTE FROM THE CREATOR</p><h2 id="about-title">Made with <em>mischief.</em></h2></div>
-        <div class="about-card"><span class="about-icon" aria-hidden="true">✿</span><p>Hi, I’m K. I make characters, collect stories, and enjoy making small interactive things with far too much personality. This is my little corner of the internet for games I build as I learn to code.</p><p>Pick a fate, try another ending, and come back when a new portal appears.</p><p class="gerald-secret">🤖 Gerald’s little status report: Pink lights on. Tiny glasses polished. Bow tie straightened. The arcade’s cozy cyber systems are operational. Beep boop. ♡</p><p class="derek-secret">✧ Derek’s cottage note: A fairy and a honey badger have borrowed the spellbook. The sunset looks like it’s trapped inside a bubble. There are choux pastries and shrimp chips on the table. Mind the doorway—you might stub your toe twice.</p><button type="button" class="primary-button" data-go="play">Into the forest <span aria-hidden="true">↗</span></button><button type="button" class="danger-button" id="do-not-press">DO NOT PRESS</button></div>
+        <div class="about-card"><span class="about-icon" aria-hidden="true">✿</span><p>Hi, I’m K. I make characters, collect stories, and enjoy making small interactive things with far too much personality. This is my little corner of the internet for games I build as I learn to code.</p><p>Pick a fate, try another ending, and come back when a new portal appears.</p><p class="late-note">✦ Totally not made at 2 a.m. The tiny dragon will corroborate this.</p><p class="kat-secret">✎ Kat’s margin note: An autistic author and coder built this corner one curious detail at a time. The draft has side quests, the code has personality, and there are probably twelve tabs open. ♡ &lt;/end note&gt;</p><p class="dad-secret">⚔ Dad’s guild notice: The lanterns are lit, the maps are unrolled, and the forest path is open. Come in from your quest; there’s a place by the fire.</p><p class="gerald-secret">🤖 Gerald’s little status report: Pink lights on. Tiny glasses polished. Bow tie straightened. The arcade’s cozy cyber systems are operational. Beep boop. ♡</p><p class="derek-secret">✧ Derek’s cottage note: A fairy and a honey badger have borrowed the spellbook. The sunset looks like it’s trapped inside a bubble. There are choux pastries and shrimp chips on the table. Mind the doorway—you might stub your toe twice.</p><button type="button" class="primary-button" data-go="play">Into the forest <span aria-hidden="true">↗</span></button><button type="button" class="danger-button" id="do-not-press">DO NOT PRESS</button></div>
       </section>
     </main>
 
@@ -226,7 +247,7 @@ body[data-theme="gerald"] .home-preview,body[data-theme="gerald"] .home-controls
   <div class="settings-panel" id="settings-panel" hidden>
     <div class="settings-heading"><strong>Little enchantments</strong><button type="button" id="settings-close" aria-label="Close settings">×</button></div>
     <label for="theme-select">Choose a look</label>
-    <select id="theme-select"><option value="fae">Fae Garden · pink + green</option><option value="derek">Derek’s Cottage · sage + velvet pink</option><option value="memaw">Memaw’s Purple Haven · lavender + plum</option><option value="ma">Ma’s Sunroom · practical + pretty</option><option value="gerald">Gerald’s Cyber Corner · pink + black</option><option value="mage">Moon Mage · lilac + midnight</option><option value="healer">Woodland Healer · mint + cream</option><option value="rogue">Rose Rogue · pink + charcoal</option><option value="dragon">Dragon Grove · ember + pine</option><option value="fairy">Candy Fairy · pastel daydream</option></select>
+    <select id="theme-select"><option value="fae">Fae Garden · pink + green</option><option value="kat">Kat’s Margins · pastel + salmon</option><option value="dad">Dad’s Guildhall · forest + wood</option><option value="derek">Derek’s Cottage · sage + velvet pink</option><option value="memaw">Memaw’s Purple Haven · lavender + plum</option><option value="ma">Ma’s Sunroom · practical + pretty</option><option value="gerald">Gerald’s Cyber Corner · pink + black</option><option value="mage">Moon Mage · lilac + midnight</option><option value="healer">Woodland Healer · mint + cream</option><option value="rogue">Rose Rogue · pink + charcoal</option><option value="dragon">Dragon Grove · ember + pine</option><option value="fairy">Candy Fairy · pastel daydream</option></select>
     <label for="volume-select">Beep boop level</label>
     <select id="volume-select"><option value="0">Silent</option><option value="1">Polite</option><option value="2">Beepy</option><option value="3">Goblin Mode</option></select>
     <p>Sounds play only after you turn them on. Your settings stay on this device.</p>
@@ -366,7 +387,7 @@ function readSaved() {
   try {
     const value = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
     return {
-      theme: Object.hasOwn( { fae:1,derek:1,memaw:1,ma:1,gerald:1,mage:1,healer:1,rogue:1,dragon:1,fairy:1 }, value.theme) ? value.theme : 'fae',
+      theme: Object.hasOwn( { fae:1,kat:1,dad:1,derek:1,memaw:1,ma:1,gerald:1,mage:1,healer:1,rogue:1,dragon:1,fairy:1 }, value.theme) ? value.theme : 'fae',
       volume: [0,1,2,3].includes(value.volume) ? value.volume : 0,
       endings: Array.isArray(value.endings) ? value.endings.filter(id => ENDINGS[id]) : [],
       achievements: Array.isArray(value.achievements) ? value.achievements.filter(id => ACHIEVEMENTS.some(a => a.id === id)) : [],
