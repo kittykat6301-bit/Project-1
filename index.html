@@ -7,7 +7,7 @@
   <title>Kat’s Corner — a tiny enchanted arcade</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23173c31'/%3E%3Cpath d='M32 9c-5 13-16 17-16 29a16 16 0 0 0 32 0C48 26 37 22 32 9Z' fill='%23f2a9c7'/%3E%3Cpath d='M22 39c7-2 13-8 20-18M31 36c-3-1-5-4-6-7' stroke='%23173c31' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
   <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Pixelify+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Pixelify+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
 
 :root{font-family:'DM Sans',system-ui,sans-serif;color-scheme:light;--bg:#f9f7ed;--ink:#193a30;--muted:#5d7668;--forest:#173c31;--forest-deep:#102d27;--pink:#f2a9c7;--pale:#ffe7ef;--accent:#d94c83;--line:#d8e5d7;--card:#fffef9;--button-text:#fff;--glow:rgba(217,76,131,.24)}
 body[data-theme="mage"]{--bg:#f3f0fa;--ink:#2f274f;--muted:#6d6486;--forest:#292145;--forest-deep:#1b1731;--pink:#c8a8fc;--pale:#eae2ff;--accent:#8655db;--line:#ddd2f5;--card:#fffaff;--glow:rgba(134,85,219,.22)}
@@ -413,6 +413,29 @@ body[data-theme="gerald"]{--header-surface:#181320f6;--header-ink:#ffecf6;--head
 @media(max-width:950px){.arcade-stage.is-game .game-layout{grid-template-columns:minmax(0,1fr)}.arcade-stage.is-game .forest-panel{min-height:300px}.arcade-stage.is-game .story-panel{min-height:410px}}
 @media(max-width:760px){.site-header{min-height:79px}.site-header .menu-toggle{margin-left:auto}.mobile-menu:not([hidden]){background:var(--header-surface);padding:.7rem}.arcade-stage.is-game .console{width:min(620px,96%)}.arcade-stage.is-game .slot-cartridge{width:min(445px,84%)}.arcade-stage.is-game .tv-chin{gap:.45rem}}
 @media(max-width:540px){.site-header .brand{font-size:1.08rem}.arcade-stage.is-game .tv-chin{font-size:.86rem;min-height:55px}.arcade-stage.is-game .console{width:98%;padding:12px 10px 10px}.arcade-stage.is-game .console-top{font-size:.98rem}.arcade-stage.is-game .console-top small{font-size:.55rem}.arcade-stage.is-game .slot-cartridge{top:62px;width:85%;height:76px;font-size:.78rem}.arcade-stage.is-game .cartridge-slot{margin-top:85px;width:84%}.arcade-stage.is-game .console-bottom{font-size:.58rem}}
+/* Larger, clear console lettering; the empty slot label gets its own row. */
+.tv-chin,.arcade-stage .console,.tv-power,.tv-channel,.eject-button{font-family:'Space Mono','Courier New',monospace}
+.tv-chin{font-size:clamp(.8rem,1.35vw,1rem);letter-spacing:0;gap:.55rem;min-height:64px}
+.tv-chin small{font-size:.7rem;letter-spacing:.08em;line-height:1.3}
+.tv-channel{font:700 .82rem 'Space Mono','Courier New',monospace;letter-spacing:0}
+.arcade-stage .console-top{gap:.55rem;line-height:1.4}
+.arcade-stage .console-top>span{font-weight:700;min-width:0;overflow-wrap:anywhere}
+.arcade-stage .console-top small{font-size:.76rem;opacity:1;letter-spacing:0;line-height:1.45}
+.arcade-stage .console-bottom{font-size:.7rem;line-height:1.4}
+.arcade-stage .console-light,.arcade-stage .eject-button{font-family:'Space Mono','Courier New',monospace;font-weight:700}
+.arcade-preview .console{display:flex;flex-direction:column;gap:0;min-height:160px;padding:15px 20px 13px;margin:18px auto 0}
+.arcade-preview .console-top{min-height:42px;flex:none}
+.arcade-preview .cartridge-slot{flex:none;width:min(76%,420px);height:16px;margin:8px auto 34px}
+.arcade-preview #slot-placeholder{top:17px;width:max-content;max-width:min(95vw,470px);padding:0 .35rem;white-space:normal;line-height:1.45;font:700 clamp(.68rem,1.25vw,.88rem) 'Space Mono','Courier New',monospace;letter-spacing:0;text-shadow:0 1px 0 #fff4}
+.arcade-preview .console-bottom{min-height:34px;margin-top:0;align-items:center}
+.arcade-preview .slot-cartridge{top:64px}
+.arcade-preview:is(.has-cartridge,.is-loading) .cartridge-slot{margin-bottom:93px}
+.arcade-preview:is(.has-cartridge,.is-loading) .console{min-height:220px}
+.tv-idle-content{max-width:100%;font-family:'Space Mono','Courier New',monospace;overflow-wrap:anywhere}
+.tv-idle-content strong{font-family:'Pixelify Sans',system-ui,sans-serif}
+.tv-idle-content span:not(.tv-star){font-size:clamp(.86rem,1.9vw,1.35rem);font-weight:700;line-height:1.4}
+.tv-idle-content small{font-size:clamp(.71rem,1.1vw,.93rem);line-height:1.55;letter-spacing:0}
+@media(max-width:600px){.arcade-preview .console{width:96%;padding:12px 10px 11px;min-height:163px}.arcade-preview .console-top{font-size:.85rem;min-height:49px}.arcade-preview .console-top small{font-size:.64rem;line-height:1.3}.arcade-preview .cartridge-slot{width:78%;margin:7px auto 38px}.arcade-preview #slot-placeholder{font-size:.69rem}.arcade-preview .console-bottom{font-size:.58rem;gap:.35rem}.tv-chin{min-height:62px}.tv-idle-content{padding:1.3rem .8rem}}
 </style>
   
 </head>
@@ -484,10 +507,10 @@ body[data-theme="gerald"]{--header-surface:#181320f6;--header-ink:#ffecf6;--head
             <div class="tv-screen tv-idle" id="library-screen" role="status" aria-live="polite">
               <div class="tv-idle-content"><span class="tv-star" aria-hidden="true">✦</span><strong id="tv-broadcast-title">KAT’S CORNER</strong><span id="tv-broadcast-subtitle">CHOOSE A CARTRIDGE BELOW</span><small id="tv-broadcast-tagline">PRESS START · MAKE TROUBLE · HAVE FUN</small></div>
             </div>
-            <div class="tv-chin"><span>KC DREAMVISION <small>COLOR TV</small></span><span class="tv-control-lights" aria-hidden="true"><i></i><i></i><i></i></span><button class="tv-channel" id="tv-channel" type="button" aria-label="Change silly TV channel" title="Change channel">CH ↻</button><button class="tv-power" id="tv-power" type="button" aria-pressed="true" aria-label="Turn TV off" title="Turn TV off">⏻</button></div>
+            <div class="tv-chin"><span>KAT’S STORYBOX <small>MAGIC-VISION COLOR TV</small></span><span class="tv-control-lights" aria-hidden="true"><i></i><i></i><i></i></span><button class="tv-channel" id="tv-channel" type="button" aria-label="Change silly TV channel" title="Change channel">CH ↻</button><button class="tv-power" id="tv-power" type="button" aria-pressed="true" aria-label="Turn TV off" title="Turn TV off">⏻</button></div>
           </div>
           <div class="console" aria-label="Game console">
-            <div class="console-top"><span>KC <small>POCKET QUEST SYSTEM</small></span><button class="console-light" id="console-power" type="button" aria-pressed="true" aria-label="Turn TV off" title="Turn TV off">POWER</button></div>
+            <div class="console-top"><span>KAT’S <small>POCKET QUEST DECK</small></span><button class="console-light" id="console-power" type="button" aria-pressed="true" aria-label="Turn TV off" title="Turn TV off">POWER</button></div>
             <div class="cartridge-slot" id="cartridge-slot"><span id="slot-placeholder">▼ INSERT CARTRIDGE ▼</span></div>
             <div class="slot-cartridge" id="slot-cartridge" aria-hidden="true"><span id="slot-title">CHOOSE YOUR FATE</span><small id="slot-number">QUEST 001</small></div>
             <div class="console-bottom"><span>✦ FOUR GAMES READY</span><button type="button" id="eject-cartridge" class="eject-button" aria-label="Eject cartridge">⏏ EJECT</button><span>04 / 12 CASES PLAYABLE</span></div>
@@ -1115,7 +1138,14 @@ const TV_CHANNELS = [
   ['DRAGON WEATHER','CLOUDY WITH A CHANCE OF SNACKS','TINY ROARS FORECAST AFTER TEA'],
   ['GOBLIN SHOPPING','EVERYTHING MUST GO!','POSSIBLY BECAUSE IT WAS STOLEN'],
   ['COTTAGE CAM','THE KETTLE IS ON','BREAKING NEWS: HONEY BADGER NAPPING'],
-  ['THE MYSTERY CHANNEL','THIS CHANNEL IS HAUNTED','THE GHOST IS VERY POLITE']
+  ['THE MYSTERY CHANNEL','THIS CHANNEL IS HAUNTED','THE GHOST IS VERY POLITE'],
+  ['BUBBLE SUNSET','A WHOLE SKY IN ONE LITTLE BUBBLE','DEREK REQUESTED EXTRA PERIWINKLE'],
+  ['MEMAW’S PARLOR','TEA AT FOUR. QUESTS AT FIVE.','THE PURPLE ARMCHAIR KNOWS EVERYTHING'],
+  ['MA’S LIVING ROOM','EVERYTHING HAS A PLACE','YES, EVEN THE DRAGON. USE A COASTER.'],
+  ['DAD’S GUILD','HALL OF STONE, HEART OF GOLD','NOTICE: DAD’S ARMS ARE ALWAYS OPEN'],
+  ['GERALD FM','BEEP BOOP. HEART.EXE IS WARM.','PINK NEON HEARTS AT MIDNIGHT'],
+  ['SHRIMP CHIP ALERT','THE BAG IS SUSPICIOUSLY EMPTY','A HONEY BADGER DENIES ALL INVOLVEMENT'],
+  ['WRITER’S HOUR','CHAPTER 249: THE TINY DETOUR','PLOT TWIST: THE INK HAS ESCAPED']
 ];
 let tvOn = true, channelIndex = 0, queuedCartridge = null, bootButton = null, bootTimer = null, screenTaps = 0;
 function renderTvChannel() {
@@ -1159,7 +1189,7 @@ function setTvPower(on) {
     queuedCartridge = null;
     stage.classList.remove('has-cartridge');
     insertCartridge(button);
-  } else note(on ? '✦ The Dreamvision hums to life.' : 'The TV has gone to sleep. Shhh.');
+  } else note(on ? '✦ Kat’s Storybox hums to life.' : 'The TV has gone to sleep. Shhh.');
 }
 $('#tv-power').addEventListener('click', () => setTvPower(!tvOn));
 $('#console-power').addEventListener('click', () => setTvPower(!tvOn));
@@ -1485,10 +1515,10 @@ function mountGameStages() {
     const inner = document.createElement('div'); inner.className = 'tv-screen-inner';
     screen.append(inner);
     const chin = document.createElement('div'); chin.className = 'tv-chin';
-    chin.innerHTML = '<span>KC DREAMVISION <small>COLOR TV</small></span><span class="tv-control-lights" aria-hidden="true"><i></i><i></i><i></i></span><button class="tv-power" type="button" aria-pressed="true" aria-label="Turn TV off" title="Turn TV off">⏻</button>';
+    chin.innerHTML = '<span>KAT’S STORYBOX <small>MAGIC-VISION COLOR TV</small></span><span class="tv-control-lights" aria-hidden="true"><i></i><i></i><i></i></span><button class="tv-power" type="button" aria-pressed="true" aria-label="Turn TV off" title="Turn TV off">⏻</button>';
     tv.append(screen,chin);
     const consoleBox = document.createElement('div'); consoleBox.className = 'console'; consoleBox.setAttribute('aria-label',`${info.title} cartridge inserted in the console`);
-    consoleBox.innerHTML = `<div class="console-top"><span>KC <small>POCKET QUEST SYSTEM</small></span><button class="console-light" type="button" aria-pressed="true" aria-label="Turn TV off" title="Turn TV off">POWER</button></div><div class="cartridge-slot"></div><div class="slot-cartridge" aria-hidden="true"><span>${info.title}</span><small>${info.number}</small></div><div class="console-bottom"><span>✦ CARTRIDGE LOADED</span><button class="eject-button" type="button" aria-label="Eject cartridge and return to Library">⏏ EJECT</button><span>PRESS START ON SCREEN</span></div>`;
+    consoleBox.innerHTML = `<div class="console-top"><span>KAT’S <small>POCKET QUEST DECK</small></span><button class="console-light" type="button" aria-pressed="true" aria-label="Turn TV off" title="Turn TV off">POWER</button></div><div class="cartridge-slot"></div><div class="slot-cartridge" aria-hidden="true"><span>${info.title}</span><small>${info.number}</small></div><div class="console-bottom"><span>✦ CARTRIDGE LOADED</span><button class="eject-button" type="button" aria-label="Eject cartridge and return to Library">⏏ EJECT</button><span>PRESS START ON SCREEN</span></div>`;
     content.before(stage); inner.append(content); stage.append(tv,consoleBox);
     const gamePowerButtons = [chin.querySelector('.tv-power'), consoleBox.querySelector('.console-light')];
     function setGamePower(powered, announce = true) {
