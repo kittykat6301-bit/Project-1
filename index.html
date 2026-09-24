@@ -132,15 +132,89 @@ body[data-theme="dad"] .choice-button:hover{border-color:#d0ad70;box-shadow:0 0 
 
 /* Goblin Grab cartridge */
 .goblin-shell{max-width:870px;margin:auto;padding:1.1rem;background:var(--card);border:4px solid var(--forest);box-shadow:7px 7px 0 var(--pink)}
-/* Theme scenery: parchment, cabin planks, and guildhall masonry. */
-body[data-theme="kat"]{background-image:radial-gradient(ellipse at 17% 14%,#fff9ebaa,transparent 50%),repeating-linear-gradient(0deg,transparent 0 35px,#a9597721 36px,#a9597721 37px),linear-gradient(110deg,#fae5d8,#ffeff1 45%,#eed5c5)}
-body[data-theme="kat"] .about-card,body[data-theme="kat"] .story-panel,body[data-theme="kat"] .home-controls{background:linear-gradient(110deg,#e9c99544,transparent 15% 84%,#dfb18a44),repeating-linear-gradient(0deg,transparent 0 33px,#af7f7833 34px,#af7f7833 35px),#fff2da;border-color:#9e6a72;box-shadow:6px 6px 0 #d995a8;color:#443047}
-body[data-theme="kat"] .story-content,body[data-theme="kat"] .about-card p{color:#443047}body[data-theme="kat"] .section-heading,body[data-theme="kat"] .section-heading p:last-child{color:#52364b}
+/* Room-wide scenery for Kat, Derek, and Dad. Every view inherits its theme. */
+body[data-theme="kat"]{
+  --room-surface:linear-gradient(90deg,#b87d8442 0 5px,transparent 5px calc(100% - 6px),#b87d8442 calc(100% - 6px)),repeating-linear-gradient(0deg,transparent 0 32px,#b57b8540 33px,#b57b8540 34px),linear-gradient(120deg,#fff8e7,#f9e8d1 65%,#f4ddcb);
+  background-color:#f2d6c8;
+  background-image:radial-gradient(ellipse at 24% 30%,#fff9e9 0 32%,transparent 76%),repeating-linear-gradient(0deg,transparent 0 35px,#a66b7433 36px,#a66b7433 37px),linear-gradient(90deg,#dcaab2 0 3%,#fce8db 5% 95%,#dba9b1 97%);
+  background-attachment:fixed;
+}
+body[data-theme="kat"] .shell{background:linear-gradient(90deg,#b96f8459 0 3px,#fff0dcaa 4px 96%,#b96f8459 calc(100% - 3px));box-shadow:0 0 0 1px #ad728058,0 0 38px #74536229}
+body[data-theme="kat"] :is(.story-panel,.about-card,.build-card,.achievement,.ending-shelf,.home-start,.home-preview,.home-controls,.goblin-shell,.settings-panel,.control-dock){background-color:#fff0d8;background-image:var(--room-surface);border-color:#9e6a72;color:#443047}
+body[data-theme="kat"] :is(.story-panel,.about-card,.build-card,.achievement,.home-start,.home-preview,.home-controls,.goblin-shell){box-shadow:5px 6px 0 #d995a8}
+body[data-theme="kat"] :is(.choice-button,.name-row input,.home-option){background-color:#fff4e5;background-image:repeating-linear-gradient(0deg,transparent 0 29px,#ba8b9333 30px,#ba8b9333 31px);color:#443047}
+body[data-theme="kat"] .forest-panel,body[data-theme="kat"] .monster-panel{background:repeating-linear-gradient(90deg,#f6bfc520 0 2px,transparent 2px 17px),linear-gradient(145deg,#624462,#99627b 64%,#c98289);border-color:#b67982}
+body[data-theme="kat"] .section-heading{padding:.9rem 1.2rem;background:var(--room-surface);border-left:5px solid #b77483;box-shadow:4px 4px 0 #e9b1a7;color:#52364b}
+body[data-theme="kat"] .section-heading p:last-child,body[data-theme="kat"] .about-card p{color:#52364b}
+body[data-theme="kat"] .game-card{background-image:linear-gradient(90deg,#fff7e150 0 4px,transparent 4px calc(100% - 5px),#fff7e150 calc(100% - 5px)),repeating-linear-gradient(0deg,transparent 0 26px,#8e5a7050 27px,#8e5a7050 28px)}
 body[data-theme="kat"] .story-panel:before{content:'✒   ✧   Once upon a side quest   ✧';display:block;width:fit-content;max-width:100%;padding:.2rem .7rem;margin-bottom:1rem;border-bottom:2px solid #b37378;font:700 .9rem 'Pixelify Sans',system-ui,sans-serif;color:#915275}
-body[data-theme="derek"]{background-image:repeating-linear-gradient(0deg,#0e1a1d99 0 4px,transparent 4px 114px,#c39a7755 114px 118px),repeating-linear-gradient(90deg,#26332f 0 160px,#33413a 160px 320px,#292f33 320px 480px);background-size:auto,480px 240px}
-body[data-theme="derek"] .shell{background:linear-gradient(90deg,#182124e0,transparent 22% 78%,#182124e0)}
-body[data-theme="dad"]{background-image:repeating-linear-gradient(0deg,#101b1599 0 4px,transparent 4px 95px),repeating-linear-gradient(90deg,#566049 0 3px,#28382d 3px 155px,#645d45 155px 159px,#304132 159px 310px);background-size:auto,310px 190px}
-body[data-theme="dad"] .shell{background:linear-gradient(90deg,#15231cbb,transparent 22% 78%,#15231cbb)}
+body[data-theme="derek"]{
+  --room-surface:repeating-linear-gradient(90deg,#a6775124 0 2px,transparent 2px 18px,#e4b08b0a 19px 22px),linear-gradient(135deg,#35443d,#293934 65%,#3d343b);
+  background-color:#352b26;
+  background-image:radial-gradient(ellipse at 24% 34%,#1a13126e 0 5px,transparent 6px 21px,#1a13124a 22px 25px,transparent 26px),repeating-linear-gradient(0deg,#171918 0 5px,#9c75505c 5px 7px,transparent 7px 119px,#d6a57535 120px 122px),repeating-linear-gradient(90deg,#352920 0 68px,#463427 68px 130px,#3d3027 130px 230px);
+  background-size:420px 240px,auto,460px 240px;
+  background-attachment:fixed;
+}
+body[data-theme="derek"] .shell{background:linear-gradient(90deg,#1b1715aa,transparent 12% 88%,#1b1715aa)}
+body[data-theme="derek"] :is(.story-panel,.about-card,.build-card,.achievement,.ending-shelf,.home-start,.home-preview,.home-controls,.goblin-shell,.settings-panel,.control-dock){background-color:#2c3a35;background-image:var(--room-surface);border-color:#ab8972;color:#f9f1ed}
+body[data-theme="derek"] :is(.choice-button,.home-option){background-image:repeating-linear-gradient(90deg,#ad816a14 0 2px,transparent 2px 25px);border-color:#a9c8b0}
+body[data-theme="derek"] .forest-panel,body[data-theme="derek"] .monster-panel{background:repeating-linear-gradient(0deg,#2e252933 0 4px,transparent 4px 93px,#d6a57a44 93px 96px),repeating-linear-gradient(90deg,#335346 0 80px,#614b42 80px 160px,#445245 160px 250px);border-color:#ceac97}
+body[data-theme="derek"] .section-heading{padding:.9rem 1.2rem;background:linear-gradient(90deg,#344139ed,#544037ed);border:2px solid #ad8066;box-shadow:5px 5px 0 #211b1a;color:#f9f1ed}
+body[data-theme="derek"] .game-card{background-image:repeating-linear-gradient(90deg,#ffe1c91c 0 1px,transparent 1px 19px,#120e0d1c 20px 22px)}
+body[data-theme="dad"]{
+  --room-surface:repeating-linear-gradient(90deg,#c6a46a19 0 2px,transparent 2px 24px),linear-gradient(145deg,#304432,#253a2d 55%,#3c3729);
+  background-color:#233329;
+  background-image:radial-gradient(circle at 78% 18%,#b7904644,transparent 35%),linear-gradient(90deg,transparent 0 47%,#111e18 47% 49%,transparent 49% 100%),linear-gradient(90deg,#111e18 0 3%,transparent 3% 100%),repeating-linear-gradient(0deg,#132019 0 5px,#304036 5px 107px,#14231b 107px 113px);
+  background-size:auto,420px 226px,420px 226px,auto;
+  background-position:0 0,210px 113px,0 0,0 0;
+  background-attachment:fixed;
+}
+body[data-theme="dad"] .shell{background:linear-gradient(90deg,#14241ccc,transparent 14% 86%,#14241ccc)}
+body[data-theme="dad"] :is(.story-panel,.about-card,.build-card,.achievement,.ending-shelf,.home-start,.home-preview,.home-controls,.goblin-shell,.settings-panel,.control-dock){background-color:#283a2c;background-image:var(--room-surface);border-color:#a58455;color:#f6ead1}
+body[data-theme="dad"] :is(.choice-button,.home-option){background-image:repeating-linear-gradient(90deg,#b8945c15 0 2px,transparent 2px 27px);border-color:#947951}
+body[data-theme="dad"] .forest-panel,body[data-theme="dad"] .monster-panel{background:linear-gradient(90deg,transparent 0 48%,#14231b44 48% 50%,transparent 50%),repeating-linear-gradient(0deg,#17281e 0 4px,#465547 4px 89px,#a181554d 89px 94px);border-color:#b38b54}
+body[data-theme="dad"] .section-heading{padding:.9rem 1.2rem;background:linear-gradient(120deg,#273d2fee,#3e3c2cee);border:3px double #bc985f;box-shadow:5px 5px 0 #121e17;color:#f6ead1}
+body[data-theme="dad"] .game-card{background-image:repeating-linear-gradient(90deg,#c7a7761a 0 2px,transparent 2px 26px,#0d180f24 27px 30px)}
+/* The scene follows the player between cartridges, stories, and the About page. */
+body[data-theme="kat"] :is(.section-heading h2,.forest-panel h1,.story-content h2,.about-card h2){font-family:Georgia,serif;letter-spacing:-.055em}
+body[data-theme="kat"] .section-heading:before{content:'✒  ·  THE OPEN MANUSCRIPT  ·  ✧';display:block;margin-bottom:.45rem;color:#98506c;font:700 .9rem 'Pixelify Sans',system-ui,sans-serif;letter-spacing:.07em}
+body[data-theme="kat"] .ambient{opacity:.3}body[data-theme="kat"] .ambient span{color:#a96685}
+body[data-theme="kat"] .site-header{border-bottom:3px double #a96a7c}
+body[data-theme="kat"] .console{background-image:linear-gradient(90deg,#552f5633 0 5%,transparent 5%),repeating-linear-gradient(0deg,#fbdcc229 0 2px,transparent 2px 27px),linear-gradient(145deg,#916585,#b77f8f)}
+body[data-theme="derek"] :is(.section-heading h2,.forest-panel h1,.story-content h2){font-family:Georgia,serif;letter-spacing:-.045em}
+body[data-theme="derek"] .section-heading:before{content:'✿  ·  THE COTTAGE BY THE WOODS  ·  ✧';display:block;margin-bottom:.45rem;color:#f3b3d0;font:700 .9rem 'Pixelify Sans',system-ui,sans-serif;letter-spacing:.07em}
+body[data-theme="derek"] .ambient:before{content:'';position:absolute;right:2vw;top:14vh;width:clamp(90px,14vw,180px);aspect-ratio:1;border:10px solid #8d694c;border-radius:50%;background:linear-gradient(90deg,transparent 46%,#765540 46% 54%,transparent 54%),linear-gradient(0deg,transparent 46%,#765540 46% 54%,transparent 54%),radial-gradient(circle at 42% 38%,#ffd5c9 0 15%,#c4a7ce 35%,#748993 75%);box-shadow:0 0 0 5px #3c2e29,0 0 48px #f4bdbd80;opacity:.9}
+body[data-theme="derek"] .site-header{border-bottom:3px solid #9e765d;background:linear-gradient(90deg,#513e3666,#4b5d4b33,#513e3666)}
+body[data-theme="derek"] .console{background-image:repeating-linear-gradient(90deg,#d8ad8140 0 2px,transparent 2px 20px),linear-gradient(145deg,#4c624e,#694a58);border-color:#a18167}
+body[data-theme="dad"] :is(.section-heading h2,.forest-panel h1,.story-content h2){font-family:Georgia,serif;letter-spacing:-.045em}
+body[data-theme="dad"] .section-heading:before{content:'⚔  ·  THE GUILD RECORDS  ·  ✦';display:block;margin-bottom:.45rem;color:#e5c489;font:700 .9rem 'Pixelify Sans',system-ui,sans-serif;letter-spacing:.07em}
+body[data-theme="dad"] .ambient:before,body[data-theme="dad"] .ambient:after{content:'✦';position:absolute;top:19vh;font-size:clamp(3.5rem,8vw,7rem);color:#f3c57e;text-shadow:0 0 12px #ffc478,0 0 40px #e8975b,0 0 90px #e8975b;opacity:.7}body[data-theme="dad"] .ambient:before{left:2vw}body[data-theme="dad"] .ambient:after{right:2vw}
+body[data-theme="dad"] .site-header{border-bottom:4px double #b2945f;background:linear-gradient(90deg,#2d241cb3,#1c3326a6,#2d241cb3)}
+body[data-theme="dad"] :is(.game-layout,.home-start,.home-preview,.home-controls,.build-card,.goblin-shell){box-shadow:5px 6px 0 #151e15,0 0 0 2px #91745077}
+body[data-theme="dad"] .console{background-image:repeating-linear-gradient(90deg,#38281c 0 4px,transparent 4px 65px,#a9804c55 65px 68px),linear-gradient(145deg,#433526,#624831);border-color:#bc985f}
+/* Keep each room's colors on its buttons, cartridges, panels, and labels. */
+body[data-theme="kat"]{--bg:#fde8e1;--ink:#503448;--muted:#75596c;--forest:#76516d;--forest-deep:#4d3454;--pink:#f4a2a3;--pale:#ffe1d8;--accent:#aa4c6e;--line:#dcb1bd;--card:#fff0da;--button-text:#fffaf3}
+body[data-theme="kat"] .game-card:nth-child(5){background-color:#f3cfb7}
+body[data-theme="kat"] :is(.start-screen .start-icon,.creature-portrait,.game-card .card-icon,.build-tag,.achievement-icon){background-color:#ffe0d7;color:#804a64}
+body[data-theme="kat"] .primary-button{background-color:#76516d;border-color:#4d3454;color:#fffaf3}
+body[data-theme="kat"] .game-card .primary-button{background-color:#ffe5d4;border-color:#4d3454;color:#503448}
+body[data-theme="kat"] .game-card .primary-button:hover{background-color:#f4a2a3}
+body[data-theme="derek"]{--bg:#222b2c;--ink:#fff2f5;--muted:#d0c8d7;--forest:#547563;--forest-deep:#243c38;--pink:#e9a6ca;--pale:#394947;--accent:#f0b3d7;--line:#887b91;--card:#313c41;--button-text:#fff9f4;color-scheme:dark}
+body[data-theme="derek"]{--room-surface:repeating-linear-gradient(90deg,#d8aa8a1d 0 2px,transparent 2px 22px),radial-gradient(circle at 85% 12%,#82749a55,transparent 38%),linear-gradient(130deg,#354e43,#393f52 60%,#594453)}
+body[data-theme="derek"] .section-heading{background:linear-gradient(115deg,#385b4add,#5f4e70ee 70%,#78556dee);border-color:#e9a6ca}
+body[data-theme="derek"] .forest-panel,body[data-theme="derek"] .monster-panel{background:radial-gradient(circle at 80% 20%,#b1a4d363,transparent 45%),repeating-linear-gradient(0deg,#2e252933 0 4px,transparent 4px 93px,#d6a57a44 93px 96px),linear-gradient(125deg,#365d4c,#5d5169 72%,#765165)}
+body[data-theme="derek"] .game-card:nth-child(3){background-color:#50675c}body[data-theme="derek"] .game-card:nth-child(4){background-color:#676381}body[data-theme="derek"] .game-card:nth-child(5){background-color:#6c5369}
+body[data-theme="derek"] :is(.home-option,.choice-button,.settings-panel select){background-color:#3d4d4b;color:#fff2f5;border-color:#a7a0be}
+body[data-theme="derek"] .primary-button{background-color:#e9a6ca;border-color:#795777;color:#2f2739}
+body[data-theme="derek"] .primary-button:hover{background-color:#efc0dc}
+body[data-theme="dad"]{--bg:#1c2d22;--ink:#f8eed8;--muted:#d5c5a9;--forest:#31543a;--forest-deep:#18291d;--pink:#c9a36e;--pale:#384938;--accent:#e6c185;--line:#846c48;--card:#2d3c2d;--button-text:#fff8e9}
+body[data-theme="dad"]{--room-surface:repeating-linear-gradient(90deg,#d0a77120 0 2px,transparent 2px 25px),radial-gradient(circle at 80% 15%,#976d3152,transparent 40%),linear-gradient(130deg,#294631,#293b2e 58%,#4b3d2c)}
+body[data-theme="dad"] .game-card:nth-child(5){background-color:#405a42}
+body[data-theme="dad"] :is(.build-tag,.coming-pill,.story-kicker,.achievement-icon){background-color:#435239;color:#ffe0a4}
+body[data-theme="dad"] :is(.choice-button,.home-option,.settings-panel select){background-color:#344936;color:#fff1da;border-color:#a48757}
+body[data-theme="dad"] .primary-button{background-color:#3f653f;border-color:#b7955c;color:#fff8e9}
+body[data-theme="dad"] .primary-button:hover{background-color:#547a4a}
+@media(max-width:760px){body[data-theme="derek"] .ambient:before{opacity:.32;top:6vh}body[data-theme="dad"] .ambient:before,body[data-theme="dad"] .ambient:after{opacity:.25}}
 .goblin-intro{text-align:center;padding:2.2rem 1rem}.goblin-intro .start-icon{font-size:4rem}.goblin-intro h3,.goblin-result h3{font-size:clamp(2rem,5vw,3rem);margin:.5rem 0}.goblin-intro p,.goblin-result p{max-width:520px;margin:1rem auto;color:var(--muted)}
 .goblin-hud{display:flex;justify-content:space-between;gap:.6rem;flex-wrap:wrap;font:700 1.2rem 'Pixelify Sans',system-ui,sans-serif;margin-bottom:.7rem}.goblin-hud span{background:var(--pale);color:var(--ink);border:2px solid var(--forest);padding:.3rem .65rem}
 .goblin-field{position:relative;overflow:hidden;border:4px solid var(--forest-deep);background:#253b37;touch-action:none;cursor:none}.goblin-field canvas{display:block;width:100%;height:auto;aspect-ratio:640/440}.goblin-field:focus-visible{outline:4px solid var(--accent);outline-offset:3px}.goblin-result{text-align:center;padding:1.1rem}.goblin-result .result-icon{font-size:3.5rem}.goblin-help{font-size:.9rem;color:var(--muted);margin:.75rem 0 0;text-align:center}
@@ -501,6 +575,7 @@ function setTheme(theme) {
   if (!$('#theme-select').querySelector(`option[value="${theme}"]`)) return;
   saved.theme = theme;
   document.body.dataset.theme = theme;
+  document.querySelector('meta[name="theme-color"]').setAttribute('content', getComputedStyle(document.body).getPropertyValue('--forest').trim());
   $('#theme-select').value = theme;
   save();
 }
