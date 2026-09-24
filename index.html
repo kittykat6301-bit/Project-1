@@ -108,7 +108,7 @@ body[data-theme="gerald"] .home-preview,body[data-theme="gerald"] .home-controls
 
 /* Kat's storybook/code desk and Dad's guildhall. */
 .late-note{display:inline-block;padding:.7rem 1rem;border:2px dashed var(--accent);background:var(--pale);font-family:'Pixelify Sans',system-ui,sans-serif!important;font-size:1rem!important;line-height:1.45!important;transform:rotate(-1deg)}
-.kat-secret,.dad-secret{display:none}
+.kat-secret,.dad-secret,.memaw-secret,.ma-secret{display:none}
 body[data-theme="kat"]{--bg:#fff1f0;--ink:#443047;--muted:#695365;--forest:#725675;--forest-deep:#49344e;--pink:#f1a09d;--pale:#ffe0db;--accent:#a24e72;--line:#e5c4d2;--card:#fffaf7;--glow:rgba(216,111,146,.24);background-color:var(--bg);background-image:radial-gradient(circle at 88% 10%,#f4c4d388,transparent 34%),radial-gradient(circle at 13% 75%,#d4c1f077,transparent 32%),radial-gradient(var(--line) .8px,transparent .8px)}
 body[data-theme="kat"] .forest-panel,body[data-theme="kat"] .monster-panel{background:linear-gradient(150deg,#8c5e8b,#c9788d 80%,#dd957f)}
 body[data-theme="kat"] .game-card,body[data-theme="kat"] .game-card.featured,body[data-theme="kat"] .game-card:nth-child(2),body[data-theme="kat"] .game-card:nth-child(3),body[data-theme="kat"] .game-card:nth-child(4){background:#f3bfd0;color:#443047;border-color:#725675;box-shadow:0 8px 0 #725675,7px 15px 0 #dd897e}
@@ -125,7 +125,26 @@ body[data-theme="dad"] .game-card,body[data-theme="dad"] .game-card.featured,bod
 body[data-theme="dad"] .game-card:nth-child(2){background:#604936}body[data-theme="dad"] .game-card:nth-child(3){background:#486145}body[data-theme="dad"] .game-card:nth-child(4){background:#554638}
 body[data-theme="dad"] .brand-mark{font-size:0;position:relative;background:#3b3825;border-color:#d0ad70}body[data-theme="dad"] .brand-mark:before{content:'🛡️';font-size:1.5rem}
 body[data-theme="dad"] .dad-secret{display:block;border:3px double #bc955c;padding:1rem;background:#3b3224;color:#f6ead1}
+body[data-theme="memaw"] .memaw-secret{display:block;border:2px solid #ae87cc;background:#f1e5fa;color:#49335c;padding:1rem 1.2rem;box-shadow:4px 4px 0 #d9bee9}
+body[data-theme="ma"] .ma-secret{display:block;border-left:5px solid #79977f;background:#edf3e8;color:#304938;padding:1rem 1.2rem}
+.dad-notice{display:block;width:fit-content;max-width:100%;margin:1.2rem 0 .15rem auto;padding:.7rem 1rem;background:#ddc299;color:#352517;border:2px solid #8d673e;box-shadow:3px 4px 0 #120f0b;transform:rotate(-2deg);font:700 1.1rem 'Pixelify Sans',system-ui,sans-serif}
 body[data-theme="dad"] .choice-button:hover{border-color:#d0ad70;box-shadow:0 0 0 2px #d0ad7055}
+
+/* Goblin Grab cartridge */
+.goblin-shell{max-width:870px;margin:auto;padding:1.1rem;background:var(--card);border:4px solid var(--forest);box-shadow:7px 7px 0 var(--pink)}
+/* Theme scenery: parchment, cabin planks, and guildhall masonry. */
+body[data-theme="kat"]{background-image:radial-gradient(ellipse at 17% 14%,#fff9ebaa,transparent 50%),repeating-linear-gradient(0deg,transparent 0 35px,#a9597721 36px,#a9597721 37px),linear-gradient(110deg,#fae5d8,#ffeff1 45%,#eed5c5)}
+body[data-theme="kat"] .about-card,body[data-theme="kat"] .story-panel,body[data-theme="kat"] .home-controls{background:linear-gradient(110deg,#e9c99544,transparent 15% 84%,#dfb18a44),repeating-linear-gradient(0deg,transparent 0 33px,#af7f7833 34px,#af7f7833 35px),#fff2da;border-color:#9e6a72;box-shadow:6px 6px 0 #d995a8;color:#443047}
+body[data-theme="kat"] .story-content,body[data-theme="kat"] .about-card p{color:#443047}body[data-theme="kat"] .section-heading,body[data-theme="kat"] .section-heading p:last-child{color:#52364b}
+body[data-theme="kat"] .story-panel:before{content:'✒   ✧   Once upon a side quest   ✧';display:block;width:fit-content;max-width:100%;padding:.2rem .7rem;margin-bottom:1rem;border-bottom:2px solid #b37378;font:700 .9rem 'Pixelify Sans',system-ui,sans-serif;color:#915275}
+body[data-theme="derek"]{background-image:repeating-linear-gradient(0deg,#0e1a1d99 0 4px,transparent 4px 114px,#c39a7755 114px 118px),repeating-linear-gradient(90deg,#26332f 0 160px,#33413a 160px 320px,#292f33 320px 480px);background-size:auto,480px 240px}
+body[data-theme="derek"] .shell{background:linear-gradient(90deg,#182124e0,transparent 22% 78%,#182124e0)}
+body[data-theme="dad"]{background-image:repeating-linear-gradient(0deg,#101b1599 0 4px,transparent 4px 95px),repeating-linear-gradient(90deg,#566049 0 3px,#28382d 3px 155px,#645d45 155px 159px,#304132 159px 310px);background-size:auto,310px 190px}
+body[data-theme="dad"] .shell{background:linear-gradient(90deg,#15231cbb,transparent 22% 78%,#15231cbb)}
+.goblin-intro{text-align:center;padding:2.2rem 1rem}.goblin-intro .start-icon{font-size:4rem}.goblin-intro h3,.goblin-result h3{font-size:clamp(2rem,5vw,3rem);margin:.5rem 0}.goblin-intro p,.goblin-result p{max-width:520px;margin:1rem auto;color:var(--muted)}
+.goblin-hud{display:flex;justify-content:space-between;gap:.6rem;flex-wrap:wrap;font:700 1.2rem 'Pixelify Sans',system-ui,sans-serif;margin-bottom:.7rem}.goblin-hud span{background:var(--pale);color:var(--ink);border:2px solid var(--forest);padding:.3rem .65rem}
+.goblin-field{position:relative;overflow:hidden;border:4px solid var(--forest-deep);background:#253b37;touch-action:none;cursor:none}.goblin-field canvas{display:block;width:100%;height:auto;aspect-ratio:640/440}.goblin-field:focus-visible{outline:4px solid var(--accent);outline-offset:3px}.goblin-result{text-align:center;padding:1.1rem}.goblin-result .result-icon{font-size:3.5rem}.goblin-help{font-size:.9rem;color:var(--muted);margin:.75rem 0 0;text-align:center}
+@media(max-width:540px){.goblin-shell{padding:.65rem}.goblin-hud{font-size:1rem}.goblin-intro{padding:1.4rem .45rem}.goblin-field{cursor:default}}
 
 </style>
   
@@ -194,16 +213,17 @@ body[data-theme="dad"] .choice-button:hover{border-color:#d0ad70;box-shadow:0 0 
       </section>
 
       <section class="view" id="view-games" aria-labelledby="games-title" hidden>
-        <div class="section-heading"><p class="eyebrow">THE ARCADE SHELF</p><h2 id="games-title">Pick your <em>cartridge.</em></h2><p>Three adventures are ready. Choose one to slide into the console.</p></div>
+        <div class="section-heading"><p class="eyebrow">THE ARCADE SHELF</p><h2 id="games-title">Pick your <em>cartridge.</em></h2><p>Four adventures are ready. Choose one to slide into the console.</p></div>
         <div class="console" aria-label="Game console">
           <div class="console-top"><span>KC <small>POCKET QUEST SYSTEM</small></span><span class="console-light">POWER</span></div>
           <div class="cartridge-slot" id="cartridge-slot"><span id="slot-placeholder">▼ INSERT CARTRIDGE ▼</span><span class="slot-cartridge" id="slot-cartridge" aria-hidden="true"><span id="slot-title">CHOOSE YOUR FATE</span> <small id="slot-number">QUEST 001</small></span></div>
-          <div class="console-bottom"><span>✦ THREE GAMES READY</span><span>03 / 04 GAMES LOADED</span></div>
+          <div class="console-bottom"><span>✦ FOUR GAMES READY</span><span>04 / 05 GAMES LOADED</span></div>
         </div>
         <div class="game-grid">
           <article class="game-card featured"><span class="card-icon" aria-hidden="true">⚔</span><span class="status">READY TO PLAY</span><h3>Choose Your Fate</h3><p>A tiny fantasy adventure where every decision is probably a mistake.</p><button type="button" class="primary-button insert-trigger" data-game="play">Insert cartridge <span aria-hidden="true">↥</span></button></article>
           <article class="game-card monster-cartridge"><span class="card-icon" aria-hidden="true">✿</span><span class="status">READY TO PLAY</span><h3>Adopt a Tiny Monster</h3><p>Choose an egg. Acquire a problem.</p><button type="button" class="primary-button insert-trigger" data-game="monster">Insert cartridge <span aria-hidden="true">↥</span></button></article>
           <article class="game-card"><span class="card-icon" aria-hidden="true">⌂</span><span class="status">READY TO PLAY</span><h3>Fantasy Home Builder</h3><p>Design a cozy escape. Possibly with a dragon sized mortgage.</p><button type="button" class="primary-button insert-trigger" data-game="home">Insert cartridge ↥</button></article>
+          <article class="game-card"><span class="card-icon" aria-hidden="true">🪙</span><span class="status">READY TO PLAY</span><h3>Goblin Grab</h3><p>Catch as many coins as your basket can hold before the guard arrives.</p><button type="button" class="primary-button insert-trigger" data-game="goblin">Insert cartridge ↥</button></article>
           <article class="game-card"><span class="card-icon" aria-hidden="true">✧</span><span class="status muted">A LITTLE SPARK</span><h3>Fantasy Creature Quiz</h3><p>Find out which magical creature matches your particular brand of chaos.</p><span class="coming-pill">PLANNED</span></article>
         </div>
       </section>
@@ -214,12 +234,21 @@ body[data-theme="dad"] .choice-button:hover{border-color:#d0ad70;box-shadow:0 0 
 <div class="under-game"><span>✦ Structurally sound? Emotionally, absolutely.</span><button class="text-button" type="button" data-go="games">Back to cartridges ↗</button></div>
 </section>
 
+      <section class="view" id="view-goblin" aria-labelledby="goblin-title" hidden>
+        <div class="section-heading"><p class="eyebrow">QUEST FILE 004 · THE TREASURY</p><h2 id="goblin-title">Goblin <em>Grab.</em></h2><p>Slide your basket to catch falling coins. The guard is coming in 30 seconds!</p></div>
+        <div class="goblin-shell" id="goblin-content"></div>
+        <div class="under-game"><span>✦ The guard has never once checked the basket.</span><button class="text-button" type="button" data-go="games">Back to cartridges ↗</button></div>
+      </section>
+
 <section class="view" id="view-building" aria-labelledby="building-title" hidden>
         <div class="section-heading"><p class="eyebrow">THE CODE GARDEN</p><h2 id="building-title">Still being <em>summoned.</em></h2><p>Little games and features taking shape behind the curtain.</p></div>
         <div class="build-list">
           <article class="build-card"><div><span class="build-glyph" aria-hidden="true">⌂</span><h3>Fantasy Home Builder</h3><p>The cottage workshop is open! Pick a roof, plant a garden, and invite a tiny roommate.</p></div><span class="build-tag">NOW PLAYABLE</span></article>
           <article class="build-card"><div><span class="build-glyph" aria-hidden="true">✧</span><h3>Fantasy Creature Quiz</h3><p>A quick personality quiz for people who suspect they might be a goblin.</p></div><span class="build-tag">PLANNED</span></article>
-          <article class="build-card"><div><span class="build-glyph" aria-hidden="true">✿</span><h3>Family inspired themes</h3><p>Derek’s cozy cottage palette has arrived. More secret looks may appear after the next round of suspicious survey answers.</p></div><span class="build-tag">ONE UNLOCKED</span></article>
+          <article class="build-card"><div><span class="build-glyph" aria-hidden="true">🪙</span><h3>Goblin Grab</h3><p>The treasury is open. Catch coins before the guard comes running.</p></div><span class="build-tag">NOW PLAYABLE</span></article>
+          <article class="build-card"><div><span class="build-glyph" aria-hidden="true">⚗</span><h3>Potion Problems</h3><p>Mix ingredients for villagers with extremely specific magical problems. Collect recipes and happy accidents.</p></div><span class="build-tag">ON THE DRAWING BOARD</span></article>
+          <article class="build-card"><div><span class="build-glyph" aria-hidden="true">◌</span><h3>Bubble Sunset Studio</h3><p>Make tiny sunsets inside bubbles and keep your favorites as little postcards.</p></div><span class="build-tag">ON THE DRAWING BOARD</span></article>
+          <article class="build-card"><div><span class="build-glyph" aria-hidden="true">✿</span><h3>Family inspired themes</h3><p>Kat, Dad, Derek, Memaw, Ma, and Gerald each have their own little corner to explore.</p></div><span class="build-tag">NOW AVAILABLE</span></article>
         </div>
       </section>
 
@@ -233,7 +262,7 @@ body[data-theme="dad"] .choice-button:hover{border-color:#d0ad70;box-shadow:0 0 
 
       <section class="view" id="view-about" aria-labelledby="about-title" hidden>
         <div class="section-heading"><p class="eyebrow">A NOTE FROM THE CREATOR</p><h2 id="about-title">Made with <em>mischief.</em></h2></div>
-        <div class="about-card"><span class="about-icon" aria-hidden="true">✿</span><p>Hi, I’m K. I make characters, collect stories, and enjoy making small interactive things with far too much personality. This is my little corner of the internet for games I build as I learn to code.</p><p>Pick a fate, try another ending, and come back when a new portal appears.</p><p class="late-note">✦ Totally not made at 2 a.m. The tiny dragon will corroborate this.</p><p class="kat-secret">✎ Kat’s margin note: An autistic author and coder built this corner one curious detail at a time. The draft has side quests, the code has personality, and there are probably twelve tabs open. ♡ &lt;/end note&gt;</p><p class="dad-secret">⚔ Dad’s guild notice: The lanterns are lit, the maps are unrolled, and the forest path is open. Come in from your quest; there’s a place by the fire.</p><p class="gerald-secret">🤖 Gerald’s little status report: Pink lights on. Tiny glasses polished. Bow tie straightened. The arcade’s cozy cyber systems are operational. Beep boop. ♡</p><p class="derek-secret">✧ Derek’s cottage note: A fairy and a honey badger have borrowed the spellbook. The sunset looks like it’s trapped inside a bubble. There are choux pastries and shrimp chips on the table. Mind the doorway—you might stub your toe twice.</p><button type="button" class="primary-button" data-go="play">Into the forest <span aria-hidden="true">↗</span></button><button type="button" class="danger-button" id="do-not-press">DO NOT PRESS</button></div>
+        <div class="about-card"><span class="about-icon" aria-hidden="true">✿</span><p>Hi, I’m K. I make characters, collect stories, and enjoy making small interactive things with far too much personality. This is my little corner of the internet for games I build as I learn to code.</p><p>Pick a fate, try another ending, and come back when a new portal appears.</p><p class="late-note">✦ Totally not made at 2 a.m. The tiny dragon will corroborate this.</p><p class="kat-secret">✎ Kat’s margin note: An author and coder built this corner one curious detail at a time. The draft has side quests, the code has personality, and there are probably 249 tabs open. ♡ &lt;/end note&gt;</p><div class="dad-secret">⚔ Dad’s guild notice: The lanterns are lit, the maps are unrolled, and the forest path is open. Come in from your quest; there’s a place by the fire.<span class="dad-notice">Notice: Dad’s arms are always open.</span></div><p class="memaw-secret">☾ Memaw’s purple haven: Pull up a soft chair, tuck a blanket around your shoulders, and stay as long as you like. There’s always room for one more story here. 💜</p><p class="ma-secret">✿ Ma’s sunroom note: Your boots can go by the door, the kettle is ready, and there’s a basket for all the little things you brought home. A pretty place works best when you can really live in it.</p><p class="gerald-secret">🤖 Gerald’s little status report: Pink lights on. Tiny glasses polished. Bow tie straightened. The arcade’s cozy cyber systems are operational. Beep boop. ♡</p><p class="derek-secret">✧ Derek’s cottage note: A fairy and a honey badger have borrowed the spellbook. The sunset looks like it’s trapped inside a bubble. There are choux pastries and shrimp chips on the table. Mind the doorway—you might stub your toe twice.</p><button type="button" class="primary-button" data-go="play">Into the forest <span aria-hidden="true">↗</span></button><button type="button" class="danger-button" id="do-not-press">DO NOT PRESS</button></div>
       </section>
     </main>
 
@@ -250,7 +279,7 @@ body[data-theme="dad"] .choice-button:hover{border-color:#d0ad70;box-shadow:0 0 
     <select id="theme-select"><option value="fae">Fae Garden · pink + green</option><option value="kat">Kat’s Margins · pastel + salmon</option><option value="dad">Dad’s Guildhall · forest + wood</option><option value="derek">Derek’s Cottage · sage + velvet pink</option><option value="memaw">Memaw’s Purple Haven · lavender + plum</option><option value="ma">Ma’s Sunroom · practical + pretty</option><option value="gerald">Gerald’s Cyber Corner · pink + black</option><option value="mage">Moon Mage · lilac + midnight</option><option value="healer">Woodland Healer · mint + cream</option><option value="rogue">Rose Rogue · pink + charcoal</option><option value="dragon">Dragon Grove · ember + pine</option><option value="fairy">Candy Fairy · pastel daydream</option></select>
     <label for="volume-select">Beep boop level</label>
     <select id="volume-select"><option value="0">Silent</option><option value="1">Polite</option><option value="2">Beepy</option><option value="3">Goblin Mode</option></select>
-    <p>Sounds play only after you turn them on. Your settings stay on this device.</p>
+    <p>Goblin Mode makes every click a surprise: moo, cluck, boop, bonk, and more. Sounds start only when you turn them on. Your settings stay on this device.</p>
   </div>
   <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 <script>
@@ -400,6 +429,7 @@ let adventure = { scene: 'opening', step: 0, started: false, scores: Object.from
 let monsterRun = { step:0, started:false, scores:Object.fromEntries(Object.keys(MONSTERS).map(key => [key,0])) };
 let audioContext;
 let toastTimer;
+let lastGoblinNoise = -1;
 const $ = selector => document.querySelector(selector);
 function save() { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(saved)); } catch { /* The game still works if storage is unavailable. */ } }
 
@@ -413,10 +443,42 @@ function note(message) {
 
 function sound(kind = 'click') {
   if (saved.volume === 0) return;
+  if (saved.volume === 3 && kind !== 'goblin') return;
   try {
     audioContext ||= new (window.AudioContext || window.webkitAudioContext)();
     if (audioContext.state === 'suspended') audioContext.resume();
     const now = audioContext.currentTime;
+    if (kind === 'goblin') {
+      // Little synthesised animal and arcade noises: no downloads or audio files needed.
+      const voices = [
+        [[165,108,.38,'sawtooth'],[110,92,.33,'sine']], // moo
+        [[950,520,.07,'square'],[750,420,.08,'square'],[1030,600,.08,'square']], // cluck
+        [[730,330,.17,'sine']], // boop
+        [[260,90,.23,'triangle']], // bonk
+        [[400,1100,.23,'sine']], // squeak
+        [[420,240,.09,'sawtooth'],[370,210,.09,'sawtooth']], // quack
+        [[230,750,.1,'square'],[750,180,.16,'triangle']], // sproing
+        [[140,135,.28,'sawtooth'],[340,110,.11,'square']] // raspberry
+      ];
+      let index = Math.floor(Math.random() * voices.length);
+      if (index === lastGoblinNoise) index = (index + 1) % voices.length;
+      lastGoblinNoise = index;
+      let offset = 0;
+      for (const [from,to,duration,type] of voices[index]) {
+        const oscillator = audioContext.createOscillator(), gain = audioContext.createGain();
+        const start = now + offset;
+        oscillator.type = type;
+        oscillator.frequency.setValueAtTime(from,start);
+        oscillator.frequency.exponentialRampToValueAtTime(to,start+duration);
+        gain.gain.setValueAtTime(.0001,start);
+        gain.gain.exponentialRampToValueAtTime(.045,start+.018);
+        gain.gain.exponentialRampToValueAtTime(.0001,start+duration);
+        oscillator.connect(gain).connect(audioContext.destination);
+        oscillator.start(start); oscillator.stop(start+duration+.01);
+        offset += duration * .86;
+      }
+      return;
+    }
     const notes = { click:[520], hover:[760], choice:[480,720], win:[530,670,880], unlock:[690,920], bonk:[270,190], secret:[340,250,440] }[kind] || [520];
     notes.forEach((frequency, index) => {
       const oscillator = audioContext.createOscillator();
@@ -707,12 +769,13 @@ $('#settings-toggle').addEventListener('click', () => {
 $('#settings-close').addEventListener('click', () => { $('#settings-panel').hidden = true; $('#settings-toggle').setAttribute('aria-expanded','false'); sound('click'); });
 $('#theme-select').addEventListener('change', event => { setTheme(event.target.value); sound('secret'); });
 $('#volume-select').addEventListener('change', event => { setVolume(Number(event.target.value)); sound('choice'); });
+document.addEventListener('click', () => { if (saved.volume === 3) sound('goblin'); }, true);
 $('#sound-toggle').addEventListener('click', () => { setVolume(saved.volume ? 0 : 1); sound('choice'); });
 document.querySelectorAll('.insert-trigger').forEach(button => button.addEventListener('click', () => {
   if ($('#cartridge-slot').classList.contains('is-loading')) return;
   const game = button.dataset.game;
-  $('#slot-title').textContent = game === 'home' ? 'FANTASY HOME BUILDER' : game === 'monster' ? 'ADOPT A TINY MONSTER' : 'CHOOSE YOUR FATE';
-  $('#slot-number').textContent = game === 'home' ? 'QUEST 003' : game === 'monster' ? 'QUEST 002' : 'QUEST 001';
+  $('#slot-title').textContent = game === 'goblin' ? 'GOBLIN GRAB' : game === 'home' ? 'FANTASY HOME BUILDER' : game === 'monster' ? 'ADOPT A TINY MONSTER' : 'CHOOSE YOUR FATE';
+  $('#slot-number').textContent = game === 'goblin' ? 'QUEST 004' : game === 'home' ? 'QUEST 003' : game === 'monster' ? 'QUEST 002' : 'QUEST 001';
   document.querySelectorAll('.insert-trigger').forEach(trigger => trigger.disabled = true);
   button.dataset.originalLabel = button.innerHTML;
   button.textContent = 'Loading quest…';
@@ -722,7 +785,7 @@ document.querySelectorAll('.insert-trigger').forEach(button => button.addEventLi
     $('#cartridge-slot').classList.remove('is-loading');
     document.querySelectorAll('.insert-trigger').forEach(trigger => trigger.disabled = false);
     button.innerHTML = button.dataset.originalLabel;
-    if (game === 'home') renderHomeStart(); else if (game === 'monster') resetMonster(); else resetGame();
+    if (game === 'goblin') renderGoblinStart(); else if (game === 'home') renderHomeStart(); else if (game === 'monster') resetMonster(); else resetGame();
     showView(game);
   }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 80 : 950);
 }));
@@ -838,7 +901,110 @@ function updateHomePreview(){
  $('#cottage-garden').textContent=homeChoice('garden')[2];$('#cottage-friend').textContent=homeChoice('friend')[2];$('#cottage-name-preview').textContent=homeDraft.name.trim()||'Your unnamed little cottage';$('#cottage-caption').textContent=`${homeChoice('friend')[1]} approved. Dishes remain a tomorrow problem.`;
  document.querySelectorAll('.home-option').forEach(button=>button.setAttribute('aria-pressed',String(homeDraft[button.dataset.homeKey]===button.dataset.homeValue)));
 }
+// Goblin Grab: a 30-second mouse, touch, or keyboard coin-catching game.
+const GOBLIN_BEST_KEY = 'kats-corner-goblin-best';
+let goblinRun = null;
+function renderGoblinStart() {
+  if (goblinRun) { cancelAnimationFrame(goblinRun.frame); goblinRun = null; }
+  const box = $('#goblin-content'); box.replaceChildren();
+  const intro = homeElement('div',undefined,'goblin-intro');
+  let best = 0; try { best = Number(localStorage.getItem(GOBLIN_BEST_KEY)) || 0; } catch {}
+  intro.append(homeElement('div','🧌 🧺 🪙','start-icon'),homeElement('h3','The treasury is unattended. Probably.'),homeElement('p','Move your mouse or finger left and right to catch falling coins. You have 30 seconds until the guard spots you! Arrow keys work too.'),homeElement('p',`Best haul: ${best} coins`));
+  const start = homeElement('button','✦ PRESS / CLICK TO START','primary-button'); start.type = 'button';
+  start.addEventListener('click',startGoblin); intro.append(start); box.append(intro);
+}
+function startGoblin() {
+  const box = $('#goblin-content'); box.replaceChildren();
+  const hud = homeElement('div',undefined,'goblin-hud');
+  const scoreLabel = homeElement('span','🪙 0 coins');
+  const timeLabel = homeElement('span','GUARD ARRIVES IN 30s');
+  hud.append(scoreLabel,timeLabel);
+  const field = homeElement('div',undefined,'goblin-field'); field.tabIndex = 0;
+  field.setAttribute('role','application'); field.setAttribute('aria-label','Goblin Grab play area. Move mouse or finger, or use left and right arrow keys to move your basket.');
+  const canvas = document.createElement('canvas'); canvas.width = 640; canvas.height = 440;
+  const ratio = Math.min(window.devicePixelRatio || 1,2);
+  canvas.width = 640 * ratio; canvas.height = 440 * ratio;
+  const ctx = canvas.getContext('2d'); ctx.setTransform(ratio,0,0,ratio,0,0);
+  field.append(canvas);
+  const help = homeElement('p','Mouse / touch: slide to catch coins  ·  Keyboard: ← →','goblin-help');
+  box.append(hud,field,help);
+  const run = goblinRun = {ctx,field,frame:0,last:0,remaining:30,score:0,coins:[],spawn:0,x:320,left:false,right:false,scoreLabel,timeLabel};
+  const move = event => { const bounds = canvas.getBoundingClientRect(); run.x = Math.max(45,Math.min(595,(event.clientX-bounds.left)/bounds.width*640)); };
+  field.addEventListener('pointermove',move);
+  field.addEventListener('pointerdown',event => { field.focus(); move(event); field.setPointerCapture(event.pointerId); });
+  field.addEventListener('keydown',event => { if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {event.preventDefault();run[event.key === 'ArrowLeft' ? 'left' : 'right']=true;} });
+  field.addEventListener('keyup',event => { if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') run[event.key === 'ArrowLeft' ? 'left' : 'right']=false; });
+  field.addEventListener('blur',()=>{run.left=false;run.right=false;});
+  field.focus({preventScroll:true});
+  run.frame = requestAnimationFrame(goblinFrame);
+}
+function goblinFrame(stamp) {
+  const run = goblinRun;
+  if (!run) return;
+  const dt = run.last ? Math.min((stamp-run.last)/1000,.05) : 0;
+  run.last = stamp;
+  if (!document.hidden && !$('#view-goblin').hidden) {
+    run.remaining = Math.max(0,run.remaining-dt);
+    if (run.left) run.x = Math.max(45,run.x-390*dt);
+    if (run.right) run.x = Math.min(595,run.x+390*dt);
+    run.spawn += dt;
+    while (run.spawn >= .38) {
+      run.spawn -= .38;
+      run.coins.push({x:27+Math.random()*586,y:-24,speed:145+Math.random()*95+(30-run.remaining)*2,bonus:Math.random()<.13,spin:Math.random()*6});
+    }
+    run.coins = run.coins.filter(coin => {
+      coin.y += coin.speed*dt; coin.spin += dt*5;
+      if (coin.y >= 354 && coin.y <= 415 && Math.abs(coin.x-run.x)<48) {
+        run.score += coin.bonus ? 3 : 1;
+        run.scoreLabel.textContent = `🪙 ${run.score} coins`;
+        sound('choice');
+        return false;
+      }
+      return coin.y < 460;
+    });
+    run.timeLabel.textContent = `GUARD ARRIVES IN ${Math.ceil(run.remaining)}s`;
+  }
+  drawGoblin(run);
+  if (run.remaining <= 0) { finishGoblin(); return; }
+  run.frame = requestAnimationFrame(goblinFrame);
+}
+function drawGoblin(run) {
+  const {ctx,x,coins,remaining} = run;
+  ctx.clearRect(0,0,640,440);
+  const sky=ctx.createLinearGradient(0,0,0,440);sky.addColorStop(0,'#172729');sky.addColorStop(1,'#445944');ctx.fillStyle=sky;ctx.fillRect(0,0,640,440);
+  ctx.fillStyle='#586655';for(let i=0;i<8;i++){ctx.fillRect(i*86-6,74,54,247);ctx.fillStyle='#374c43';ctx.fillRect(i*86,79,44,238);ctx.fillStyle='#586655';}
+  ctx.fillStyle='#192b29';ctx.fillRect(0,321,640,119);ctx.fillStyle='#a07747';ctx.fillRect(0,415,640,25);
+  ctx.fillStyle='#dab96d';ctx.font='bold 20px Pixelify Sans, monospace';ctx.fillText('✦ THE KINGDOM TREASURY ✦',188,45);
+  // The guard's lantern gets closer as the timer runs out.
+  ctx.fillStyle=`rgba(255,202,108,${.05+(30-remaining)/30*.25})`;ctx.beginPath();ctx.arc(618,255,54+(30-remaining)*3,0,7);ctx.fill();
+  for(const coin of coins){
+    ctx.save();ctx.translate(coin.x,coin.y);ctx.scale(.72+Math.abs(Math.cos(coin.spin))*.28,1);
+    ctx.fillStyle=coin.bonus?'#f3c3e6':'#8a5e25';ctx.beginPath();ctx.arc(0,0,17,0,7);ctx.fill();
+    ctx.fillStyle=coin.bonus?'#ffdef6':'#ffd66f';ctx.beginPath();ctx.arc(0,-2,14,0,7);ctx.fill();
+    ctx.fillStyle=coin.bonus?'#9949a1':'#81502d';ctx.font='bold 18px monospace';ctx.textAlign='center';ctx.fillText(coin.bonus?'✦':'$',0,5);ctx.restore();
+  }
+  // Green ears, face, tiny hood, and a very large loot basket.
+  ctx.fillStyle='#4b8b56';ctx.beginPath();ctx.moveTo(x-20,349);ctx.lineTo(x-53,326);ctx.lineTo(x-42,364);ctx.lineTo(x+42,364);ctx.lineTo(x+53,326);ctx.lineTo(x+20,349);ctx.fill();
+  ctx.fillStyle='#7ab46b';ctx.beginPath();ctx.arc(x,350,32,0,7);ctx.fill();
+  ctx.fillStyle='#303a28';ctx.fillRect(x-15,340,6,8);ctx.fillRect(x+10,340,6,8);
+  ctx.strokeStyle='#30533a';ctx.lineWidth=3;ctx.beginPath();ctx.arc(x,355,8,.1,Math.PI-.1);ctx.stroke();
+  ctx.fillStyle='#674b38';ctx.fillRect(x-46,372,92,51);ctx.fillStyle='#ad7a4d';ctx.fillRect(x-50,367,100,13);
+  ctx.strokeStyle='#e5bb73';ctx.lineWidth=4;ctx.beginPath();ctx.ellipse(x,370,50,13,0,0,7);ctx.stroke();
+  ctx.strokeStyle='#d8aa70';ctx.lineWidth=2;for(let i=-34;i<=34;i+=17){ctx.beginPath();ctx.moveTo(x+i,385);ctx.lineTo(x+i,419);ctx.stroke();}
+}
+function finishGoblin() {
+  const run=goblinRun;if(!run)return;
+  cancelAnimationFrame(run.frame);goblinRun=null;
+  let oldBest=0;try{oldBest=Number(localStorage.getItem(GOBLIN_BEST_KEY))||0;}catch{}
+  if(run.score>oldBest)try{localStorage.setItem(GOBLIN_BEST_KEY,String(run.score));}catch{}
+  const box=$('#goblin-content');box.replaceChildren();
+  const result=homeElement('div',undefined,'goblin-result');
+  result.append(homeElement('div','🧌 🧺','result-icon'),homeElement('h3','The guard found you!'),homeElement('p',`You escaped with ${run.score} coins. ${run.score>oldBest?'NEW BEST HAUL! ✦':'Your best haul is '+oldBest+' coins.'}`),homeElement('p','The guard is certain the basket was already full when you arrived.'));
+  const again=homeElement('button','Play again ↻','primary-button');again.type='button';again.addEventListener('click',startGoblin);
+  result.append(again);box.append(result);sound('win');
+}
 renderHomeStart();
+renderGoblinStart();
 
 </script>
 </body>
