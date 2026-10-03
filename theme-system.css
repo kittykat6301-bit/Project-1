@@ -1,0 +1,50 @@
+/* The theme selector is one stable, readable control in every room. */
+.top nav button,#theme-close{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:9px 14px;border:2px solid transparent;border-radius:10px;background:transparent;color:inherit;font-weight:750}
+.top nav button:hover,.top nav button:focus-visible{background:#f6e2ed}
+#theme-dialog{width:min(740px,calc(100vw - 24px));max-height:calc(100dvh - 24px);padding:0;border:3px solid #775b8e;border-radius:17px;background:#fffaf3;color:#392d4e;box-shadow:0 18px 60px #241a29a8;overflow:auto}
+#theme-dialog::backdrop{background:#1c1623a8}
+.theme-dialog-inner{padding:clamp(15px,3vw,26px)}.theme-dialog-head{display:flex;align-items:start;justify-content:space-between;gap:12px}.theme-dialog-head h2{font-size:clamp(1.55rem,4vw,2.3rem);margin:0}.theme-dialog-head .eyebrow{margin:0 0 5px}#theme-close{border-color:#a786a9;background:#fff6ee;flex:none}
+.theme-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0}.theme-choice{display:flex;align-items:center;gap:12px;width:100%;min-width:0;padding:10px;border:2px solid #bca9bb;border-radius:11px;background:#fff;color:#392d4e;text-align:left}.theme-choice[aria-pressed="true"]{border-color:#99557e;background:#fae9f0;box-shadow:inset 0 0 0 1px #99557e}.theme-choice span:nth-child(2){min-width:0}.theme-choice strong,.theme-choice small{display:block;line-height:1.3}.theme-choice small{color:#675b6b;font-size:.84rem;margin-top:3px}.theme-choice-state{margin-left:auto;color:#874568;font-size:.72rem;font-style:normal;font-weight:900}.theme-choice-art{width:64px;height:64px;flex:none;object-fit:cover;border-radius:8px;border:1px solid #ae8b9d}.classic-art{background:radial-gradient(circle at 26% 24%,#fff3c0 0 11%,transparent 13%),linear-gradient(135deg,#f8bad4,#c6b5eb 55%,#a6dedf)}
+.theme-preview{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:16px;align-items:center;border:2px solid #bda7b9;border-radius:13px;background:#fff;padding:10px}.theme-preview-art{width:100%;min-height:200px;aspect-ratio:16/9;object-fit:cover;background-size:cover;background-position:center;border-radius:9px}.theme-preview-copy h3{font-size:1.45rem;margin:0 0 7px}.theme-preview-copy p{line-height:1.4;color:#594d60;margin:0}.theme-preview-icons{display:flex;gap:8px;margin-top:15px;align-items:center;min-height:45px}.theme-preview-icons img{width:42px;height:42px;object-fit:contain}.theme-dialog-actions{display:flex;justify-content:flex-end;margin-top:10px}.theme-dialog-actions .primary:disabled{opacity:.6;box-shadow:none;cursor:default}
+html[data-theme="game-room"]{color-scheme:light;--ink:#302820;--muted:#584c40;--rose:#914e36;--line:#8e6f50}
+html[data-theme="game-room"] body{color:#302820;background:#4e3425 url('/assets/themes/game-room.webp') center center/cover fixed no-repeat}
+html[data-theme="game-room"] .shell{background:linear-gradient(90deg,#4a3024c9,#e8d4b7e8 12% 88%,#4a3024c9)}
+html[data-theme="game-room"] .top{border-color:#4f3629;background:#e8d4b9;box-shadow:5px 6px 0 #2a1b15a6}
+html[data-theme="game-room"] .brand small{color:#604b39}
+html[data-theme="game-room"] nav a:hover,html[data-theme="game-room"] .top nav button:hover{background:#d9bea0}
+html[data-theme="game-room"] nav a[aria-current="page"]{background:#c78f6e;border-color:#684432}
+html[data-theme="game-room"] .panel{border-color:#60432e;background:#f3e5ce;box-shadow:7px 8px 0 #3e2a21a1}
+html[data-theme="game-room"] #home{background:linear-gradient(90deg,#f3e5cef5 0%,#f3e5ceec 53%,#f3e5ceb5 100%),url('/assets/themes/game-room.webp') center/cover}
+html[data-theme="game-room"] em{color:#914e36}
+html[data-theme="game-room"] .eyebrow{color:#825238}
+html[data-theme="game-room"] .intro,html[data-theme="game-room"] .game-card p,html[data-theme="game-room"] .game-content>p,html[data-theme="game-room"] .arcade-content p{color:#51443b}
+html[data-theme="game-room"] .primary{border-color:#503827;background:#c78e5e;box-shadow:3px 4px 0 #765039;color:#261c17}
+html[data-theme="game-room"] .primary:hover{background:#e2ac78}
+html[data-theme="game-room"] .machine{border-color:#664a36;background:#332a27;box-shadow:inset 0 0 0 4px #ae8870,7px 10px 0 #402e26a6}
+html[data-theme="game-room"] .screen{border-color:#bcae96;background:radial-gradient(circle,#ecc79d,#96aca3)}
+html[data-theme="game-room"] .screen span{color:#36463c}
+html[data-theme="game-room"] .game-card{border-color:#76553b;background:linear-gradient(145deg,#eee0c4,#d8bb94);box-shadow:5px 6px 0 #593e2ca6}
+html[data-theme="game-room"] .game-card-art{border-color:#a17c55;background:#d3b48a}
+html[data-theme="game-room"] .game-content,html[data-theme="game-room"] .arcade-content,html[data-theme="game-room"] .entry,html[data-theme="game-room"] .shelf{border-color:#9a7650;background:#fbefd8}
+html[data-theme="game-room"] .game-choice,html[data-theme="game-room"] .arcade-choices button,html[data-theme="game-room"] .game-actions :is(a,button),html[data-theme="game-room"] .arcade-actions :is(a,button),html[data-theme="game-room"] .home-controls-new button{border-color:#a7805c;background:#e9d4b5;color:#34281e}
+html[data-theme="game-room"] .game-choice:hover,html[data-theme="game-room"] .arcade-choices button:hover,html[data-theme="game-room"] .game-actions :is(a,button):hover{background:#d9bb92}
+html[data-theme="game-room"] .arcade-status,html[data-theme="game-room"] .result-tag,html[data-theme="game-room"] .shelf-count{background:#e7cfac;color:#55341d}
+html[data-theme="game-room"] .entry[open]{border-color:#8b5435}html[data-theme="game-room"] .entry summary:after,html[data-theme="game-room"] .entry-number{color:#8b5435}
+html[data-theme="game-room"] footer{border-color:#806447;color:#503b2d}html[data-theme="game-room"] footer strong{color:#352419}
+html[data-theme="game-room"] .brand-icon{width:52px;height:52px;background:url('/assets/themes/game-room-home.webp') center/contain no-repeat}
+html[data-theme="game-room"] .screen-icon{background:url('/assets/themes/game-room-games.webp') center/contain no-repeat}
+html[data-theme="game-room"] .shelf-icon{background:url('/assets/themes/game-room-games.webp') center/contain no-repeat}
+html[data-theme="game-room"] nav [data-route]::before{content:'';display:inline-block;width:24px;height:24px;margin-right:6px;vertical-align:middle;background:center/contain no-repeat}
+html[data-theme="game-room"] nav [data-route="home"]::before{background-image:url('/assets/themes/game-room-home.webp')}
+html[data-theme="game-room"] nav [data-route="games"]::before{background-image:url('/assets/themes/game-room-games.webp')}
+html[data-theme="game-room"] nav [data-route="updates"]::before{background-image:url('/assets/themes/game-room-updates.webp')}
+html[data-theme="game-room"] #theme-open::before{content:'';width:23px;height:23px;margin-right:6px;background:url('/assets/themes/game-room-settings.webp') center/contain no-repeat}
+html[data-theme="game-room"] .game-hero,html[data-theme="game-room"] .arcade-scene{border-color:#9a7650}
+@media(max-width:700px){html[data-theme="game-room"] body{background-attachment:scroll}html[data-theme="game-room"] .shell{background:#e8d4b9ef}}
+@media(max-width:560px){.theme-choices,.theme-preview{grid-template-columns:1fr}.theme-choice-art{width:50px;height:50px}.theme-preview-art{min-height:125px;max-height:190px}.theme-preview-copy{padding:2px 4px}.theme-dialog-actions .primary{width:100%}#theme-dialog{width:calc(100vw - 18px);max-height:calc(100dvh - 18px)}}
+@media(max-width:430px){.top nav{grid-template-columns:repeat(2,minmax(0,1fr))}.top nav a,.top nav button{min-width:0;padding:8px 5px}}
+
+html[data-theme="game-room"] #home{grid-template-columns:1fr;background:linear-gradient(90deg,#f3e5cef5 0%,#f3e5ceec 48%,#f3e5ce45 100%),url('/assets/themes/game-room.webp') center/cover;min-height:390px}
+html[data-theme="game-room"] #home>div:first-child{max-width:52ch}
+html[data-theme="game-room"] #home .machine{display:none}
+@media(max-width:700px){html[data-theme="game-room"] #home{background:linear-gradient(#f3e5ceea,#f3e5cecb),url('/assets/themes/game-room.webp') center/cover;min-height:0}}

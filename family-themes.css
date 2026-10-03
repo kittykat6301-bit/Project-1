@@ -1,0 +1,62 @@
+/* Two family rooms share the same seven working game cartridges. */
+html[data-theme="dad"]{--ink:#20352e;--muted:#53655a;--rose:#536d4b;--line:#6d8069;color-scheme:light}
+html[data-theme="ma"]{--ink:#3b4b3e;--muted:#58685c;--rose:#a65f76;--line:#9fb6a3;color-scheme:light}
+html[data-theme="dad"] body{background:#15271f url('/assets/themes/dad-guildhall.webp') center/cover fixed}
+html[data-theme="ma"] body{background:#d8dfd1 url('/assets/themes/ma-conservatory.webp') center/cover fixed}
+html[data-theme="dad"] .shell{background:#e6dbc5ed}
+html[data-theme="ma"] .shell{background:#f9f3e8eb}
+html[data-theme="dad"] .top{border-color:#9e8558;background:#22392d;color:#fff3d3}
+html[data-theme="ma"] .top{border-color:#a9b9a6;background:#f6f3e9;color:#364a3b}
+html[data-theme="dad"] .brand small{color:#d6c894}
+html[data-theme="ma"] .brand small{color:#677d6a}
+html[data-theme="dad"] .brand-icon{width:50px;height:50px;background:url('/assets/themes/dad-home.webp') center/cover;border-radius:9px}
+html[data-theme="ma"] .brand-icon{width:50px;height:50px;background:url('/assets/themes/ma-home.webp') center/cover;border-radius:9px}
+html[data-theme="dad"] nav [data-route]::before,html[data-theme="ma"] nav [data-route]::before{content:'';display:inline-block;width:22px;height:22px;margin-right:6px;vertical-align:middle;background-position:center;background-size:cover;border-radius:4px}
+html[data-theme="dad"] nav [data-route="home"]::before{background-image:url('/assets/themes/dad-home.webp')}
+html[data-theme="dad"] nav [data-route="games"]::before{background-image:url('/assets/themes/dad-games.webp')}
+html[data-theme="dad"] nav [data-route="gerald"]::before{background-image:url('/assets/themes/dad-gerald.webp')}
+html[data-theme="dad"] nav [data-route="updates"]::before{background-image:url('/assets/themes/dad-updates.webp')}
+html[data-theme="ma"] nav [data-route="home"]::before{background-image:url('/assets/themes/ma-home.webp')}
+html[data-theme="ma"] nav [data-route="games"]::before{background-image:url('/assets/themes/ma-games.webp')}
+html[data-theme="ma"] nav [data-route="gerald"]::before{background-image:url('/assets/themes/ma-gerald.webp')}
+html[data-theme="ma"] nav [data-route="updates"]::before{background-image:url('/assets/themes/ma-updates.webp')}
+html[data-theme="dad"] nav a[aria-current="page"]{background:#44634c;border-color:#b69f64;color:#fff}
+html[data-theme="ma"] nav a[aria-current="page"]{background:#d9e8d9;border-color:#98b49e;color:#304836}
+html[data-theme="dad"] .panel{border-color:#836c47;background:#f2e9d5;box-shadow:7px 8px 0 #13241baa}
+html[data-theme="ma"] .panel{border-color:#9daf9d;background:#fffaf0;box-shadow:7px 8px 0 #5369576b}
+html[data-theme="dad"] #home{min-height:430px;grid-template-columns:1fr;background:linear-gradient(90deg,#14261ce9,#172c21b2 58%,#172c215c),url('/assets/themes/dad-guildhall.webp') center/cover;color:#fff9e9}
+html[data-theme="ma"] #home{min-height:430px;grid-template-columns:1fr;background:linear-gradient(90deg,#f9f6ecf2,#f9f6ecc0 58%,#f9f6ec40),url('/assets/themes/ma-conservatory.webp') center/cover;color:#324b3a}
+html:is([data-theme="dad"],[data-theme="ma"]) #home .machine{display:none}
+html[data-theme="dad"] #home .intro,html[data-theme="dad"] #home .eyebrow{color:#f2e9d0}
+html[data-theme="ma"] #home .intro,html[data-theme="ma"] #home .eyebrow{color:#47614d}
+html[data-theme="dad"] #home em{color:#f2c782}
+html[data-theme="ma"] #home em{color:#a76579}
+html[data-theme="dad"] .primary{background:#527352;border-color:#2d503a;color:#fff;box-shadow:3px 4px 0 #344938}
+html[data-theme="ma"] .primary{background:#a26276;border-color:#78485d;color:#fff;box-shadow:3px 4px 0 #9dada0}
+html[data-theme="dad"] #games,html[data-theme="dad"] #updates{background:linear-gradient(#f2e9d5ed,#f2e9d5ed),url('/assets/themes/dad-study.webp') center/cover}
+html[data-theme="ma"] #games,html[data-theme="ma"] #updates{background:linear-gradient(#fffaf0eb,#fffaf0eb),url('/assets/themes/ma-study.webp') center/cover}
+html[data-theme="dad"] .game-card,html[data-theme="dad"] .entry,html[data-theme="dad"] .game-content,html[data-theme="dad"] .arcade-content{border-color:#887453;background:#fff6df;color:#263c31}
+html[data-theme="ma"] .game-card,html[data-theme="ma"] .entry,html[data-theme="ma"] .game-content,html[data-theme="ma"] .arcade-content{border-color:#aac0a9;background:#fffdf7;color:#34473a}
+html[data-theme="dad"] .game-card-art{border-color:#997e4d;background:#253a2a}
+html[data-theme="ma"] .game-card-art{border-color:#b6c4a6;background:#e9eee2}
+html:is([data-theme="dad"],[data-theme="ma"]) .game-card-art img{width:min(280px,95%);height:165px;object-fit:cover;border-radius:7px;filter:none}
+html[data-theme="dad"] .gerald-room-intro{background:linear-gradient(90deg,#16251ce9 0 43%,#16251ca8 70%,#16251c44),url('/assets/themes/dad-study.webp') center/cover;color:#fff7db;border-color:#92764c}
+html[data-theme="ma"] .gerald-room-intro{background:linear-gradient(90deg,#f5f1e9ef 0 43%,#f5f1e9ad 70%,#f5f1e933),url('/assets/themes/ma-study.webp') center/cover;color:#334c39;border-color:#a7b8a7}
+html[data-theme="dad"] .gerald-room-sections section,html[data-theme="dad"] .gerald-memory{background:#fff3db;border-color:#967e55}
+html[data-theme="ma"] .gerald-room-sections section,html[data-theme="ma"] .gerald-memory{background:#fefaf1;border-color:#a6bba9}
+html[data-theme="dad"] .gerald-desk{background:#f7ead0!important}
+html[data-theme="ma"] .gerald-desk{background:#f4efe9!important}
+html[data-theme="dad"] .gerald-room button{background:#e5dfc4;border-color:#7b936b;color:#233f30}
+html[data-theme="ma"] .gerald-room button{background:#e8eee1;border-color:#a5b8a2;color:#344a3b}
+html[data-theme="dad"] .gerald-room button[aria-pressed="true"]{background:#a5bb93}
+html[data-theme="ma"] .gerald-room button[aria-pressed="true"]{background:#e3c5d0}
+html[data-theme="dad"] .gerald-memory figure{background:#e9dec7;border-color:#927b5b}
+html[data-theme="ma"] .gerald-memory figure{background:#f2e9e5;border-color:#abbdaa}
+@media(max-width:700px){html:is([data-theme="dad"],[data-theme="ma"]) body{background-attachment:scroll}html:is([data-theme="dad"],[data-theme="ma"]) #home{min-height:380px}html[data-theme="dad"] .gerald-room-intro{background:linear-gradient(#16251cde,#16251cc9),url('/assets/themes/dad-study.webp') center/cover}html[data-theme="ma"] .gerald-room-intro{background:linear-gradient(#f5f1e9de,#f5f1e9c9),url('/assets/themes/ma-study.webp') center/cover}}
+.family-visit{display:none}
+html[data-theme="dad"] .dad-visit,html[data-theme="ma"] .ma-visit{display:flex;align-items:center;gap:15px;max-width:500px;margin-top:22px;padding:12px;border:2px solid;border-radius:12px}
+html[data-theme="dad"] .dad-visit{background:#122b22d9;border-color:#ac9269;color:#fff4d9}
+html[data-theme="ma"] .ma-visit{background:#fff9eeea;border-color:#a5bea8;color:#34483b}
+.family-visit img{width:110px;height:125px;object-fit:contain;flex:none}
+.family-visit strong{font-size:.82rem;letter-spacing:.08em}.family-visit p{line-height:1.4;margin:7px 0}.family-visit button{min-height:42px;padding:8px 12px;border-radius:7px;border:1px solid currentColor;background:transparent;color:inherit;font-weight:750}.family-visit button:hover{background:#ffffff32}
+@media(max-width:420px){.family-visit img{width:80px;height:95px}}

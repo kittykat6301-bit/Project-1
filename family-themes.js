@@ -1,0 +1,4 @@
+(() => {
+  const visits={dad:{button:'dad-visit-button',note:'dad-note',lines:['Whisper has graciously allowed the rest of the guild to use the other chairs.','The chair remains occupied. I have filed a formal request for one corner of the cushion.','A knight approached. Whisper looked up. The knight found another chair.']},ma:{button:'ma-visit-button',note:'ma-note',lines:['The rabbit has moved the basil behind the roses. Ma found it before I finished counting.','Inventory complete: flowers watered, notes sorted, rabbit still pretending innocence.','The garden is in order. I have no explanation for the dirt on my clipboard.']}};
+  Object.values(visits).forEach(v=>{let i=0;document.getElementById(v.button).addEventListener('click',()=>{document.getElementById(v.note).textContent=v.lines[i++%v.lines.length]})});
+})();

@@ -1,0 +1,47 @@
+/* Phase 4: stable contrast on restored pages across every room palette. */
+#characters .restoration-card,#mascots .restoration-card,#records .restoration-card,#about .restoration-card{background:#fffaf2!important;color:#29253b!important;border-color:#776380!important;text-shadow:none!important}
+#characters .restoration-card :is(h3,p,small),#mascots .restoration-card :is(h3,p,small),#records .restoration-card :is(h3,p,small),#about .restoration-card :is(h3,p,small){text-shadow:none!important}
+#characters .restoration-card h3,#mascots .restoration-card h3,#records .restoration-card h3,#about .restoration-card h3{color:#29253b!important}
+#characters .restoration-card p,#mascots .restoration-card p,#records .restoration-card p,#about .restoration-card p{color:#514857!important}
+#characters .restoration-card small,#mascots .restoration-card small,#records .restoration-card small,#about .restoration-card small{color:#803454!important}
+#about .restoration-card a{color:#71345a!important;text-decoration:underline}
+#records .phase-note{background:#fffaf2!important;color:#29253b!important;border-color:#803454!important;text-shadow:none!important}
+.theme-choice[data-preview-theme="alex"]{grid-column:auto!important}
+/* Phases 5–7 use the same legible card palette in all room themes. */
+#settings .restoration-card,#games .upcoming-shelf .restoration-card{background:#fffaf2!important;color:#29253b!important;border-color:#776380!important;text-shadow:none!important}
+#settings .restoration-card :is(h3,p,label,a),#games .upcoming-shelf .restoration-card :is(h4,p){color:#29253b!important;text-shadow:none!important}
+#games .upcoming-shelf .restoration-card small{color:#803454!important}
+#settings .restoration-card a{color:#71345a!important;text-decoration:underline}
+#settings .setting-toggle{display:flex;align-items:center;gap:12px;min-height:48px;font-weight:800;cursor:pointer}
+#settings .setting-toggle input{width:22px;height:22px;accent-color:#803454}
+.upcoming-shelf{margin-top:32px;padding-top:24px;border-top:2px solid currentColor}.upcoming-shelf .restoration-card h4{font-size:1.14rem;margin:10px 0 5px}
+html[data-kats-reduce-motion="true"] *,html[data-kats-reduce-motion="true"] *::before,html[data-kats-reduce-motion="true"] *::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+/* Phases 8–10: portable achievements and the TV-adjacent local scoreboard. */
+#achievements .restoration-card{background:#fffaf2!important;color:#29253b!important;border-color:#776380!important;text-shadow:none!important}
+#achievements .restoration-card h3{color:#29253b!important;text-shadow:none!important}
+#achievements .restoration-card p{color:#514857!important;text-shadow:none!important}
+#achievements .restoration-card small{color:#803454!important;text-shadow:none!important}
+#achievements .restoration-card.locked{opacity:.8;border-style:dashed!important}
+#games .scoreboard{display:grid;gap:12px;margin:20px 0;padding:18px;border:2px solid #776380;border-radius:14px;background:#fffaf2!important;color:#29253b!important;text-shadow:none!important}
+#games .scoreboard :is(h3,p,a,strong,span){color:#29253b!important;text-shadow:none!important}
+#games .scoreboard .eyebrow{color:#803454!important}
+#games .scoreboard h3{margin:0 0 5px;font-size:1.35rem}
+#games .scoreboard p{margin:0;line-height:1.5}
+#games .scoreboard a{justify-self:start;text-decoration:underline;font-weight:800}
+#games .scoreboard-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:9px}
+#games .scoreboard-stats div{padding:10px;border-radius:8px;background:#ece2ef;color:#29253b}
+#games .scoreboard-stats strong{display:block;font-size:1.45rem}
+#mascots .saved-monster img{object-fit:contain}
+/* Phases 11–12: room previews and save controls. */
+#characters .room-preview-button,#settings #save-import-confirm{min-height:40px;padding:7px 12px;border:2px solid #803454;border-radius:8px;background:#fff2e7;color:#51253d;font-weight:800;cursor:pointer}
+#characters .room-preview-button:hover,#settings #save-import-confirm:not(:disabled):hover{background:#f4dbe7}
+#settings #save-import-confirm:disabled{opacity:.6;cursor:not-allowed}
+#settings #save-import-file{display:block;width:100%;max-width:100%;margin:8px 0 12px;color:#29253b}
+#settings #save-import-preview{overflow-wrap:anywhere}
+/* Phases 14–15: gallery and share controls. */
+.gallery-filters,.scoreboard-actions{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin:15px 0}
+.gallery-filters button,#games #score-share,#achievements .badge-share{min-height:40px;padding:7px 12px;border:2px solid #803454;border-radius:8px;background:#fffaf2;color:#51253d;font-weight:800;cursor:pointer}
+.gallery-filters button[aria-pressed="true"]{background:#803454;color:#fff}
+#mascot-filter-status{min-height:1.5em}
+#achievements .badge-share{margin-top:6px}
+#games #score-share:hover,#achievements .badge-share:hover,.gallery-filters button:hover{filter:brightness(.94)}

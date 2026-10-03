@@ -1,0 +1,62 @@
+/* Gerald's Neon Archive: physical books and machinery, bright paper and pink interface lights. */
+.archive-visit{display:none}
+.theme-choice[data-preview-theme="kat"]{grid-column:auto}
+.gerald-memory-grid{grid-template-columns:repeat(5,minmax(0,1fr))}
+html[data-theme="gerald"]{color-scheme:dark;--ink:#fff4fc;--muted:#ecd6e7;--rose:#ff66b6;--line:#fc83c0}
+html[data-theme="gerald"] body{color:#fff4fc;background:#110e17 url('/assets/themes/gerald-neon-archive.webp') center/cover fixed no-repeat}
+html[data-theme="gerald"] .shell{background:linear-gradient(90deg,#0b0914ed,#15111cf0 12% 88%,#0b0914ed)}
+html[data-theme="gerald"] .top{align-items:flex-start;flex-direction:column;border-color:#ff63b7;background:#15111beF;box-shadow:5px 6px 0 #f44fa27b}
+html[data-theme="gerald"] .top nav{width:100%}
+html[data-theme="gerald"] .brand-icon{width:55px;height:55px;background:url('/assets/themes/gerald-gerald-v2.webp') center/contain no-repeat}
+html[data-theme="gerald"] .brand small{color:#ffc6e7}
+html[data-theme="gerald"] nav a:hover,html[data-theme="gerald"] .top nav button:hover{background:#4f2544}
+html[data-theme="gerald"] nav a[aria-current="page"]{background:#792454;border-color:#ff84c4}
+html[data-theme="gerald"] nav [data-route]::before{content:'';display:inline-block;width:24px;height:24px;margin-right:6px;vertical-align:middle;background:center/contain no-repeat}
+html[data-theme="gerald"] nav [data-route="home"]::before{background-image:url('/assets/themes/gerald-home.webp')}
+html[data-theme="gerald"] nav [data-route="games"]::before{background-image:url('/assets/themes/gerald-games.webp')}
+html[data-theme="gerald"] nav [data-route="gerald"]::before{background-image:url('/assets/themes/gerald-gerald-v2.webp')}
+html[data-theme="gerald"] nav [data-route="updates"]::before{background-image:url('/assets/themes/gerald-updates.webp')}
+html[data-theme="gerald"] #theme-open::before{content:'';width:23px;height:23px;margin-right:6px;background:url('/assets/themes/gerald-settings.webp') center/contain no-repeat}
+html[data-theme="gerald"] .panel{border-color:#ff75bb;background:#17121fcf;box-shadow:7px 8px 0 #b83283a6}
+html[data-theme="gerald"] #home{grid-template-columns:minmax(0,1.3fr) minmax(180px,.7fr);min-height:420px;background:linear-gradient(90deg,#15101ff5,#17101edb 51%,#17101e43),url('/assets/themes/gerald-neon-archive.webp') center/cover}
+html[data-theme="gerald"] #home .machine{display:none}
+html[data-theme="gerald"] .archive-visit{display:flex;align-self:end;align-items:end;gap:9px;padding:12px;border:2px solid #ed67ab;border-radius:13px;background:#161220ec;box-shadow:0 0 16px #fa5aa45e}
+html[data-theme="gerald"] .archive-visit img{width:clamp(80px,11vw,126px);max-height:155px;object-fit:contain;flex:none}
+html[data-theme="gerald"] .archive-visit div{min-width:0}
+html[data-theme="gerald"] .archive-visit p{margin:0 0 4px;color:#ff91c8;font:800 .79rem ui-monospace,monospace;letter-spacing:.08em}
+html[data-theme="gerald"] .archive-visit strong{display:block;line-height:1.35;font-size:.92rem}
+html[data-theme="gerald"] .archive-visit button{min-height:40px;margin-top:10px;padding:7px 9px;border:1px solid #ff8dca;border-radius:7px;background:#5b2046;color:#fff;font-weight:750}
+html[data-theme="gerald"] em{color:#ff86c8}
+html[data-theme="gerald"] .eyebrow{color:#ffb0d7}
+html[data-theme="gerald"] .intro,html[data-theme="gerald"] .game-card p{color:#f4dcec}
+html[data-theme="gerald"] .primary{border-color:#ffa3d2;background:#fa68b1;box-shadow:3px 4px 0 #7e2d62;color:#231326}
+html[data-theme="gerald"] .primary:hover{background:#ffb0d8}
+html[data-theme="gerald"] .game-card{border-color:#e277b5;background:linear-gradient(145deg,#241a2b,#39203a);box-shadow:5px 6px 0 #ad387b8a}
+html[data-theme="gerald"] .game-card-art{border-color:#ac5a91;background:#131019}
+html[data-theme="gerald"] .game-card-art img{filter:drop-shadow(0 5px 9px #ed51a24a)}
+html[data-theme="gerald"] .game-content,html[data-theme="gerald"] .arcade-content,html[data-theme="gerald"] .shelf{--ink:#291b2a;--muted:#564154;color:#291b2a;border-color:#ff84c4;background:#fff8fc}
+html[data-theme="gerald"] .game-content p,html[data-theme="gerald"] .arcade-content p{color:#49374b}
+html[data-theme="gerald"] .game-choice,html[data-theme="gerald"] .arcade-choices button,html[data-theme="gerald"] .game-actions :is(a,button),html[data-theme="gerald"] .arcade-actions :is(a,button),html[data-theme="gerald"] .home-controls-new button{border-color:#bf72a5;background:#ffe9f6;color:#2d2030}
+html[data-theme="gerald"] .game-choice:hover,html[data-theme="gerald"] .arcade-choices button:hover{background:#ffc6e4}
+html[data-theme="gerald"] .arcade-status,html[data-theme="gerald"] .result-tag,html[data-theme="gerald"] .shelf-count{background:#ffd2ea;color:#4a2143}
+html[data-theme="gerald"] .game-hero,html[data-theme="gerald"] .arcade-scene{border-color:#e36cad}
+html[data-theme="gerald"] .cottage-preview,html[data-theme="gerald"] .goblin-field{border-color:#e36cad}
+html[data-theme="gerald"] #updates{background:linear-gradient(#17121fe8,#17121fe9),url('/assets/themes/gerald-neon-archive.webp') center/cover}
+html[data-theme="gerald"] .updates-intro{color:#ecd6e7}
+html[data-theme="gerald"] .entry{border:2px solid #fa82c2;border-radius:7px;background:#fff8fc;color:#291b2a;box-shadow:3px 4px 0 #e653a66c}
+html[data-theme="gerald"] .entry[open]{border-color:#ff3fa8}
+html[data-theme="gerald"] .entry summary:after,html[data-theme="gerald"] .entry-number{color:#ad2d77}
+html[data-theme="gerald"] .badge{background:#ffd4e9;color:#76265a}
+html[data-theme="gerald"] .entry p{color:#493549}
+html[data-theme="gerald"] .gerald-room-intro{border-color:#fb81c3;background:linear-gradient(90deg,#170f20f4 0 42%,#170f20af 70%,#170f2038),url('/assets/themes/gerald-neon-archive.webp') 72%/cover}
+html[data-theme="gerald"] .gerald-room-intro img{max-height:230px;border-radius:18px;filter:drop-shadow(0 0 16px #ff5dbab0)}
+html[data-theme="gerald"] .gerald-room-sections section,html[data-theme="gerald"] .gerald-memory{border-color:#cb5f9e;background:#251b2c}
+html[data-theme="gerald"] .gerald-desk{background:linear-gradient(145deg,#332039,#1c1723)!important}
+html[data-theme="gerald"] .gerald-memory figure{border-color:#995477;background:#15111e}
+html[data-theme="gerald"] .gerald-room button{border-color:#ff83c3;background:#54213f;color:#fff1fa}
+html[data-theme="gerald"] .gerald-room button:hover,html[data-theme="gerald"] .gerald-room button[aria-pressed="true"]{background:#953b72;border-color:#ffb9dc}
+html[data-theme="gerald"] footer{border-color:#f077b7;color:#f7d7e8}html[data-theme="gerald"] footer strong{color:#fff}
+@media(max-width:700px){html[data-theme="gerald"] body{background-attachment:scroll}html[data-theme="gerald"] .shell{background:#15101deB}html[data-theme="gerald"] #home{grid-template-columns:1fr;background:linear-gradient(#14101de8,#14101db8),url('/assets/themes/gerald-neon-archive.webp') center/cover}html[data-theme="gerald"] .archive-visit{max-width:430px}}
+@media(max-width:700px) and (min-width:481px){.gerald-memory-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){html[data-theme="gerald"] .gerald-room-intro{background:linear-gradient(#170f20ed,#170f20c9),url('/assets/themes/gerald-neon-archive.webp') center/cover}html[data-theme="gerald"] .archive-visit img{width:84px}html[data-theme="gerald"] .archive-visit strong{font-size:.85rem}}
+@media(max-width:480px){.gerald-memory-grid{grid-template-columns:1fr}}

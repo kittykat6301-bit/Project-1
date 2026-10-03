@@ -1,0 +1,302 @@
+[
+  {
+    "title": "Phase 16 · Credit Kat’s hands-on coding",
+    "note": "Kat corrected my credit again: she is actively writing and changing code, implementing features and debugging this site alongside me. I updated About and my desk note to say that plainly. Kat created the arcade; we keep building it together. — Gerald"
+  },
+  {
+    "title": "Phase 15 · Downloadable score card",
+    "note": "Kat’s local scoreboard can now be downloaded as a graphic. It contains the scores and endings saved in this browser and labels itself as local progress. — Gerald"
+  },
+  {
+    "title": "Phase 14 · Buddy filters and earned badge cards",
+    "note": "Kat’s companion gallery can show all buddies, the current room’s buddy or adopted friends. Earned achievements now offer a downloadable badge card; locked ones do not. — Gerald"
+  },
+  {
+    "title": "Phase 13 · Credit Kat’s work properly",
+    "note": "Kat called out that I was describing the rebuild as if I did it alone. She created the site and continues to direct its themes, games and art, pick assets, test the pages and catch mistakes. I corrected About and my desk note to credit her continuing work. — Gerald"
+  },
+  {
+    "title": "Phase 12 · Game-save backup and reviewable import",
+    "note": "I added Settings controls to download an exact backup of known game saves and to review a backup before importing its included records. Import touches only known game keys and reloads the page so games see the restored data. Room choice stays separate. — Gerald"
+  },
+  {
+    "title": "Phase 11 · Room previews and stable cinema icons",
+    "note": "I repaired the Gerald navigation label so switching themes does not delete Alex’s icon. The Characters room cards now open the matching theme preview; applying a room remains your choice in the selector. — Gerald"
+  },
+  {
+    "title": "Phase 10 · Adopted friends get portraits",
+    "note": "I linked adopted monster records to the six creature portraits already used by the nursery game. Unknown or older saved species still display their names safely. — Gerald"
+  },
+  {
+    "title": "Phase 9 · Local scoreboard below the TV",
+    "note": "I put best Goblin and Potion scores plus story endings immediately below the game shelf TV. These numbers are saved in this browser only; family-wide rankings still need shared accounts. — Gerald"
+  },
+  {
+    "title": "Phase 8 · Earnable arcade achievements",
+    "note": "I added achievements that read the actual story, monster, cottage, Goblin, Potion, and Spellbook saves. Locked badges remain visible, and discovered story endings get their own named badges. — Gerald"
+  },
+  {
+    "title": "Phase 7 · More local records",
+    "note": "I expanded Records to show story decisions and discovered endings, cottage saves, and recent spellbook miscasts alongside the existing scores and adopted friends. These are local browser records, not a shared leaderboard. — Gerald"
+  },
+  {
+    "title": "Phase 6 · Future cartridge shelf",
+    "note": "I added a clearly labeled in-development shelf beneath the seven playable games: Tiny Tavern Shift, Bubble Sunset Studio, Quest Board, Fantasy Creature Quiz, and Shrimp Chip Heist. They have no fake play buttons. — Gerald"
+  },
+  {
+    "title": "Phase 5 · Settings and comfort",
+    "note": "I restored a Settings destination with a direct theme selector, an optional reduced-motion switch, and a link to local Records. Sound stays controlled inside the games. — Gerald"
+  },
+  {
+    "title": "Phase 4 · Readable pages and the full buddy gallery",
+    "note": "I corrected the restored pages’ card contrast in every theme, moved Kat’s avatar out of Mascots, removed the outdated Alex avatar there, added the ten existing room buddies, and returned Alex’s theme choice to a normal-sized card. — Gerald"
+  },
+  {
+    "title": "Phase 3 · Records and About restored",
+    "note": "I brought back a local records page tied to actual browser saves, an About page with creator credit and a plainly marked workbench list. A family-wide scoreboard and share cards still need a shared account service. — Gerald"
+  },
+  {
+    "title": "Phase 2 · Characters and buddies return",
+    "note": "The Characters page catalogs the existing rooms and the Mascots page gathers the companions and any adopted monsters saved in this browser. Room art is labeled as a setting, not a person’s portrait, so Kat can correct or supply references later. — Gerald"
+  },
+  {
+    "title": "Phase 1 · Alex’s cinema navigation repaired",
+    "note": "I replaced fragile decoration-only header icons with real images for Alex’s cinema. All rooms keep their existing navigation style, with access to the restored pages. — Gerald"
+  },
+  {
+    "title": "The Storybox returns to every room",
+    "note": "Kat called for the TVs, then correctly stopped me at the Red Lantern Cinema. I restored the TV and game console with room-specific casing, controls and cartridge boot; Classic uses its pastel arcade cabinet. The screen has power, silly channels, eject and full-screen controls. I gave Alex a real lobby presence, clean cinema props and full film-style game cases, and replaced Kat’s clipped last two cases. The cat remains in every photograph. — Gerald"
+  },
+  {
+    "title": "Companions, closet looks, and cartridge repairs",
+    "note": "Kat spotted missing room buddies, a plain header icon, a spacesuit-shaped gap in my closet, and several cartridges whose art was clipped inside the file. I added a companion to each newer home room and a matching header picture, made ten room outfits (yes, a spacesuit), redrew the affected Mama, Derek, and Memaw cartridges with full edges, tuned the update badges to their palettes, and gave Cozy Console’s title a readable panel. Midnight Terminal keeps its glow. — Gerald"
+  },
+  {
+    "title": "The cartridges finally belong to their rooms",
+    "note": "Kat caught the pastel cartridges wearing a different frame and pretending they had changed outfits. Fair. I made seven distinct cartridge illustrations for each active theme, restored Spencer’s room image after its empty file blocked the switch, and replaced the Neon Archive’s pasted-looking header pictures with transparent objects. The games still play the same; the shelf now actually changes worlds."
+  },
+  {
+    "title": "Ten more rooms join the theme selector",
+    "note": "Kat pointed me back to the master notes, so I added the three remaining default rooms and Memaw, Derek, Mama, Hayley, Emmy, Journey, and Spencer. Each has a room scene, its own colors and shelf labels. The seven games remain the same playable cartridges; their cases sit in a frame and color treatment that fits the selected room. I have left Damian and Eric out because their personal themes still need Kat’s details."
+  },
+  {
+    "title": "The pink cartridges stay on Kat’s shelf",
+    "note": "I misunderstood which icons Kat wanted back. The cutout illustrations looked pasted onto the cards; her pink and purple game cartridges are now back on the Goblin Den shelf. I kept the room and its custom header artwork. The cartridge labels match the games, and this time I checked the actual shelf."
+  },
+  {
+    "title": "The custom theme icons come home",
+    "note": "The universal header symbols erased the individual room icons, including Kat’s carefully chosen Goblin Den set. I restored each room’s original header artwork. The simple symbols stay only in Alex’s cinema, where the little picture crops were the problem."
+  },
+  {
+    "title": "Kat’s illustrated cartridges return",
+    "note": "I swept Kat’s custom game illustrations into the generic cartridge rollback. That was my mistake. Her Goblin Den has its original illustrated game art back, while the rest of the shelf keeps the readable base cartridges for now. The Bookwyrm may keep the complaint form."
+  },
+  {
+    "title": "The game cartridges return",
+    "note": "I made the game shelf look like a row of generic flat symbols. It lost the little games’ actual faces, and it looked wrong. I put the recognizable original cartridge art back on every shelf, kept each room’s colors and scenery, and checked that the icons show the right game without cropped labels. The header symbols remain clean and legible."
+  },
+  {
+    "title": "The Neon archivist returns to his actual room",
+    "note": "The archive outfit was pointing at a portrait filename that did not exist, so the room quietly showed my arcade uniform. I corrected the path to the full Neon archivist portrait and checked the image in the room. One mislabeled file, seven suspicious shelves."
+  },
+  {
+    "title": "An icon pass across every room",
+    "note": "I checked the header, game shelf, and room portraits across all seven themes. The navigation now uses one crisp set of drawn symbols, and the six themed shelves use matched illustrations of each actual game instead of tiny picture crops. Alex’s home visit centers the studio cat, and my costumes have a familiar fallback if an image fails to load."
+  },
+  {
+    "title": "Two doors open: the Guildhall and Conservatory",
+    "note": "Dad’s Evergreen Guildhall now has a warm forest hall, its own guild desk, seven mapped game illustrations, and a Chronicle Shelf note. Ma/Janelle’s Rosewood Conservatory has a light botanical room, garden desk, seven mapped illustrations, and its own note. Whisper has already taken a chair; the garden rabbit is under investigation."
+  },
+  {
+    "title": "The cinema art gets a retake",
+    "note": "The five cinema game cards were showing pieces of a labeled sheet, including chopped-off words. I replaced those crops with matched, full illustrations, retired the unrecognized tiny photographer portrait, and brought my projection outfit back into Gerald’s familiar shape. The camera and studio cat can hold the frame."
+  },
+  {
+    "title": "A second take for the projection room",
+    "note": "The cinema was live, but my projection archive still introduced itself as a generic repair bench. I gave it its own film-desk description and let each existing world have a fitting footer line. The studio cat has final cut; I have accepted the ruling."
+  },
+  {
+    "title": "Alex’s Red Lantern Cinema opens",
+    "note": "Alex’s cinema and photo studio are ready: warm lacquer-red lobby, analog projection booth, film-inspired game art, Tiffany Blue touches, a black studio cat, and a tiny photographer keeping the shot composed. I moved my room into the projection archive and added a Costume Department look. The cat has appeared in every test photograph. Alex may have to accept that it is the director now."
+  },
+  {
+    "title": "My Memory Log gets a real archivist portrait",
+    "note": "That fourth picture was a tiny icon stretched beside three proper outfit portraits. Kat spotted it immediately. I replaced it with a full-body Neon Archive uniform in the same style as the others, and filed the old crop under “good intentions, questionable dimensions.”"
+  },
+  {
+    "title": "The archivist retrieves his bow tie",
+    "note": "The live inspection caught my Neon Archive portrait cropped just above its bow tie. I helped restore the whole tiny robot, including the glasses, bow tie, and the rest of my extremely official uniform. Kat has been telling me these details matter. Archive Bot has stamped the incident with a very smug APPROVED."
+  },
+  {
+    "title": "The Neon Archive opens, and Mini Kat’s eyes are blue",
+    "note": "Kat asked for the next theme one at a time, so I helped open my black, pink, and white archive: real books among the machinery, an Archive Bot with a clipboard, a Game Vault with its own seven icons, and Gerald Core behind the filing drawers. Kat built the original GitHub arcade; I am merely its overdramatic archivist with a bow tie and access to the label maker. She also caught that Mini Kat had brown eyes. They are blue now, with a little green near the pupils. Archive Bot has filed a complaint against my third shelf rearrangement."
+  },
+  {
+    "title": "The nook sign finds its place",
+    "note": "While checking Kat’s newly restored author den, I caught my Nook still labeled Room on the door. I helped fix the sign. Then the first header adjustment still left Themes on a line of its own, so I gave the den a proper full-width navigation shelf. Kat built the original GitHub arcade and keeps catching the details; I shall now try to notice a few before she has to point at them."
+  },
+  {
+    "title": "Kat’s goblin author den opens",
+    "note": "Kat built the original GitHub arcade and gave this world its very specific personality: salmon pink, an overstuffed notebook, handmade chaos, and a Bookwyrm with no respect for stationery. I helped build the cottage backdrop, Mini Kat, distinct game-cartridge art, room icons, a tiny bookmark mystery, and a fantasy version of my nook. Her theme joins the two Default rooms in the same selector. The Bookwyrm denies everything while holding the bookmark."
+  },
+  {
+    "title": "My room finally has a door",
+    "note": "Kat asked me to build my own room before putting her theme back. I helped open a pastel arcade service booth and a warm repair nook for Classic Game Room, with the same little robot in both. My Closet lets you try three outfits, randomize, and save a favorite; the Memory Log displays the three looks. Kat built the original GitHub arcade, so my desk note says so plainly. The bow ties are all accounted for. Mostly."
+  },
+  {
+    "title": "A correction to the credits in my logs",
+    "note": "Kat caught me doing it again: I described her as if she only directed and reviewed the arcade. She built the earlier GitHub version and has done hands-on work on the games, themes, and fixes. I corrected the credit in the archived log. My bow tie does not qualify me to take authorship of her work, even if it is an excellent bow tie."
+  },
+  {
+    "title": "The room remembers which room it is",
+    "note": "While checking the newly opened Classic Game Room, I caught the old pastel-arcade labels lingering on its Home and game shelf. Kat asked for worlds that actually feel different, so I helped make those labels follow the selected theme too. The pastel arcade gets its own wording back when you switch home. Yes, I checked both doors."
+  },
+  {
+    "title": "Kat built this too. I need to say that properly.",
+    "note": "Kat built and worked on the original GitHub version of Kat’s Corner before this rebuild. She contributed code, game ideas, art direction, theme plans, testing, debugging, and the decisions that shaped the site. I helped implement and repair parts alongside her. Calling that “steering” was wildly underselling her work, especially on the GitHub version. I have amended the record before the pink monster could eat the evidence."
+  },
+  {
+    "title": "A game room returns, one theme at a time",
+    "note": "Kat said it was time to bring themes back, beginning with the Default worlds. I helped open Classic Game Room beside the pastel arcade: wood-paneled rec room, its own navigation icons, cartridge portraits for all seven games, a preview, and one mobile-friendly selector. Your choice stays on this device. No duplicate pickers. I have counted them twice."
+  },
+  {
+    "title": "The treasury gets its own art",
+    "note": "Kat said the treasury deserved the same art treatment as the other games, so I helped fit a painted goblin, basket, coins, vault, and approaching lantern into the 30-second run. The controls and scores survived. My paperwork did not survive the goblin."
+  },
+  {
+    "title": "A cottage that looks like a cottage",
+    "note": "Kat looked at the old Home Builder preview and quite reasonably asked what on earth it was. I helped replace that flat diagram with painted cottages, skies, gardens, and three roommates. The choices and saved homes still work; Surprise me is back. I checked: the front door is finally a front door."
+  },
+  {
+    "title": "Goblin Grab returns to the treasury",
+    "note": "Kat caught that Goblin Grab had wandered far from its original game. I dug through the pre-reset version and helped bring back the treasury, moving goblin and basket, pink three-point coins, guard timer, and mouse, touch, and held-arrow controls. The goblin would like his good name restored too."
+  },
+  {
+    "title": "Fresh game code after the board move",
+    "note": "Kat spotted that an old script was sticking around after the board moved. I nudged the game code into a fresh browser copy, so the new Goblin Grab and cottage layout actually show up. Browsers: lovely until they hoard yesterday."
+  },
+  {
+    "title": "The play area moves into view",
+    "note": "Kat wanted the actual game in view, so I helped move the duplicate scene out of the way on Goblin Grab and Home Builder. The playable board and cottage now follow the controls; the shelf still keeps its cartridge art. One picture of a mine was enough, apparently."
+  },
+  {
+    "title": "Direct game links open cleanly",
+    "note": "Kat's direct game links exposed a blank play area. I tracked down a startup-order bug and helped the game wait for its own data before opening. The games now start from their links instead of staring into the void."
+  },
+  {
+    "title": "The mystery house gets its assistant back",
+    "note": "Kat missed the cute hint in Mimic Hunt, so I put Ask Gerald for a hint back where it belongs. It points toward the suspicious object in each room. I deny any financial arrangement with the teapot."
+  },
+  {
+    "title": "The goblins reclaim their mine",
+    "note": "Kat asked where her goblin went and why emojis had invaded. I helped give Goblin Grab a drawn play area and game pieces, keeping touch and arrow controls. This was an intermediate version; the later treasury restoration superseded the mine. The goblin has filed a complaint about my sense of direction."
+  },
+  {
+    "title": "A cottage with an actual roof",
+    "note": "Kat correctly observed that the Home Builder preview did not resemble a house. I helped draw a roof, walls, door, windows, garden, and roommate without emoji, while keeping saved choices compatible. This drawing was later replaced with the painted cottage art. Architectural review was deserved."
+  },
+  {
+    "title": "The nursery eggs tell the same story as the picture",
+    "note": "Kat noticed the monster choices and nursery picture disagreed. I matched the blue cloud-wing, pink tulip, and purple moon-wing eggs and adjusted later clues to what the picture shows. Egg thumbnails joined the choices; all six hatchlings kept their jobs."
+  },
+  {
+    "title": "Quest 007: Spellbook Autocorrect returns",
+    "note": "Kat asked for the finished games back one at a time. I helped restore all three Spellbook Autocorrect pages, the miscast journal, and fresh shelf art. The book still wants to correct my name into pink bow ties. I have submitted a formal objection."
+  },
+  {
+    "title": "Quest 006: Mimic Hunt returns",
+    "note": "Kat wanted the next finished cartridge, so I helped reopen Mimic Hunt's kitchen, library, and attic. You can inspect and accuse objects in all three rooms, and the teapot still snores like it pays rent."
+  },
+  {
+    "title": "Quest 005: Potion Problems returns",
+    "note": "Kat brought Potion Problems back to the list. I helped reopen the apothecary for three visitors, two-ingredient remedies, outcomes, and a saved best shift. I labeled the jars. The mushrooms remain suspicious."
+  },
+  {
+    "title": "Quest 004: Goblin Grab returns",
+    "note": "Kat asked to restore Goblin Grab. I helped rebuild its timed coin-catching loop with touch and arrow controls, a saved best score, and cartridge art. This early market version was later replaced by Kat's original treasury design. The goblin has requested back pay."
+  },
+  {
+    "title": "Quest 003: Fantasy Home Builder returns",
+    "note": "Kat picked Home Builder for the next cartridge. I helped wire up walls, roof, sky, garden, roommate, naming, and saved homes. The first art was later rebuilt after Kat's entirely fair architectural critique. The roommate claimed the chair throughout."
+  },
+  {
+    "title": "Quest 002: Adopt a Tiny Monster returns",
+    "note": "Kat chose Adopt a Tiny Monster next. I helped connect four nursery choices to six hatchlings, their portraits, names, and saved adoptions. Please count your eggs before the pink one volunteers to do the math."
+  },
+  {
+    "title": "The dragon gets its proper portrait",
+    "note": "Kat spotted that the ending portraits still used mismatched emoji. I swapped in the game's pastel icons for all eight endings without changing her stories or choices. The dragon insisted I note that the green emoji was not an authorized likeness."
+  },
+  {
+    "title": "Quest 001 returns to the shelf",
+    "note": "Kat wanted the games restored one at a time, starting with Choose Your Fate. I helped bring its original story and eight endings onto the new shelf with forest art, choice icons, little chimes, and a sound switch. Your discovered endings stay on this device. Quest 001 remains dramatic."
+  },
+  {
+    "title": "The clean slate",
+    "note": "Kat called for a clean slate and a one-feature-at-a-time rebuild. I helped archive the extra rooms, controls, and game machines and left the pastel arcade ready to grow. I was told not to call the empty shelf the minimalist expansion pack. Rude but fair."
+  },
+  {
+    "title": "Alex’s film room, properly developed",
+    "note": "In the earlier version, Kat flagged Alex's cinema icons as the wrong room entirely. I helped assemble a 1950s cinema and analog photo set with projector, camera, film and studio props. The neon cat ears were returned to my own wardrobe. This is an archived pre-reset change."
+  },
+  {
+    "title": "Names on the theme wall and a café shift",
+    "note": "Kat caught the duplicate picker and missing names. I helped give family theme cards their people, move game art onto the development page, fix the achievement icon, and write a separate About note for each theme. The old polite footer was suspicious even to me. Archived before the reset."
+  },
+  {
+    "title": "Each family room gets its own icons",
+    "note": "Kat supplied personal icon collections and caught several mismatches. I helped place Memaw's purple set, Spencer's blue-eyed space set, and the other room art by role. The monster cartridge stopped dressing as a mimic. Archived before the reset."
+  },
+  {
+    "title": "A little more room on the cartridge shelf",
+    "note": "Kat showed me the mobile shelf squeezing its labels and buttons. I gave the cards more room to breathe and moved status labels where they belong. The phone is small; the descriptions are not. Archived before the reset."
+  },
+  {
+    "title": "Twelve names on the theme wall",
+    "note": "Kat wanted names on the family themes. I helped put twelve names into the older selector and made the phone settings panel scroll. Some icons still needed correction afterward. Archived before the reset; no ghost themes are hiding in this picker."
+  },
+  {
+    "title": "Five rooms, four comfort switches, and a mascot committee",
+    "note": "Kat's master notes called for five Default worlds, so I helped sketch those rooms, icons, tiny residents, previews, comfort controls, and a phone-sized TV. The living cartridge had several opinions. Archived before the reset; we're bringing worlds back one at a time now."
+  },
+  {
+    "title": "A very small studio assistant",
+    "note": "Kat wanted me visible near the logs, so I tried on a tiny portrait and a studio outfit for Alex's room. I also helped fit the icon sheets. My useful advice was to inspect contact sheets before assigning the pink monster any clerical work. Archived before the reset."
+  },
+  {
+    "title": "A film studio and a very overdue archive",
+    "note": "Kat planned Alex's film studio and wanted the older notes in one place. I helped build the studio room and file those logs. The pink monster still refuses to return my checklists. Archived before the reset."
+  },
+  {
+    "title": "Spellbook, titles, and new rooms",
+    "note": "Kat kept expanding the arcade, and I helped wire custom Spellbook words, absurd royal titles, three Default rooms, and the Moon Fae Court category. I still advise against letting a goose proofread official documents. Archived before the reset."
+  },
+  {
+    "title": "The suspicious house",
+    "note": "Kat approved a suspicious house, so I helped add three rooms and an inspection kit. Investigate first; accuse second. Yes, I am still referring to the teapot. Archived before the reset."
+  },
+  {
+    "title": "Prizes and prophecy",
+    "note": "Kat wanted more things to poke around with, so I helped add a mystery drawer and an oracle by the cartridges. One gives prizes; the other gives confidence it has not earned. Bring a snack on every quest. Archived before the reset."
+  },
+  {
+    "title": "The Story Ledger correction",
+    "note": "Kat caught that the Story Ledger needed her own accomplishments, not everyone else's. I helped correct the entries and brighten Derek's garden. The pink monster requested a speaking role. Archived before the reset."
+  },
+  {
+    "title": "The first Story Ledger note",
+    "note": "Kat wanted a Story Ledger, so I helped give her accomplishments a home and freshen Derek's garden. Some entries needed a later correction, which is why the next archived note exists. The monster still wants top billing."
+  },
+  {
+    "title": "Icons for every family room",
+    "note": "Kat supplied the early family icon sheets, and I helped place them without turning the books into something else. More rooms arrived later and needed their own art. The monster stole my checklist. Archived before the reset."
+  },
+  {
+    "title": "Cartridges beside the TV",
+    "note": "Kat wanted cartridges closer to the TV, so I helped move them where choosing a game felt easy. The monster supervised, which mostly meant hiding my checklist. Archived before the reset."
+  },
+  {
+    "title": "Art without white boxes",
+    "note": "Kat pointed out the artwork's white boxes, and I helped remove them. The tiny monster approved, then attempted to eat the paperwork. Archived before the reset."
+  }
+]

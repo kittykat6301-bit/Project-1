@@ -1,0 +1,55 @@
+/* Kat's personal world: salmon-pink goblin author cottage, handmade surfaces and separate icons. */
+.kat-visit{display:none}
+.theme-choice[data-preview-theme="kat"]{grid-column:span 2}
+html[data-theme="kat"]{color-scheme:light;--ink:#44334d;--muted:#655467;--rose:#a64f74;--line:#ad789c}
+html[data-theme="kat"] body{color:#44334d;background:#d89f9d url('/assets/themes/kat-den.webp') center center/cover fixed no-repeat}
+html[data-theme="kat"] .shell{background:linear-gradient(90deg,#966178bb,#fae4d9ed 12% 88%,#966178bb)}
+html[data-theme="kat"] .top{align-items:flex-start;flex-direction:column;border-color:#a96783;background:#fff0e6;box-shadow:5px 6px 0 #774d6599}
+html[data-theme="kat"] .top nav{width:100%}
+html[data-theme="kat"] .brand-icon{width:52px;height:52px;background:url('/assets/themes/kat-home.webp') center/contain no-repeat}
+html[data-theme="kat"] .brand small{color:#744960}
+html[data-theme="kat"] nav a:hover,html[data-theme="kat"] .top nav button:hover{background:#f6cbd9}
+html[data-theme="kat"] nav a[aria-current="page"]{background:#f2b2c5;border-color:#b6638d}
+html[data-theme="kat"] nav [data-route]::before{content:'';display:inline-block;width:24px;height:24px;margin-right:6px;vertical-align:middle;background:center/contain no-repeat}
+html[data-theme="kat"] nav [data-route="home"]::before{background-image:url('/assets/themes/kat-home.webp')}
+html[data-theme="kat"] nav [data-route="games"]::before{background-image:url('/assets/themes/kat-games.webp')}
+html[data-theme="kat"] nav [data-route="gerald"]::before{background-image:url('/assets/themes/kat-gerald.webp')}
+html[data-theme="kat"] nav [data-route="updates"]::before{background-image:url('/assets/themes/kat-updates.webp')}
+html[data-theme="kat"] #theme-open::before{content:'';width:23px;height:23px;margin-right:6px;background:url('/assets/themes/kat-settings.webp') center/contain no-repeat}
+html[data-theme="kat"] .panel{border-color:#ad718d;background:#fff3e8;box-shadow:7px 8px 0 #8d60749e}
+html[data-theme="kat"] #home{grid-template-columns:minmax(0,1.4fr) minmax(160px,.6fr);background:linear-gradient(90deg,#fff2eaeF 0%,#fff2eade 58%,#fff2ea82),url('/assets/themes/kat-den.webp') center/cover;min-height:440px}
+html[data-theme="kat"] #home .machine{display:none}
+html[data-theme="kat"] .kat-visit{display:grid;align-self:end;justify-items:center;position:relative;min-width:0}
+html[data-theme="kat"] .kat-mini{width:min(230px,100%);height:280px;object-fit:contain;filter:drop-shadow(0 8px 6px #60395477)}
+html[data-theme="kat"] .kat-bookwyrm{position:absolute;right:-10px;top:42%;width:88px;height:90px;object-fit:contain;filter:drop-shadow(0 5px 4px #60395466)}
+html[data-theme="kat"] .kat-visit button{margin-top:3px;border:2px solid #a75782;border-radius:9px;background:#ffd0df;padding:8px 12px;color:#4b3250;font-weight:760}
+html[data-theme="kat"] .kat-visit button:hover{background:#f4aec9}
+html[data-theme="kat"] .kat-visit p{margin:8px 0 0;padding:8px 11px;border:1px solid #d8a5b7;border-radius:8px;background:#fffaefde;font-size:.85rem;line-height:1.35;text-align:center}
+html[data-theme="kat"] em{color:#ac4f77}
+html[data-theme="kat"] .eyebrow{color:#91536f}
+html[data-theme="kat"] .intro,html[data-theme="kat"] .game-card p,html[data-theme="kat"] .game-content>p,html[data-theme="kat"] .arcade-content p{color:#59465d}
+html[data-theme="kat"] .primary{border-color:#9b547e;background:#efa5c2;box-shadow:3px 4px 0 #ad7097;color:#433049}
+html[data-theme="kat"] .primary:hover{background:#ffd2e1}
+html[data-theme="kat"] .game-card{border-color:#ac7398;border-radius:15px;background:linear-gradient(140deg,#fff6e9,#f7dce8 65%,#dedaf6);box-shadow:5px 6px 0 #a4708a80}
+html[data-theme="kat"] .game-card-art{border-color:#d2a1b7;background:radial-gradient(circle,#fffae8,#f6dded)}
+html[data-theme="kat"] .game-card-art img{filter:drop-shadow(0 6px 6px #87547055)}
+html[data-theme="kat"] .game-content,html[data-theme="kat"] .arcade-content,html[data-theme="kat"] .shelf{border-color:#c393ab;background:#fff9ef}
+html[data-theme="kat"] .game-choice,html[data-theme="kat"] .arcade-choices button,html[data-theme="kat"] .game-actions :is(a,button),html[data-theme="kat"] .arcade-actions :is(a,button),html[data-theme="kat"] .home-controls-new button{border-color:#bd89a6;background:#ffe6ef;color:#483249}
+html[data-theme="kat"] .game-choice:hover,html[data-theme="kat"] .arcade-choices button:hover{background:#f9cbdc}
+html[data-theme="kat"] .arcade-status,html[data-theme="kat"] .result-tag,html[data-theme="kat"] .shelf-count{background:#f9deeb;color:#703f65}
+html[data-theme="kat"] #updates{background:linear-gradient(#fff1e6e9,#fff1e6ee),url('/assets/themes/kat-den.webp') center/cover}
+html[data-theme="kat"] .entry{border:2px solid #bd829e;border-radius:4px;background:#fffdf2;box-shadow:3px 4px 0 #c89db177}
+html[data-theme="kat"] .entry[open]{border-color:#a75982}
+html[data-theme="kat"] .entry summary:after,html[data-theme="kat"] .entry-number{color:#a75982}
+html[data-theme="kat"] .badge{background:#f5bfcd;color:#5d304d}
+html[data-theme="kat"] .gerald-room-intro{border-color:#bb85a4;background:linear-gradient(90deg,#fff0e6f1 0 42%,#fff0e6b2 68%,#fff0e655),url('/assets/themes/kat-gerald-nook.webp') center/cover}
+html[data-theme="kat"] .gerald-room-sections section,html[data-theme="kat"] .gerald-memory{border-color:#c393ab;background:#fff7ec}
+html[data-theme="kat"] .gerald-desk{background:linear-gradient(155deg,#fff8ee,#f4dce9)!important}
+html[data-theme="kat"] .gerald-memory figure{border-color:#bb87a3;background:#f9e4ed}
+html[data-theme="kat"] .gerald-room button{border-color:#b87ba1;background:#f8d9e8;color:#483249}
+html[data-theme="kat"] .gerald-room button:hover,html[data-theme="kat"] .gerald-room button[aria-pressed="true"]{background:#f0b8d2;border-color:#a04d80}
+html[data-theme="kat"] .game-hero,html[data-theme="kat"] .arcade-scene{border-color:#bd89a6}
+html[data-theme="kat"] footer{border-color:#bf93ac;color:#685269}html[data-theme="kat"] footer strong{color:#4e3652}
+@media(max-width:700px){html[data-theme="kat"] body{background-attachment:scroll}html[data-theme="kat"] .shell{background:#fce9e3ed}html[data-theme="kat"] #home{grid-template-columns:1fr;background:linear-gradient(#fff1e8eb,#fff1e8d3),url('/assets/themes/kat-den.webp') center/cover}html[data-theme="kat"] .kat-visit{grid-template-columns:125px minmax(0,1fr);gap:8px;justify-items:start;align-items:center}html[data-theme="kat"] .kat-mini{grid-row:span 2;width:125px;height:160px}html[data-theme="kat"] .kat-bookwyrm{width:65px;height:65px;right:4px;top:0}html[data-theme="kat"] .kat-visit button{margin-top:45px}html[data-theme="kat"] .kat-visit p{text-align:left}}
+@media(max-width:560px){.theme-choice[data-preview-theme="kat"]{grid-column:auto}html[data-theme="kat"] .gerald-room-intro{background:linear-gradient(#fff0e6e9,#fff0e6bf),url('/assets/themes/kat-gerald-nook.webp') center/cover}}
+@media(max-width:390px){html[data-theme="kat"] .kat-visit{grid-template-columns:100px minmax(0,1fr)}html[data-theme="kat"] .kat-mini{width:100px;height:145px}html[data-theme="kat"] .kat-bookwyrm{width:54px;height:54px}}

@@ -1,0 +1,105 @@
+/* Alex's mid-century cinema and analog photography studio. */
+.alex-visit{display:none}
+.theme-choice[data-preview-theme="alex"]{grid-column:span 2}
+html[data-theme="alex"]{color-scheme:light;--ink:#352727;--muted:#594949;--rose:#8f302d;--line:#a16559}
+html[data-theme="alex"] body{color:#352727;background:#1c1415 url('/assets/themes/alex-cinema.webp') center/cover fixed no-repeat}
+html[data-theme="alex"] .shell{background:linear-gradient(90deg,#27151bec,#ead8bfe8 12% 88%,#27151bec)}
+html[data-theme="alex"] .top{align-items:flex-start;flex-direction:column;border-color:#ad7c57;background:#301b1c;color:#fff2df;box-shadow:5px 6px 0 #100c0b9e}
+html[data-theme="alex"] .top nav{width:100%}
+html[data-theme="alex"] .brand-icon{width:54px;height:54px;background:url('/assets/themes/alex-home.webp') center/contain no-repeat}
+html[data-theme="alex"] .brand small{color:#b5dfdd}
+html[data-theme="alex"] nav a:hover,html[data-theme="alex"] .top nav button:hover{background:#5b2b2d}
+html[data-theme="alex"] nav a[aria-current="page"]{background:#802f32;border-color:#bf9d6f}
+html[data-theme="alex"] nav [data-route]::before{content:'';display:inline-block;width:24px;height:24px;margin-right:6px;vertical-align:middle;background:center/contain no-repeat}
+html[data-theme="alex"] nav [data-route="home"]::before{background-image:url('/assets/themes/alex-home.webp')}
+html[data-theme="alex"] nav [data-route="games"]::before{background-image:url('/assets/themes/alex-games.webp')}
+html[data-theme="alex"] nav [data-route="gerald"]::before{background-image:url('/assets/themes/alex-gerald.webp')}
+html[data-theme="alex"] nav [data-route="updates"]::before{background-image:url('/assets/themes/alex-updates.webp')}
+html[data-theme="alex"] #theme-open::before{content:'';width:23px;height:23px;margin-right:6px;background:url('/assets/themes/alex-settings.webp') center/contain no-repeat}
+html[data-theme="alex"] .panel{border-color:#8b493d;background:#f6e9d4;box-shadow:7px 8px 0 #211312a8}
+html[data-theme="alex"] #home{grid-template-columns:minmax(0,1.4fr) minmax(190px,.6fr);min-height:430px;background:linear-gradient(90deg,#1d1418f4,#2b191bc9 57%,#2715154a),url('/assets/themes/alex-cinema.webp') center/cover;color:#fff2dd}
+html[data-theme="alex"] #home .machine{display:none}
+html[data-theme="alex"] #home .eyebrow{color:#b9e4df}
+html[data-theme="alex"] #home .intro{color:#ffeddf}
+html[data-theme="alex"] #home em{color:#f0b59e}
+html[data-theme="alex"] .alex-visit{display:grid;align-self:end;justify-items:center;position:relative;min-width:0;border:1px solid #aa735c;border-radius:10px;padding:12px;background:#1f161acc;box-shadow:0 8px 16px #130a0a88}
+html[data-theme="alex"] .alex-visit>img:first-child{width:min(155px,85%);height:180px;object-fit:contain;filter:drop-shadow(0 6px 5px #08070899)}
+html[data-theme="alex"] .alex-cat{position:absolute;right:2px;top:68px;width:94px;height:110px;object-fit:contain;filter:drop-shadow(0 5px 4px #0807089e)}
+html[data-theme="alex"] .alex-visit div{text-align:center;position:relative;z-index:1}
+html[data-theme="alex"] .alex-visit button{min-height:40px;padding:7px 11px;border:1px solid #bf9c73;border-radius:6px;background:#743037;color:#fff6e6;font-weight:750}
+html[data-theme="alex"] .alex-visit button:hover{background:#9e4144}
+html[data-theme="alex"] .alex-visit p{font-size:.88rem;line-height:1.35;margin:7px 0 0;color:#fff1dd}
+html[data-theme="alex"] em{color:#a14437}
+html[data-theme="alex"] .eyebrow{color:#8d4238}
+html[data-theme="alex"] .intro,html[data-theme="alex"] .game-card p{color:#56443f}
+html[data-theme="alex"] .primary{border-color:#794436;background:#ab4540;box-shadow:3px 4px 0 #6a392c;color:#fff9e9}
+html[data-theme="alex"] .primary:hover{background:#c35a50}
+html[data-theme="alex"] #games{background:linear-gradient(#f7ead9f5,#f7ead9f5),url('/assets/themes/alex-studio.webp') center/cover}
+html[data-theme="alex"] .game-card{border:2px solid #8c5547;border-radius:5px;background:linear-gradient(145deg,#fff6e8,#ead2b7);box-shadow:5px 6px 0 #5d342b7c}
+html[data-theme="alex"] .game-card-art{border-color:#bd9975;background:#21191b}
+html[data-theme="alex"] .game-card-art img{filter:drop-shadow(0 4px 5px #170d0b65)}
+html[data-theme="alex"] .game-content,html[data-theme="alex"] .arcade-content,html[data-theme="alex"] .shelf{border-color:#aa8064;background:#fff8eb;color:#352727}
+html[data-theme="alex"] .game-choice,html[data-theme="alex"] .arcade-choices button,html[data-theme="alex"] .game-actions :is(a,button),html[data-theme="alex"] .arcade-actions :is(a,button),html[data-theme="alex"] .home-controls-new button{border-color:#ad8269;background:#f3e0c7;color:#342525}
+html[data-theme="alex"] .game-choice:hover,html[data-theme="alex"] .arcade-choices button:hover{background:#dcebea}
+html[data-theme="alex"] .arcade-status,html[data-theme="alex"] .result-tag,html[data-theme="alex"] .shelf-count{background:#d8e8e6;color:#395856}
+html[data-theme="alex"] .game-hero,html[data-theme="alex"] .arcade-scene,html[data-theme="alex"] .cottage-preview,html[data-theme="alex"] .goblin-field{border-color:#9d6651}
+html[data-theme="alex"] #updates{background:linear-gradient(#f4e7d5ed,#f4e7d5f5),url('/assets/themes/alex-studio.webp') center/cover}
+html[data-theme="alex"] .updates-intro{color:#5f4b43}
+html[data-theme="alex"] .entry{border:2px solid #977055;border-radius:5px;background:#fff9ee;box-shadow:3px 4px 0 #94705273}
+html[data-theme="alex"] .entry[open]{border-color:#913e36}
+html[data-theme="alex"] .entry summary:after,html[data-theme="alex"] .entry-number{color:#913e36}
+html[data-theme="alex"] .badge{background:#d9e9e7;color:#375e5d}
+html[data-theme="alex"] .gerald-room-intro{border-color:#9b6652;background:linear-gradient(90deg,#1d1619ec 0 42%,#1d1619a2 72%,#1d161929),url('/assets/themes/alex-studio.webp') center/cover;color:#fff4e7}
+html[data-theme="alex"] .gerald-room-intro .eyebrow{color:#b5dfdd}
+html[data-theme="alex"] .gerald-room-intro em{color:#f6b39c}
+html[data-theme="alex"] .gerald-room-sections section,html[data-theme="alex"] .gerald-memory{border-color:#ae8063;background:#fff4e1}
+html[data-theme="alex"] .gerald-desk{background:linear-gradient(145deg,#fff9e9,#ead7b8)!important}
+html[data-theme="alex"] .gerald-memory figure{border-color:#9e7058;background:#e9dcc7}
+html[data-theme="alex"] .gerald-room button{border-color:#9d6f57;background:#ecddc6;color:#392721}
+html[data-theme="alex"] .gerald-room button:hover,html[data-theme="alex"] .gerald-room button[aria-pressed="true"]{background:#d7e5e2;border-color:#668e8b}
+html[data-theme="alex"] footer{border-color:#995f53;color:#42302d}html[data-theme="alex"] footer strong{color:#392927}
+@media(max-width:700px){html[data-theme="alex"] body{background-attachment:scroll}html[data-theme="alex"] .shell{background:#eddcc7ef}html[data-theme="alex"] #home{grid-template-columns:1fr;background:linear-gradient(#25161ce9,#25161ccb),url('/assets/themes/alex-cinema.webp') center/cover}html[data-theme="alex"] .alex-visit{max-width:360px}}
+@media(max-width:560px){.theme-choice[data-preview-theme="alex"]{grid-column:auto}html[data-theme="alex"] .gerald-room-intro{background:linear-gradient(#20151ae9,#20151acb),url('/assets/themes/alex-studio.webp') center/cover}}
+/* A camera prop avoids inventing a portrait of Alex. */
+html[data-theme="alex"] .alex-camera{display:block;width:155px;height:168px;background:url('/assets/themes/alex-camera.webp') center/contain no-repeat;filter:drop-shadow(0 7px 8px #0c0a0a)}
+html[data-theme="alex"] .alex-cat{top:72px;right:0;width:78px}
+html[data-theme="alex"] .game-card-art img{width:min(240px,90%);object-fit:cover;object-position:center;border-radius:8px;filter:none}
+html[data-theme="alex"] .gerald-room-intro{grid-template-columns:minmax(0,1fr) 190px;align-items:end}
+html[data-theme="alex"] .gerald-room-intro img{max-height:245px;max-width:180px}
+@media(max-width:600px){html[data-theme="alex"] .gerald-room-intro{grid-template-columns:1fr}html[data-theme="alex"] .gerald-room-intro img{justify-self:center}}
+
+/* The cat carries the home visit; a camera backdrop read like a stray game card. */
+html[data-theme="alex"] .alex-visit{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:280px}
+html[data-theme="alex"] .alex-visit .alex-cat{position:static;width:145px;height:155px;object-fit:contain;margin:0 auto}
+html[data-theme="alex"] .alex-visit div{max-width:210px}
+
+/* Transparent props belong to the header; the lobby is a composed scene. */
+html[data-theme="alex"] .brand-icon{background:url('/assets/themes/alex-nav-home.webp') center/contain no-repeat}
+html[data-theme="alex"] nav [data-route="home"]::before{background-image:url('/assets/themes/alex-nav-home.webp')}
+html[data-theme="alex"] nav [data-route="games"]::before{background-image:url('/assets/themes/alex-nav-games.webp')}
+html[data-theme="alex"] nav [data-route="gerald"]::before{background-image:url('/assets/themes/alex-nav-gerald.webp')}
+html[data-theme="alex"] nav [data-route="updates"]::before{background-image:url('/assets/themes/alex-nav-updates.webp')}
+html[data-theme="alex"] #theme-open::before{background-image:url('/assets/themes/alex-nav-settings.webp')}
+html[data-theme="alex"] .game-card-art img{object-fit:contain;object-position:center;border-radius:0;filter:drop-shadow(0 8px 8px #100a0a66)}
+html[data-theme="alex"] #games>.eyebrow::after{content:' · NOW SHOWING';color:#7b514a}
+html[data-theme="alex"] .alex-visit{display:grid;grid-template-columns:110px 1fr;align-items:center;gap:6px;max-width:430px;min-height:0;padding:10px 14px;background:linear-gradient(135deg,#28191de8,#3d2123dc);border:2px solid #b39165}
+html[data-theme="alex"] .alex-visit .alex-mini{display:block;width:110px;height:165px;object-fit:contain;grid-row:1/3;filter:drop-shadow(0 6px 8px #0008)}
+html[data-theme="alex"] .alex-visit .alex-cat{position:static;width:95px;height:95px;object-fit:contain;justify-self:center;margin:0}
+html[data-theme="alex"] .alex-visit div{grid-column:2;max-width:none}
+html[data-theme="alex"] .alex-visit button{background:#763330;border-color:#bf9b73}
+html[data-theme="alex"] .alex-visit p{color:#f8e8d4}
+html[data-theme="alex"] .alex-studio-note{display:block;max-width:52ch;border-left:3px solid #8ccecb;padding:8px 13px;color:#f9e6d5;background:#221618ac;font-size:.88rem;line-height:1.4}
+@media(max-width:550px){html[data-theme="alex"] .alex-visit{grid-template-columns:80px 1fr;padding:8px}html[data-theme="alex"] .alex-visit .alex-mini{width:80px;height:125px}}
+
+html[data-theme="alex"] .top{background:linear-gradient(90deg,#241718f2,#3d2122df),url('/assets/themes/alex-cinema.webp') center/cover}
+html[data-theme="alex"] #games{background:linear-gradient(#f7ead9e8,#f7ead9ec),url('/assets/themes/alex-studio.webp') center/cover}
+html[data-theme="alex"] #home{background:linear-gradient(90deg,#1d1418f4,#2b191bd3 57%,#27151566),url('/assets/themes/alex-cinema.webp') center/cover}
+html[data-theme="alex"] .alex-studio-note{grid-column:1/-1}
+html[data-theme="alex"] .tv-stage .tv-status{color:#5c4036}
+/* Let the people occupy the lobby instead of sitting inside a separate tile. */
+html[data-theme="alex"] .alex-visit{display:grid;grid-template-columns:145px 120px;grid-template-rows:175px auto;justify-content:center;gap:0;min-height:0;max-width:330px;align-self:end;padding:0;background:none;border:0;box-shadow:none}
+html[data-theme="alex"] .alex-visit .alex-mini{grid-column:1;grid-row:1;width:145px;height:175px;align-self:end;filter:drop-shadow(0 9px 8px #070405ae)}
+html[data-theme="alex"] .alex-visit .alex-cat{grid-column:2;grid-row:1;width:120px;height:145px;align-self:end;filter:drop-shadow(0 9px 8px #070405ae)}
+html[data-theme="alex"] .alex-visit div{grid-column:1/-1;grid-row:2;max-width:265px;justify-self:center;padding:9px 13px;border:1px solid #b49268;border-radius:9px;background:#261b1cda;box-shadow:0 6px 12px #0006}
+html[data-theme="alex"] .alex-visit button{min-height:35px;padding:5px 12px}html[data-theme="alex"] .alex-visit p{margin:5px 0 0}
+@media(max-width:550px){html[data-theme="alex"] .alex-visit{grid-template-columns:115px 95px;grid-template-rows:140px auto}html[data-theme="alex"] .alex-visit .alex-mini{width:115px;height:140px}html[data-theme="alex"] .alex-visit .alex-cat{width:95px;height:120px}}
